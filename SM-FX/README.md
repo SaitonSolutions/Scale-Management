@@ -1,4 +1,4 @@
-iICS-Common
+Scale-Management
 ===========
 
-Intelligent inventory controll system
+Intelligent scale management system
