@@ -140,12 +140,12 @@ public class CCSHome extends Application implements HomeCallback {
             r.setVisible(true);
         });
         
-        home.createTileButton("Service \nRegistration",
-         TileColors.TILE_COLOR_BLUEVIOLET,
-         "/com/saiton/ccs/res/img-stock_approve.png", FxHome.HOME_PAGE,
+        home.createTileButton("Weight Scale",
+         TileColors.TILE_COLOR_CORAL,
+         "/com/saiton/ccs/res/img-suppliers.png", FxHome.HOME_PAGE,
          e -> FxmlUiLauncher.launchOnNewStage(
-         "/com/saiton/ccs/sales/Services.fxml",
-                 "Service Registration"));
+         "/com/saiton/ccs/scale/Scale.fxml",
+                 "Weight Scale"));
 
       
          

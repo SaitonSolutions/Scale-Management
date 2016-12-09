@@ -1,4 +1,4 @@
-package com.saiton.ccs.sales;
+package com.saiton.ccs.scale;
 
 import com.saiton.ccs.base.UserPermission;
 import com.saiton.ccs.base.UserSession;
@@ -40,7 +40,7 @@ import org.controlsfx.control.PopOver;
 import org.controlsfx.validation.ValidationResult;
 import org.controlsfx.validation.ValidationSupport;
 
-public class ServiceController implements Initializable, Validatable,
+public class ScaleController implements Initializable, Validatable,
         StagePassable {
 
     //<editor-fold defaultstate="collapsed" desc="Initcomponent">

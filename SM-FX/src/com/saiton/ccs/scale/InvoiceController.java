@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.saiton.ccs.sales;
+package com.saiton.ccs.scale;
 
 import com.saiton.ccs.base.UserPermission;
 import com.saiton.ccs.base.UserSession;

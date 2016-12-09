@@ -3319,3 +3319,11 @@ where i.date between ? and ?
 2016-12-09 11:16:16 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
 2016-12-09 11:36:46 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
 2016-12-09 11:36:59 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 12:41:45 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 12:51:35 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 13:16:36 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 13:30:11 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 13:31:31 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 13:32:18 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-09 13:32:48 ERROR ServiceDAO:462 - Exception tag --> Invalid sql statementcom.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sm_db.services' doesn't exist
+2016-12-09 13:32:52 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
