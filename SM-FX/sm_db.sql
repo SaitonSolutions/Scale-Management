@@ -179,7 +179,7 @@ CREATE TABLE `report` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_repot_report_type_idx` (`type`),
   CONSTRAINT `fk_repot_report_type_idx` FOREIGN KEY (`type`) REFERENCES `report_type` (`type`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,7 +236,7 @@ CREATE TABLE `report_type` (
   `type` varchar(45) NOT NULL,
   PRIMARY KEY (`type`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,6 +247,70 @@ LOCK TABLES `report_type` WRITE;
 /*!40000 ALTER TABLE `report_type` DISABLE KEYS */;
 INSERT INTO `report_type` VALUES (1,'Finance'),(2,'Stock');
 /*!40000 ALTER TABLE `report_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scale`
+--
+
+DROP TABLE IF EXISTS `scale`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scale` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weight_scale_id` varchar(45) NOT NULL,
+  `scale_id` varchar(45) NOT NULL,
+  `size` varchar(45) DEFAULT NULL,
+  `no` varchar(45) DEFAULT NULL,
+  `t_no_shift` varchar(45) DEFAULT NULL,
+  `net_weight` double DEFAULT NULL,
+  `file_type` varchar(200) DEFAULT NULL,
+  `gauge` varchar(200) DEFAULT NULL,
+  `qty` double DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `gross_weight` double DEFAULT NULL,
+  `time_stamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`weight_scale_id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `scale_fk1_idx` (`scale_id`),
+  CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scale`
+--
+
+LOCK TABLES `scale` WRITE;
+/*!40000 ALTER TABLE `scale` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scale` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scale_register`
+--
+
+DROP TABLE IF EXISTS `scale_register`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scale_register` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `scale_id` varchar(45) NOT NULL,
+  `scale_name` varchar(45) DEFAULT NULL,
+  `com_port` varchar(45) DEFAULT NULL,
+  `board_rate` int(11) DEFAULT NULL,
+  PRIMARY KEY (`scale_id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scale_register`
+--
+
+LOCK TABLES `scale_register` WRITE;
+/*!40000 ALTER TABLE `scale_register` DISABLE KEYS */;
+/*!40000 ALTER TABLE `scale_register` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -420,7 +484,7 @@ CREATE TABLE `user_permission_type` (
 
 LOCK TABLES `user_permission_type` WRITE;
 /*!40000 ALTER TABLE `user_permission_type` DISABLE KEYS */;
-INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration');
+INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration'),(133,'Scale Registration');
 /*!40000 ALTER TABLE `user_permission_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -451,7 +515,7 @@ CREATE TABLE `user_permissions` (
 
 LOCK TABLES `user_permissions` WRITE;
 /*!40000 ALTER TABLE `user_permissions` DISABLE KEYS */;
-INSERT INTO `user_permissions` VALUES ('EM0004','Printer Registration',1,1,1,1),('EM0004','Report Generator',1,1,1,1),('EM0004','Report Registration',1,1,1,1),('EM0004','Report Settings',1,1,1,1),('EM0004','User Registration',1,1,1,1),('EM0004','Weight Scale',1,1,1,1),('EM0005','Printer Registration',1,1,1,1),('EM0005','Report Generator',1,1,1,1),('EM0005','Report Registration',1,1,1,1),('EM0005','Report Settings',1,1,1,1),('EM0005','User Registration',1,1,1,1),('EM0005','Weight Scale',1,1,1,1);
+INSERT INTO `user_permissions` VALUES ('EM0004','Printer Registration',1,1,1,1),('EM0004','Report Generator',1,1,1,1),('EM0004','Report Registration',1,1,1,1),('EM0004','Report Settings',1,1,1,1),('EM0004','Scale Registration',1,1,1,1),('EM0004','User Registration',1,1,1,1),('EM0004','Weight Scale',1,1,1,1),('EM0005','Printer Registration',1,1,1,1),('EM0005','Report Generator',1,1,1,1),('EM0005','Report Registration',1,1,1,1),('EM0005','Report Settings',1,1,1,1),('EM0005','Scale Registration',1,1,1,1),('EM0005','User Registration',1,1,1,1),('EM0005','Weight Scale',1,1,1,1);
 /*!40000 ALTER TABLE `user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -514,4 +578,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-09 17:10:01
+-- Dump completed on 2016-12-12 19:51:57

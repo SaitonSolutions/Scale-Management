@@ -42,109 +42,61 @@ import org.controlsfx.control.PopOver;
 import org.controlsfx.validation.ValidationResult;
 import org.controlsfx.validation.ValidationSupport;
 
-public class ScaleController implements Initializable, Validatable,
+public class ScaleRegisterController implements Initializable, Validatable,
         StagePassable {
 
     //<editor-fold defaultstate="collapsed" desc="Initcomponent">
+    
     @FXML
-    private TextField txtWeightScaleId;
+    private Button btnClose;
 
     @FXML
-    private ComboBox<?> cmbFileType;
-
-    @FXML
-    private TableColumn<?, ?> tcGrossWeight;
-
-    @FXML
-    private DatePicker dtpDate;
-
-    @FXML
-    private TableColumn<?, ?> tcNetWeight;
-
-    @FXML
-    private TextField txtNo;
+    private TableColumn<?, ?> tcScaleId;
 
     @FXML
     private TableView<?> tblItemList;
 
     @FXML
-    private TableColumn<?, ?> tcTNoShift;
+    private TableColumn<?, ?> tcBoardRate;
 
     @FXML
-    private TableColumn<?, ?> tcGauge;
-
-    @FXML
-    private Button btnDelete;
-
-    @FXML
-    private TextField txtGauge;
-
-    @FXML
-    private TextField txtNetWeight;
-
-    @FXML
-    private TableColumn<?, ?> tcQty;
-
-    @FXML
-    private TableColumn<?, ?> tcSize;
-
-    @FXML
-    private TableColumn<?, ?> tcWeightScaleId;
-
-    @FXML
-    private Button btnClose;
-
-    @FXML
-    private Button btnRefreshNetWeight;
-
-    @FXML
-    private TableColumn<?, ?> tcFileType;
-
-    @FXML
-    private TextField txtQty;
-
-    @FXML
-    private TableColumn<?, ?> tcNo;
+    private TableColumn<?, ?> tcScaleName;
 
     @FXML
     private Label lblItemId;
 
     @FXML
-    private Button btnPrint;
+    private Button btnSave;
 
     @FXML
-    private TextField txtSize;
+    private Button btnDelete;
 
     @FXML
-    private Button btnRefreshGrossWeight;
+    private TextField txtScaleId;
 
     @FXML
-    private TableColumn<?, ?> tcDate;
+    private TextField txtNComPort;
 
     @FXML
-    private TextField txtTNoShift;
-    
+    private TableColumn<?, ?> tcComPort;
+
     @FXML
-    private TextField txtGrossWeight;
-    
+    private TextField txtBoardRate;
+
     @FXML
-    private ComboBox<?> cmbSearchScale;
-    
-    @FXML
-    private DatePicker dtpSearchDate;
-    
-    @FXML
-    private ComboBox<?> cmbScale;
+    private TextField txtScaleName;
+
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
 
     @FXML
-    void btnRefreshGrossWeightOnAction(ActionEvent event) {
+    void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
 
+    @FXML
     void tblRequestNoteListOnMouseClicked(ActionEvent event) {
 
     }
@@ -155,7 +107,7 @@ public class ScaleController implements Initializable, Validatable,
     }
 
     @FXML
-    void btnPrintOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) {
 
     }
 
@@ -164,12 +116,18 @@ public class ScaleController implements Initializable, Validatable,
 
     }
 
-    void txtSellingPriceOnKeyReleased(ActionEvent event) {
+    @FXML
+    void txtSizeOnKeyReleased(ActionEvent event) {
 
     }
 
     @FXML
-    void btnRefreshNetWeightOnAction(ActionEvent event) {
+    void txtNoOnKeyReleased(ActionEvent event) {
+
+    }
+
+    @FXML
+    void txtTNoShiftOnKeyReleased(ActionEvent event) {
 
     }
 
@@ -380,8 +338,8 @@ public class ScaleController implements Initializable, Validatable,
             case DELETE:
                 disableUi(false);
 
-                btnPrint.setDisable(true);
-                btnPrint.setVisible(false);
+                btnSave.setDisable(true);
+                btnSave.setVisible(false);
 
                 deactivateCombo();
 
@@ -392,8 +350,8 @@ public class ScaleController implements Initializable, Validatable,
                 deactivateCombo();
                 btnDelete.setVisible(false);
 
-                btnPrint.setDisable(true);
-                btnPrint.setVisible(false);
+                btnSave.setDisable(true);
+                btnSave.setVisible(false);
 
                 break;
 
@@ -426,8 +384,8 @@ public class ScaleController implements Initializable, Validatable,
         btnDelete.setDisable(state);
         btnDelete.setVisible(!state);
 
-        btnPrint.setDisable(state);
-        btnPrint.setVisible(!state);
+        btnSave.setDisable(state);
+        btnSave.setVisible(!state);
 
         btnClose.setDisable(state);
         btnClose.setVisible(!state);

@@ -174,6 +174,14 @@ public class CCSHome extends Application implements HomeCallback {
                 e -> FxmlUiLauncher.launchOnNewStage(
                         "/com/saiton/ccs/report/ReportSettings.fxml",
                         "Report Settings"));
+        
+        home.createTileButton("Scale \nRegistration",
+                TileColors.TILE_COLOR_PLUM,
+                "/com/saiton/ccs/res/img-report-settings.png", 
+                FxHome.SETTINGS_PAGE,
+                e -> FxmlUiLauncher.launchOnNewStage(
+                        "/com/saiton/ccs/scale/ScaleRegister.fxml",
+                        "Scale Registration"));
     
           
 
