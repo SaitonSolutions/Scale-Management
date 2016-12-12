@@ -123,6 +123,8 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private TextField txtTNoShift;
+    @FXML
+    private TextField txtGrossWeight;
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
@@ -132,7 +134,6 @@ public class ScaleController implements Initializable, Validatable,
 
     }
 
-    @FXML
     void tblRequestNoteListOnMouseClicked(ActionEvent event) {
 
     }
@@ -152,7 +153,6 @@ public class ScaleController implements Initializable, Validatable,
 
     }
 
-    @FXML
     void txtSellingPriceOnKeyReleased(ActionEvent event) {
 
     }
@@ -568,6 +568,50 @@ public class ScaleController implements Initializable, Validatable,
 //                        !fav.validTableView(tblItemList),
 //                        ErrorMessages.EmptyListView));
 
+    }
+
+    @FXML
+    private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void cmbFileTypeOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void txtGrossWeightOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void tblRequestNoteListOnMouseClicked(MouseEvent event) {
+    }
+
+    @FXML
+    private void txtQtyOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtSizeOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtNetWeightOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtGaugeOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void dtpDateOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void txtNoOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtTNoShiftOnKeyReleased(KeyEvent event) {
     }
 
     public class Item {
