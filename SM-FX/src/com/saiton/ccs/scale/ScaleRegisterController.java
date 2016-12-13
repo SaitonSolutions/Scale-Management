@@ -7,6 +7,7 @@ import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
 import com.saiton.ccs.popup.ItemInfoPopup;
 import com.saiton.ccs.popup.ServiceInfoPopup;
 import com.saiton.ccs.salesdao.ServiceDAO;
+import com.saiton.ccs.scaledao.ScaleDAO;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
@@ -85,8 +86,14 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @FXML
     private TextField txtScaleName;
+    
+    
 
 //</editor-fold>
+    
+    private Stage stage;
+    ScaleDAO scaleDAO = new ScaleDAO();
+    
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
@@ -113,7 +120,7 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
-
+         stage.close();
     }
 
     @FXML
@@ -437,7 +444,9 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @Override
     public void setStage(Stage stage, Object[] obj) {
 
-//        this.stage = stage;
+        this.stage = stage;
+        txtScaleId.setText(scaleDAO.generateID());
+        
 //        setUserAccessLevel();
 //        
 //        //item popup------------------------
