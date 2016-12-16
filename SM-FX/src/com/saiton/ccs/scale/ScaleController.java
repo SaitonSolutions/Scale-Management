@@ -136,6 +136,9 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private ComboBox<?> cmbScale;
 //</editor-fold>
+    
+    private Stage stage;
+    
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
@@ -161,7 +164,7 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
-
+           stage.close();
     }
 
     void txtSellingPriceOnKeyReleased(ActionEvent event) {
@@ -479,7 +482,7 @@ public class ScaleController implements Initializable, Validatable,
     @Override
     public void setStage(Stage stage, Object[] obj) {
 
-//        this.stage = stage;
+        this.stage = stage;
 //        setUserAccessLevel();
 //        
 //        //item popup------------------------
