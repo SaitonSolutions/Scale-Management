@@ -311,20 +311,29 @@ CREATE TABLE `scale` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `weight_scale_id` varchar(45) NOT NULL,
   `scale_id` varchar(45) NOT NULL,
-  `size` varchar(45) DEFAULT NULL,
-  `no` varchar(45) DEFAULT NULL,
-  `t_no_shift` varchar(45) DEFAULT NULL,
-  `net_weight` double DEFAULT NULL,
-  `file_type` varchar(200) DEFAULT NULL,
+  `customer_code` varchar(45) NOT NULL,
+  `description` varchar(300) DEFAULT NULL,
+  `reel_no` varchar(45) DEFAULT NULL,
+  `job_no` varchar(45) DEFAULT NULL,
+  `size` float DEFAULT NULL,
+  `length` float DEFAULT NULL,
+  `width` float DEFAULT NULL,
+  `epf_no` varchar(45) DEFAULT NULL,
+  `batch_no` varchar(45) DEFAULT NULL,
+  `machine` varchar(200) DEFAULT NULL,
   `gauge` varchar(200) DEFAULT NULL,
   `qty` double DEFAULT NULL,
-  `date` date DEFAULT NULL,
   `gross_weight` double DEFAULT NULL,
+  `net_weight` double DEFAULT NULL,
+  `core_weight` double DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `time_stamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`weight_scale_id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `scale_fk1_idx` (`scale_id`),
-  CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `scale_fk2_idx` (`customer_code`),
+  CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `scale_fk2` FOREIGN KEY (`customer_code`) REFERENCES `customer` (`customer_code`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -654,4 +663,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-16 19:13:37
+-- Dump completed on 2016-12-16 20:54:55
