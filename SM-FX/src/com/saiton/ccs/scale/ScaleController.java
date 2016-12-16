@@ -50,28 +50,25 @@ public class ScaleController implements Initializable, Validatable,
     private TextField txtWeightScaleId;
 
     @FXML
-    private ComboBox<?> cmbFileType;
-
-    @FXML
-    private TableColumn<?, ?> tcGrossWeight;
-
-    @FXML
     private DatePicker dtpDate;
 
     @FXML
-    private TableColumn<?, ?> tcNetWeight;
+    private TextField txtReelNo;
 
     @FXML
-    private TextField txtNo;
+    private ComboBox<?> cmbMachine;
 
     @FXML
-    private TableView<?> tblItemList;
+    private ComboBox<?> cmbSize;
 
     @FXML
-    private TableColumn<?, ?> tcTNoShift;
+    private TextField txtGrossWeight;
 
     @FXML
-    private TableColumn<?, ?> tcGauge;
+    private TextField txtNetWeight1;
+
+    @FXML
+    private ComboBox<?> cmbCustomer;
 
     @FXML
     private Button btnDelete;
@@ -83,13 +80,10 @@ public class ScaleController implements Initializable, Validatable,
     private TextField txtNetWeight;
 
     @FXML
-    private TableColumn<?, ?> tcQty;
+    private TextField txtWidth;
 
     @FXML
-    private TableColumn<?, ?> tcSize;
-
-    @FXML
-    private TableColumn<?, ?> tcWeightScaleId;
+    private TextField txtBatchNo;
 
     @FXML
     private Button btnClose;
@@ -98,43 +92,34 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshNetWeight;
 
     @FXML
-    private TableColumn<?, ?> tcFileType;
+    private TextField txtJobNo;
+
+    @FXML
+    private TextField txtLength;
+
+    @FXML
+    private ComboBox<?> cmbScale;
+
+    @FXML
+    private TextField txtDescription;
 
     @FXML
     private TextField txtQty;
 
     @FXML
-    private TableColumn<?, ?> tcNo;
+    private Button btnPrint;
+
+    @FXML
+    private Button btnRefreshCoreWeight;
 
     @FXML
     private Label lblItemId;
 
     @FXML
-    private Button btnPrint;
-
-    @FXML
-    private TextField txtSize;
+    private TextField txtEPFNo;
 
     @FXML
     private Button btnRefreshGrossWeight;
-
-    @FXML
-    private TableColumn<?, ?> tcDate;
-
-    @FXML
-    private TextField txtTNoShift;
-    
-    @FXML
-    private TextField txtGrossWeight;
-    
-    @FXML
-    private ComboBox<?> cmbSearchScale;
-    
-    @FXML
-    private DatePicker dtpSearchDate;
-    
-    @FXML
-    private ComboBox<?> cmbScale;
 //</editor-fold>
     
     private Stage stage;
@@ -144,11 +129,12 @@ public class ScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Action Events">
 
     @FXML
-    void btnRefreshGrossWeightOnAction(ActionEvent event) {
+    void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
 
-    void tblRequestNoteListOnMouseClicked(ActionEvent event) {
+    @FXML
+    void btnRefreshGrossWeightOnAction(ActionEvent event) {
 
     }
 
@@ -164,15 +150,21 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
-           stage.close();
-    }
-
-    void txtSellingPriceOnKeyReleased(ActionEvent event) {
 
     }
 
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void dtpDateOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnRefreshCoreWeightOnAction(ActionEvent event) {
 
     }
 
@@ -423,9 +415,6 @@ public class ScaleController implements Initializable, Validatable,
 
     private void disableUi(boolean state) {
 
-        tblItemList.setDisable(state);
-        tblItemList.setVisible(!state);
-
         btnDelete.setDisable(state);
         btnDelete.setVisible(!state);
 
@@ -575,49 +564,7 @@ public class ScaleController implements Initializable, Validatable,
 //                        ErrorMessages.EmptyListView));
     }
 
-    @FXML
-    private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
-    }
 
-    @FXML
-    private void cmbFileTypeOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void txtGrossWeightOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void tblRequestNoteListOnMouseClicked(MouseEvent event) {
-    }
-
-    @FXML
-    private void txtQtyOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtSizeOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtNetWeightOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtGaugeOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void dtpDateOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void txtNoOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtTNoShiftOnKeyReleased(KeyEvent event) {
-    }
 
     public class Item {
 
