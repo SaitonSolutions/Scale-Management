@@ -1,6 +1,0 @@
-MQTT To Read topics
-
-1.MQTT connect packet.
-	- Vulnerabilities. 
-	- Packet format.
-2.
