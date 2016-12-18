@@ -560,7 +560,7 @@ CREATE TABLE `user_permission_type` (
   `type` varchar(45) NOT NULL,
   PRIMARY KEY (`type`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -569,7 +569,7 @@ CREATE TABLE `user_permission_type` (
 
 LOCK TABLES `user_permission_type` WRITE;
 /*!40000 ALTER TABLE `user_permission_type` DISABLE KEYS */;
-INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration'),(133,'Scale Registration');
+INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration'),(133,'Scale Registration'),(134,'Search Weight Scale');
 /*!40000 ALTER TABLE `user_permission_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -600,7 +600,7 @@ CREATE TABLE `user_permissions` (
 
 LOCK TABLES `user_permissions` WRITE;
 /*!40000 ALTER TABLE `user_permissions` DISABLE KEYS */;
-INSERT INTO `user_permissions` VALUES ('EM0004','Printer Registration',1,1,1,1),('EM0004','Report Generator',1,1,1,1),('EM0004','Report Registration',1,1,1,1),('EM0004','Report Settings',1,1,1,1),('EM0004','Scale Registration',1,1,1,1),('EM0004','User Registration',1,1,1,1),('EM0004','Weight Scale',1,1,1,1),('EM0005','Printer Registration',1,1,1,1),('EM0005','Report Generator',1,1,1,1),('EM0005','Report Registration',1,1,1,1),('EM0005','Report Settings',1,1,1,1),('EM0005','Scale Registration',1,1,1,1),('EM0005','User Registration',1,1,1,1),('EM0005','Weight Scale',1,1,1,1);
+INSERT INTO `user_permissions` VALUES ('EM0004','Printer Registration',1,1,1,1),('EM0004','Report Generator',1,1,1,1),('EM0004','Report Registration',1,1,1,1),('EM0004','Report Settings',1,1,1,1),('EM0004','Scale Registration',1,1,1,1),('EM0004','Search Weight Scale',1,1,1,1),('EM0004','User Registration',1,1,1,1),('EM0004','Weight Scale',1,1,1,1),('EM0005','Printer Registration',1,1,1,1),('EM0005','Report Generator',1,1,1,1),('EM0005','Report Registration',1,1,1,1),('EM0005','Report Settings',1,1,1,1),('EM0005','Scale Registration',1,1,1,1),('EM0005','Search Weight Scale',1,1,1,1),('EM0005','User Registration',1,1,1,1),('EM0005','Weight Scale',1,1,1,1);
 /*!40000 ALTER TABLE `user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -663,4 +663,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-16 20:54:55
+-- Dump completed on 2016-12-18 13:08:35

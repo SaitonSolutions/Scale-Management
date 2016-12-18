@@ -146,6 +146,13 @@ public class CCSHome extends Application implements HomeCallback {
          e -> FxmlUiLauncher.launchOnNewStage(
          "/com/saiton/ccs/scale/Scale.fxml",
                  "Weight Scale"));
+        
+        home.createTileButton("Search Weight \nScale",
+         TileColors.TILE_COLOR_SPRINGGREEN,
+         "/com/saiton/ccs/res/img-report-settings.png", FxHome.HOME_PAGE,
+         e -> FxmlUiLauncher.launchOnNewStage(
+         "/com/saiton/ccs/scale/SearchWeightScale.fxml",
+                 "Search Weight Scale"));
 
       
          
