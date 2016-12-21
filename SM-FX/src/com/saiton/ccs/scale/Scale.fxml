@@ -49,7 +49,38 @@
                                  <font>
                                     <Font size="22.0" />
                                  </font></Label>
-                              <ComboBox fx:id="cmbCustomer" prefHeight="50.0" prefWidth="300.0" promptText="Customer" />
+                              <TextField fx:id="txtCustomer" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" promptText="Customer">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnSearchCustomer" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSearchCustomerOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRefreshCustomer" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshCustomerOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-refreshNew.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnCustomerAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnCustomerAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                   </children>
                            <opaqueInsets>
                               <Insets bottom="10.0" />
@@ -162,7 +193,38 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="cmbSize" prefHeight="50.0" prefWidth="300.0" promptText="Size" />
+                              <TextField fx:id="txtSize" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" promptText="Size">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnSearchSize" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSearchSizeOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRefreshSize" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshSizeOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-refreshNew.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnSizeAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSizeAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                            <GridPane.margin>
                               <Insets left="30.0" />
@@ -281,7 +343,38 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <ComboBox fx:id="cmbMachine" prefHeight="50.0" prefWidth="300.0" promptText="Machine" />
+                              <TextField fx:id="txtMachine" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" promptText="Machine">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnSearchMachine" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSearchMachineOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnRefreshMachine" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshMachineOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-refreshNew.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="btnMachineAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnMachineAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                            <opaqueInsets>
                               <Insets bottom="10.0" />
