@@ -47,21 +47,20 @@ public class ScaleRegisterController implements Initializable, Validatable,
         StagePassable {
 
     //<editor-fold defaultstate="collapsed" desc="Initcomponent">
-    
     @FXML
     private Button btnClose;
 
     @FXML
-    private TableColumn<?, ?> tcScaleId;
+    private TableColumn<Scale, String> tcScaleId;
 
     @FXML
-    private TableView<?> tblItemList;
+    private TableColumn<Scale, String> tcBoardRate;
 
     @FXML
-    private TableColumn<?, ?> tcBoardRate;
+    private TableColumn<Scale, String> tcScaleName;
 
     @FXML
-    private TableColumn<?, ?> tcScaleName;
+    private TableColumn<Scale, String> tcComPort;
 
     @FXML
     private Label lblItemId;
@@ -79,31 +78,28 @@ public class ScaleRegisterController implements Initializable, Validatable,
     private TextField txtNComPort;
 
     @FXML
-    private TableColumn<?, ?> tcComPort;
-
-    @FXML
     private TextField txtBoardRate;
 
     @FXML
     private TextField txtScaleName;
-    
-    
+
+    private ObservableList TableScaleData = FXCollections.
+            observableArrayList();
 
 //</editor-fold>
-    
     private Stage stage;
     ScaleDAO scaleDAO = new ScaleDAO();
-    
+    @FXML
+    private TableView<Scale> tblItemList;
+    Scale scaleItem = new Scale();
+
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
-
-    @FXML
     void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
 
-    @FXML
     void tblRequestNoteListOnMouseClicked(ActionEvent event) {
 
     }
@@ -120,20 +116,17 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
-         stage.close();
+        stage.close();
     }
 
-    @FXML
     void txtSizeOnKeyReleased(ActionEvent event) {
 
     }
 
-    @FXML
     void txtNoOnKeyReleased(ActionEvent event) {
 
     }
 
-    @FXML
     void txtTNoShiftOnKeyReleased(ActionEvent event) {
 
     }
@@ -145,19 +138,20 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
-//                "colServiceId"));
-//        tcServiceName.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceName"));
-//        tcServicePrice.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServicePrice"));
-//        tcServiceDescription.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceDescription"));
-//
-//        tblItemList.setItems(TableItemData);
+        tcScaleId.setCellValueFactory(new PropertyValueFactory<Scale, String>(
+                "colScaleId"));
+        tcScaleName.setCellValueFactory(
+                new PropertyValueFactory<Scale, String>(
+                        "colScaleName"));
+        tcBoardRate.setCellValueFactory(
+                new PropertyValueFactory<Scale, String>(
+                        "colBoardRate"));
+
+        tcComPort.setCellValueFactory(
+                new PropertyValueFactory<Scale, String>(
+                        "colComPort"));
+
+        tblItemList.setItems(TableScaleData);
 //
 //        mb = SimpleMessageBoxFactory.createMessageBox();
 //        txtServiceId.setText(serviceDAO.generateID());
@@ -446,7 +440,7 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
         this.stage = stage;
         txtScaleId.setText(scaleDAO.generateID());
-        
+
 //        setUserAccessLevel();
 //        
 //        //item popup------------------------
@@ -544,19 +538,7 @@ public class ScaleRegisterController implements Initializable, Validatable,
     }
 
     @FXML
-    private void cmbFileTypeOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void txtGrossWeightOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
     private void tblRequestNoteListOnMouseClicked(MouseEvent event) {
-    }
-
-    @FXML
-    private void txtQtyOnKeyReleased(KeyEvent event) {
     }
 
     @FXML
@@ -564,59 +546,89 @@ public class ScaleRegisterController implements Initializable, Validatable,
     }
 
     @FXML
-    private void txtNetWeightOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtGaugeOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void dtpDateOnAction(ActionEvent event) {
-    }
-
-    @FXML
     private void txtNoOnKeyReleased(KeyEvent event) {
     }
 
     @FXML
-    private void txtTNoShiftOnKeyReleased(KeyEvent event) {
+    private void txtBoardRateKeyReleased(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            scaleItem = new Scale();
+            scaleItem.colScaleId.setValue(txtScaleId.
+                    getText());
+            scaleItem.colScaleName.setValue(txtScaleName.
+                    getText());
+            scaleItem.colBoardRate.setValue(
+                    txtBoardRate.
+                    getText());
+            scaleItem.colComPort.setValue(txtNComPort.getText());
+
+            TableScaleData.add(scaleItem);
+        }
+
     }
+    
+    
+    private void saveTableContent(String Id) {
 
-    public class Item {
+        Scale scaleItem;
 
-        public SimpleStringProperty colServiceId = new SimpleStringProperty(
+//// Loading to db
+////=============================================================================================================== 
+//        if (tblIssueNote.getItems().size() != 0) {
+//            for (int i = 0; i < tblIssueNote.getItems().size(); i++) {
+//                scaleItem = (IssueItem) tblIssueNote.getItems().get(i);
+//
+//                isTableContentSaved = issueNoteDAO.insertIssueNoteItems(
+//                        Id,
+//                        txtRequestNote.getText(),
+//                        scaleItem.getColIssueItemId(),
+//                        scaleItem.getColIssueItemDescription(),
+//                        Double.parseDouble(scaleItem.getColIssueQty()),
+//                        scaleItem.getColIssueBatchNo());
+//
+//            }
+//        }
+
+    }
+    
+
+    public class Scale {
+
+        public SimpleStringProperty colScaleId = new SimpleStringProperty(
                 "tcServiceId");
-        public SimpleStringProperty colServiceName = new SimpleStringProperty(
+        public SimpleStringProperty colScaleName = new SimpleStringProperty(
                 "tcServiceName");
-        public SimpleStringProperty colServicePrice
+        public SimpleStringProperty colBoardRate
                 = new SimpleStringProperty(
                         "tcServicePrice");
-        public SimpleStringProperty colServiceDescription
+        public SimpleStringProperty colComPort
                 = new SimpleStringProperty(
                         "tcServiceDescription");
 
-        public String getColServiceId() {
-            return colServiceId.get();
+        public String getColScaleId() {
+            return colScaleId.get();
         }
 
-        public String getColServiceName() {
-            return colServiceName.get();
+        public String getColScaleName() {
+            return colScaleName.get();
         }
 
-        public String getColServicePrice() {
-            return colServicePrice.get();
+        public String getColBoardRate() {
+            return colBoardRate.get();
         }
 
-        public String getColServiceDescription() {
-            return colServiceDescription.get();
+        public String getColComPort() {
+            return colComPort.get();
         }
 
-        public void setColServiceName(String serviceName) {
-            colServiceName.setValue(serviceName);
-        }
-
+//        public void setColServiceName(String serviceName) {
+//            colServiceName.setValue(serviceName);
+//        }
     }
+    
+    
+    
+    
 
 //</editor-fold>
 }

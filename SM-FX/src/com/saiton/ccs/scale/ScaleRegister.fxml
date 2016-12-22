@@ -161,7 +161,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtBoardRate" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtTNoShiftOnKeyReleased" prefWidth="300.0" promptText="Board Rate">
+                              <TextField fx:id="txtBoardRate" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtBoardRateKeyReleased" prefWidth="300.0" promptText="Board Rate">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
