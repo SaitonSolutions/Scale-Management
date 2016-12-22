@@ -55,11 +55,6 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private TextField txtReelNo;
 
-    @FXML
-    private ComboBox<?> cmbMachine;
-
-    @FXML
-    private ComboBox<?> cmbSize;
 
     @FXML
     private TextField txtGrossWeight;
@@ -67,8 +62,6 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private TextField txtNetWeight1;
 
-    @FXML
-    private ComboBox<?> cmbCustomer;
 
     @FXML
     private Button btnDelete;
@@ -123,12 +116,35 @@ public class ScaleController implements Initializable, Validatable,
 //</editor-fold>
     
     private Stage stage;
+    @FXML
+    private TextField txtCustomer;
+    @FXML
+    private Button btnSearchCustomer;
+    @FXML
+    private Button btnRefreshCustomer;
+    @FXML
+    private Button btnCustomerAdd;
+    @FXML
+    private TextField txtSize;
+    @FXML
+    private Button btnSearchSize;
+    @FXML
+    private Button btnRefreshSize;
+    @FXML
+    private Button btnSizeAdd;
+    @FXML
+    private TextField txtMachine;
+    @FXML
+    private Button btnSearchMachine;
+    @FXML
+    private Button btnRefreshMachine;
+    @FXML
+    private Button btnMachineAdd;
     
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
 
-    @FXML
     void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
@@ -562,6 +578,46 @@ public class ScaleController implements Initializable, Validatable,
 //                new CustomTableViewValidationImpl(tblItemList,
 //                        !fav.validTableView(tblItemList),
 //                        ErrorMessages.EmptyListView));
+    }
+
+    @FXML
+    private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void btnSearchCustomerOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnRefreshCustomerOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnCustomerAddOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSearchSizeOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnRefreshSizeOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSizeAddOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSearchMachineOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnRefreshMachineOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnMachineAddOnAction(ActionEvent event) {
     }
 
 

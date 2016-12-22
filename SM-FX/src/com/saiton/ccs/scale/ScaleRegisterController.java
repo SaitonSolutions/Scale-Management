@@ -7,7 +7,7 @@ import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
 import com.saiton.ccs.popup.ItemInfoPopup;
 import com.saiton.ccs.popup.ServiceInfoPopup;
 import com.saiton.ccs.salesdao.ServiceDAO;
-import com.saiton.ccs.scaledao.ScaleDAO;
+import com.saiton.ccs.scaledao.ScaleRegisterationDAO;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
@@ -15,6 +15,7 @@ import com.saiton.ccs.validations.CustomTextAreaValidationImpl;
 import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
 import com.saiton.ccs.validations.ErrorMessages;
 import com.saiton.ccs.validations.FormatAndValidate;
+import com.saiton.ccs.validations.MessageBoxTitle;
 import com.saiton.ccs.validations.Validatable;
 import java.net.URL;
 import java.util.ArrayList;
@@ -88,18 +89,59 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
 //</editor-fold>
     private Stage stage;
-    ScaleDAO scaleDAO = new ScaleDAO();
+    ScaleRegisterationDAO scaleRegistrationDAO = new ScaleRegisterationDAO();
     @FXML
     private TableView<Scale> tblItemList;
     Scale scaleItem = new Scale();
+    private MessageBox mb;
+    boolean isTableContentSaved = false;
 
     //<editor-fold defaultstate="collapsed" desc="Key Events">
-//</editor-fold>
-    //<editor-fold defaultstate="collapsed" desc="Action Events">
+    void txtSizeOnKeyReleased(ActionEvent event) {
+
+    }
+
+    void txtNoOnKeyReleased(ActionEvent event) {
+
+    }
+
+    void txtTNoShiftOnKeyReleased(ActionEvent event) {
+
+    }
+
     void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
 
+    @FXML
+    private void txtSizeOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtNoOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtBoardRateKeyReleased(KeyEvent event) {
+        if (event.getCode() == KeyCode.ENTER) {
+            scaleItem = new Scale();
+            scaleItem.colScaleId.setValue(txtScaleId.
+                    getText());
+            scaleItem.colScaleName.setValue(txtScaleName.
+                    getText());
+            scaleItem.colBoardRate.setValue(
+                    txtBoardRate.
+                    getText());
+            scaleItem.colComPort.setValue(txtNComPort.getText());
+
+            TableScaleData.add(scaleItem);
+            clearInput();
+        }
+
+    }
+
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Action Events">
     void tblRequestNoteListOnMouseClicked(ActionEvent event) {
 
     }
@@ -111,24 +153,27 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+        
+        saveTableContent();
+        
+        if (isTableContentSaved) {
+            
+            mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
+                MessageBoxTitle.INFORMATION.toString(),
+                MessageBox.MessageIcon.MSG_ICON_SUCCESS,
+                MessageBox.MessageType.MSG_OK);
+            
+        }
+        
+        
+        
+        
 
     }
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
         stage.close();
-    }
-
-    void txtSizeOnKeyReleased(ActionEvent event) {
-
-    }
-
-    void txtNoOnKeyReleased(ActionEvent event) {
-
-    }
-
-    void txtTNoShiftOnKeyReleased(ActionEvent event) {
-
     }
 
 //</editor-fold>
@@ -153,8 +198,8 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
         tblItemList.setItems(TableScaleData);
 //
-//        mb = SimpleMessageBoxFactory.createMessageBox();
-//        txtServiceId.setText(serviceDAO.generateID());
+        mb = SimpleMessageBoxFactory.createMessageBox();
+//      txtServiceId.setText(serviceDAO.generateID());
         btnDelete.setVisible(false);
 
     }
@@ -168,14 +213,11 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @Override
     public void clearInput() {
-//            txtDescription.clear();
-//            txtPrice.clear();
-//            txtService.clear();
-//            txtServiceId.clear();
-//            TableItemData.clear();
-//            txtServiceId.setText(serviceDAO.generateID());
-//            no = 1;
-//             isupdate = false;
+
+        txtScaleId.clear();
+        txtScaleName.clear();
+        txtBoardRate.clear();
+        txtNComPort.clear();
 
     }
 
@@ -439,7 +481,7 @@ public class ScaleRegisterController implements Initializable, Validatable,
     public void setStage(Stage stage, Object[] obj) {
 
         this.stage = stage;
-        txtScaleId.setText(scaleDAO.generateID());
+        txtScaleId.setText(scaleRegistrationDAO.generateID());
 
 //        setUserAccessLevel();
 //        
@@ -541,56 +583,25 @@ public class ScaleRegisterController implements Initializable, Validatable,
     private void tblRequestNoteListOnMouseClicked(MouseEvent event) {
     }
 
-    @FXML
-    private void txtSizeOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtNoOnKeyReleased(KeyEvent event) {
-    }
-
-    @FXML
-    private void txtBoardRateKeyReleased(KeyEvent event) {
-        if (event.getCode() == KeyCode.ENTER) {
-            scaleItem = new Scale();
-            scaleItem.colScaleId.setValue(txtScaleId.
-                    getText());
-            scaleItem.colScaleName.setValue(txtScaleName.
-                    getText());
-            scaleItem.colBoardRate.setValue(
-                    txtBoardRate.
-                    getText());
-            scaleItem.colComPort.setValue(txtNComPort.getText());
-
-            TableScaleData.add(scaleItem);
-        }
-
-    }
-    
-    
-    private void saveTableContent(String Id) {
+    private void saveTableContent() {
 
         Scale scaleItem;
 
 //// Loading to db
 ////=============================================================================================================== 
-//        if (tblIssueNote.getItems().size() != 0) {
-//            for (int i = 0; i < tblIssueNote.getItems().size(); i++) {
-//                scaleItem = (IssueItem) tblIssueNote.getItems().get(i);
-//
-//                isTableContentSaved = issueNoteDAO.insertIssueNoteItems(
-//                        Id,
-//                        txtRequestNote.getText(),
-//                        scaleItem.getColIssueItemId(),
-//                        scaleItem.getColIssueItemDescription(),
-//                        Double.parseDouble(scaleItem.getColIssueQty()),
-//                        scaleItem.getColIssueBatchNo());
-//
-//            }
-//        }
+        if (tblItemList.getItems().size() != 0) {
+            for (int i = 0; i < tblItemList.getItems().size(); i++) {
+                scaleItem = (Scale) tblItemList.getItems().get(i);
 
+                isTableContentSaved = scaleRegistrationDAO.insertScale(
+                        scaleItem.getColScaleId(),
+                        scaleItem.getColScaleName(),
+                        scaleItem.getColComPort(),
+                        scaleItem.getColBoardRate());
+
+            }
+        }
     }
-    
 
     public class Scale {
 
@@ -625,10 +636,6 @@ public class ScaleRegisterController implements Initializable, Validatable,
 //            colServiceName.setValue(serviceName);
 //        }
     }
-    
-    
-    
-    
 
 //</editor-fold>
 }

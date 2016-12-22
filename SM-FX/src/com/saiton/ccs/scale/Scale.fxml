@@ -404,7 +404,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtLength" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Lenght">
+                              <TextField fx:id="txtLength" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Length">
                                  <font>
                                     <Font size="22.0" />
                                  </font>

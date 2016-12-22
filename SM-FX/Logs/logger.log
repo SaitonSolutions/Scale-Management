@@ -3327,3 +3327,8 @@ where i.date between ? and ?
 2016-12-09 13:32:18 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
 2016-12-09 13:32:48 ERROR ServiceDAO:462 - Exception tag --> Invalid sql statementcom.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'sm_db.services' doesn't exist
 2016-12-09 13:32:52 ERROR ServiceDAO:73 - Exception tag --> Invalid sql statement Table 'sm_db.services' doesn't exist
+2016-12-22 09:25:30 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Parameter index out of range (1 > number of parameters, which is 0).
+2016-12-22 09:28:27 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Parameter index out of range (0 < 1 ).
+2016-12-22 09:30:16 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Table 'sm_db.scale_registering' doesn't exist
+2016-12-22 09:30:19 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Table 'sm_db.scale_registering' doesn't exist
+2016-12-22 09:33:45 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Duplicate entry 'SCA0002' for key 'PRIMARY'
