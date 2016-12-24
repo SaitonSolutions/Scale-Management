@@ -398,15 +398,15 @@ Mabole, Wattala.
 			</textField>
 			<image>
 				<reportElement x="2" y="2" width="49" height="35" uuid="4eaa3603-7c95-42e1-9e9d-2b1f7cc9d1be"/>
-				<imageExpression><![CDATA["C:\\Users\\Miren\\Desktop\\Scale-Management\\SM-FX\\Reports\\logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["..//Reports//logo.jpg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="232" y="36" width="51" height="22" uuid="b26f9f29-7f82-4e49-a6df-b438ae0384a7"/>
-				<imageExpression><![CDATA["C:\\Users\\Miren\\Desktop\\Scale-Management\\SM-FX\\Reports\\glass.png"]]></imageExpression>
+				<imageExpression><![CDATA["..//Reports//glass.png"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="193" y="0" width="84" height="37" uuid="da567c2d-08fd-4986-a104-5d98e79517b5"/>
-				<imageExpression><![CDATA["C:\\Users\\Miren\\Desktop\\Scale-Management\\SM-FX\\Reports\\ISO.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["..//Reports//ISO.jpg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
