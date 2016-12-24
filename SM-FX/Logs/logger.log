@@ -3332,3 +3332,78 @@ where i.date between ? and ?
 2016-12-22 09:30:16 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Table 'sm_db.scale_registering' doesn't exist
 2016-12-22 09:30:19 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Table 'sm_db.scale_registering' doesn't exist
 2016-12-22 09:33:45 ERROR ScaleRegisterationDAO:132 - Exception tag --> Invalid sql statement Duplicate entry 'SCA0002' for key 'PRIMARY'
+2016-12-24 10:19:29 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2016-12-24 10:19:29 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run100389594/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run100389594/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2016-12-24 10:19:29 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2016-12-24 10:19:30 DEBUG JRBaseFiller:356 - Fill 1: created for WeightScale1
+2016-12-24 10:19:30 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 1603524689
+2016-12-24 10:19:30 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 769814034
+2016-12-24 10:19:30 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 1573327800
+2016-12-24 10:19:30 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 380, columnFooterOffsetY: 360, lastPageColumnFooterOffsetY: 360
+2016-12-24 10:19:30 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2016-12-24 10:19:30 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 2097152000, columnFooterOffsetY: 2097151980, lastPageColumnFooterOffsetY: 2097151980
+2016-12-24 10:19:30 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2016-12-24 10:19:30 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT
+	s.weight_scale_id,
+	s.customer_code,
+	c.customer_name,
+	s.description,
+	s.reel_no,
+	s.job_no,
+	s.size,
+	s.length,
+	s.width,
+	s.epf_no,
+	s.batch_no,
+	s.machine,
+	s.gauge,
+	s.qty,
+	s.gross_weight,
+	s.net_weight,
+	s.core_weight,
+	s.date,
+	s.time_stamp
+
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code and s.weight_scale_id=?
+2016-12-24 10:19:30 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (weight_scale_id of type java.lang.String): SCA0001
+2016-12-24 10:19:30 DEBUG JRBaseFiller:1857 - Fill 1: adding page 1
+2016-12-24 10:19:30 DEBUG JRVerticalFiller:340 - Fill 1: title at 20
+2016-12-24 10:19:30 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2016-12-24 10:19:30 ERROR ReportGenerator:62 - Exception tag --> Jasper errorByte data not found at : C:\Users\Miren\Desktop\Scale-Management\SM-FX\Reports\logo.jpg

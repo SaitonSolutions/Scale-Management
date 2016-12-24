@@ -6,7 +6,9 @@ import com.saiton.ccs.msgbox.MessageBox;
 import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
 import com.saiton.ccs.popup.ItemInfoPopup;
 import com.saiton.ccs.popup.ServiceInfoPopup;
+import com.saiton.ccs.printerservice.ReportPath;
 import com.saiton.ccs.salesdao.ServiceDAO;
+import com.saiton.ccs.uihandle.ReportGenerator;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
 import com.saiton.ccs.util.SerialTest;
@@ -16,8 +18,10 @@ import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
 import com.saiton.ccs.validations.ErrorMessages;
 import com.saiton.ccs.validations.FormatAndValidate;
 import com.saiton.ccs.validations.Validatable;
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -56,13 +60,11 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private TextField txtReelNo;
 
-
     @FXML
     private TextField txtGrossWeight;
 
     @FXML
     private TextField txtNetWeight1;
-
 
     @FXML
     private Button btnDelete;
@@ -115,7 +117,7 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private Button btnRefreshGrossWeight;
 //</editor-fold>
-    
+
     private Stage stage;
     @FXML
     private TextField txtCustomer;
@@ -141,37 +143,35 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshMachine;
     @FXML
     private Button btnMachineAdd;
-    
+
     public static String grossWeight = " ";
-    
+
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
-
     void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
 
     }
 
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
-        
-          SerialTest main = new SerialTest();
-    main.initialize();
-    Thread t=new Thread() {
-        public void run() {
-            //the following line will keep this app alive for 1000    seconds,
-            //waiting for events to occur and responding to them    (printing incoming messages to console).
-            try {Thread.sleep(1000000);} catch (InterruptedException    ie) {}
-        }
-    };
-    t.start();
-    System.out.println("Started");
-    txtGrossWeight.setText(grossWeight);
-}
-        
-        
 
-    
+        SerialTest main = new SerialTest();
+        main.initialize();
+        Thread t = new Thread() {
+            public void run() {
+            //the following line will keep this app alive for 1000    seconds,
+                //waiting for events to occur and responding to them    (printing incoming messages to console).
+                try {
+                    Thread.sleep(1000000);
+                } catch (InterruptedException ie) {
+                }
+            }
+        };
+        t.start();
+        System.out.println("Started");
+        txtGrossWeight.setText(grossWeight);
+    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
@@ -181,6 +181,15 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnPrintOnAction(ActionEvent event) {
 
+        HashMap param = new HashMap();
+        param.put("weight_scale_id","SCA0001");
+        File fil
+                = new File(
+                        ReportPath.PATH_WEIGHT_ONE_REPORT.
+                        toString());
+        String img = fil.getAbsolutePath();
+        ReportGenerator r = new ReportGenerator(img, param);
+        r.setVisible(true);
     }
 
     @FXML
@@ -638,8 +647,6 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private void btnMachineAddOnAction(ActionEvent event) {
     }
-
-
 
     public class Item {
 
