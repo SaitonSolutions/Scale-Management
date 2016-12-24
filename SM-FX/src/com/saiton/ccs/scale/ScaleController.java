@@ -9,6 +9,7 @@ import com.saiton.ccs.popup.ServiceInfoPopup;
 import com.saiton.ccs.salesdao.ServiceDAO;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
+import com.saiton.ccs.util.SerialTest;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
 import com.saiton.ccs.validations.CustomTextAreaValidationImpl;
 import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
@@ -141,6 +142,8 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private Button btnMachineAdd;
     
+    public static String grossWeight = " ";
+    
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
@@ -151,8 +154,24 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
+        
+          SerialTest main = new SerialTest();
+    main.initialize();
+    Thread t=new Thread() {
+        public void run() {
+            //the following line will keep this app alive for 1000    seconds,
+            //waiting for events to occur and responding to them    (printing incoming messages to console).
+            try {Thread.sleep(1000000);} catch (InterruptedException    ie) {}
+        }
+    };
+    t.start();
+    System.out.println("Started");
+    txtGrossWeight.setText(grossWeight);
+}
+        
+        
 
-    }
+    
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
