@@ -6,6 +6,7 @@ import com.saiton.ccs.msgbox.MessageBox;
 import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
 import com.saiton.ccs.popup.CustomerIdPopup;
 import com.saiton.ccs.popup.ItemInfoPopup;
+import com.saiton.ccs.popup.MachinePopup;
 import com.saiton.ccs.popup.ServiceInfoPopup;
 import com.saiton.ccs.popup.SizePopup;
 import com.saiton.ccs.printerservice.ReportPath;
@@ -164,6 +165,13 @@ public class ScaleController implements Initializable, Validatable,
             observableArrayList();
     private PopOver sizeIdPop;
     
+    //Machine Popup
+    private TableView machineIdTable = new TableView();
+    private SizePopup machineIdPopup = new SizePopup();
+    private ObservableList<MachinePopup> machineData = FXCollections.
+            observableArrayList();
+    private PopOver machineIdPop;
+    
     
     //<editor-fold defaultstate="collapsed" desc="Key Events">
       
@@ -190,10 +198,10 @@ public class ScaleController implements Initializable, Validatable,
     void btnPrintOnAction(ActionEvent event) {
 
         HashMap param = new HashMap();
-        param.put("weight_scale_id","SCA0001");
+        param.put("weight_scale_id","WID0001");
         File fil
                 = new File(
-                        ReportPath.PATH_WEIGHT_TWO_REPORT.
+                        ReportPath.PATH_WEIGHT_ONE_REPORT.
                         toString());
         String img = fil.getAbsolutePath();
         ReportGenerator r = new ReportGenerator(img, param);
@@ -651,6 +659,46 @@ public class ScaleController implements Initializable, Validatable,
             
         });
         
+          //Machine popup------------------------
+        machineIdTable = machineIdPopup.tableViewLoader(machineData);
+        
+        machineIdTable.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                try {
+                    MachinePopup p = null;
+                    p = (MachinePopup) machineIdTable.getSelectionModel().
+                            getSelectedItem();
+                    clearInput();
+                    
+                    if (p.getColSize()!= null) {
+                        txtMachine.setText(p.getColSize());
+                        
+                        
+                    }
+                    
+                } catch (NullPointerException n) {
+                    
+                }
+                
+                customerIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+        customerIdTable.setOnMousePressed(e -> {
+            
+            if (e.getButton() == MouseButton.SECONDARY) {
+                
+                customerIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+ 
  
         
             //Size popup------------------------
