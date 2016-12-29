@@ -185,7 +185,7 @@ public class ScaleController implements Initializable, Validatable,
         param.put("weight_scale_id","SCA0001");
         File fil
                 = new File(
-                        ReportPath.PATH_WEIGHT_ONE_REPORT.
+                        ReportPath.PATH_WEIGHT_TWO_REPORT.
                         toString());
         String img = fil.getAbsolutePath();
         ReportGenerator r = new ReportGenerator(img, param);
