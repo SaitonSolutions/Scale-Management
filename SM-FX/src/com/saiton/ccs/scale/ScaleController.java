@@ -167,7 +167,7 @@ public class ScaleController implements Initializable, Validatable,
     
     //Machine Popup
     private TableView machineIdTable = new TableView();
-    private SizePopup machineIdPopup = new SizePopup();
+    private MachinePopup machineIdPopup = new MachinePopup();
     private ObservableList<MachinePopup> machineData = FXCollections.
             observableArrayList();
     private PopOver machineIdPop;
@@ -254,6 +254,14 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnSearchMachineOnAction(ActionEvent event) {
+    
+          machineTableDataLoader(txtMachine.getText());
+        machineIdTable.setItems(machineData);
+        if (!machineData.isEmpty()) {
+            machineIdPop.show(btnSearchMachine);
+        }
+        validatorInitialization();
+    
     }
 
     @FXML
@@ -670,8 +678,8 @@ public class ScaleController implements Initializable, Validatable,
                             getSelectedItem();
                     clearInput();
                     
-                    if (p.getColSize()!= null) {
-                        txtMachine.setText(p.getColSize());
+                    if (p.getColMachine()!= null) {
+                        txtMachine.setText(p.getColMachine());
                         
                         
                     }
@@ -680,18 +688,18 @@ public class ScaleController implements Initializable, Validatable,
                     
                 }
                 
-                customerIdPop.hide();
+                machineIdPop.hide();
                 validatorInitialization();
                 
             }
             
         });
         
-        customerIdTable.setOnMousePressed(e -> {
+        machineIdTable.setOnMousePressed(e -> {
             
             if (e.getButton() == MouseButton.SECONDARY) {
                 
-                customerIdPop.hide();
+                machineIdPop.hide();
                 validatorInitialization();
                 
             }
@@ -743,13 +751,15 @@ public class ScaleController implements Initializable, Validatable,
         
               customerIdPop = new PopOver(customerIdTable);
               sizeIdPop = new PopOver(sizeIdTable);
+              machineIdPop = new PopOver(machineIdTable);
         
         stage.setOnCloseRequest(e -> {
             
-            if (customerIdPop.isShowing() || sizeIdPop.isShowing() ) {
+            if (customerIdPop.isShowing() || sizeIdPop.isShowing() || machineIdPop.isShowing() ) {
                 e.consume();
                 customerIdPop.hide();
                 sizeIdPop.hide();
+                machineIdPop.hide();
                                 
             }
         });
@@ -896,6 +906,35 @@ public class ScaleController implements Initializable, Validatable,
                     
                     
                     sizeData.add(sizeIdPopup);
+                }
+            }
+            
+        }
+        
+    }
+    
+    private void machineTableDataLoader(String keyword) {
+        
+        machineData.clear();
+        ArrayList<ArrayList<String>> itemInfo
+                = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> list = scaleDAO.searchMachineDetailsDetails(keyword);
+        
+        if (list != null) {
+            
+            for (int i = 0; i < list.size(); i++) {
+                
+                itemInfo.add(list.get(i));
+            }
+            
+            if (itemInfo != null && itemInfo.size() > 0) {
+                for (int i = 0; i < itemInfo.size(); i++) {
+                    
+                    machineIdPopup = new MachinePopup();
+                    machineIdPopup.colMachine.setValue(itemInfo.get(i).get(0));
+                    
+                    
+                    machineData.add(machineIdPopup);
                 }
             }
             

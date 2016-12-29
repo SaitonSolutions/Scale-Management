@@ -20,10 +20,10 @@ import javafx.stage.Stage;
 public class MachinePopup {
 
  
-    public SimpleStringProperty colSize = new SimpleStringProperty("tcSize");
+    public SimpleStringProperty colMachine = new SimpleStringProperty("tcMachine");
     
-    public String getColSize() {
-        return colSize.get();
+    public String getColMachine() {
+        return colMachine.get();
     }
 
     
@@ -32,14 +32,14 @@ public class MachinePopup {
        TableView tableView = new TableView();
        
        
-       TableColumn tcSize = new TableColumn("Size");
-        tcSize.setMinWidth(500);
-        tcSize.setCellValueFactory(
-                new PropertyValueFactory<>("colSize"));
+       TableColumn tcMachine = new TableColumn("Machine");
+        tcMachine.setMinWidth(500);
+        tcMachine.setCellValueFactory(
+                new PropertyValueFactory<>("colMachine"));
 
         
         tableView.setItems(observableList);
-        tableView.getColumns().addAll(tcSize);
+        tableView.getColumns().addAll(tcMachine);
    
    
    
