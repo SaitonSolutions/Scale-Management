@@ -4,10 +4,13 @@ import com.saiton.ccs.base.UserPermission;
 import com.saiton.ccs.base.UserSession;
 import com.saiton.ccs.msgbox.MessageBox;
 import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
+import com.saiton.ccs.popup.CustomerIdPopup;
 import com.saiton.ccs.popup.ItemInfoPopup;
 import com.saiton.ccs.popup.ServiceInfoPopup;
+import com.saiton.ccs.popup.SizePopup;
 import com.saiton.ccs.printerservice.ReportPath;
 import com.saiton.ccs.salesdao.ServiceDAO;
+import com.saiton.ccs.scaledao.ScaleDAO;
 import com.saiton.ccs.uihandle.ReportGenerator;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
@@ -144,33 +147,38 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private Button btnMachineAdd;
 
-    public static String grossWeight = " ";
-
+    public static String currentReading = " ";
+    ScaleDAO scaleDAO = new ScaleDAO();
+    String customerCode = "";
+    //Customer Popup
+    private TableView customerIdTable = new TableView();
+    private CustomerIdPopup customerIdPopup = new CustomerIdPopup();
+    private ObservableList<CustomerIdPopup> customerData = FXCollections.
+            observableArrayList();
+    private PopOver customerIdPop;
+    
+    //Customer Popup
+    private TableView sizeIdTable = new TableView();
+    private SizePopup sizeIdPopup = new SizePopup();
+    private ObservableList<SizePopup> sizeData = FXCollections.
+            observableArrayList();
+    private PopOver sizeIdPop;
+    
+    
     //<editor-fold defaultstate="collapsed" desc="Key Events">
+      
+       @FXML
+    private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
+    }
+    
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
-    void txtWeightScaleIdOnKeyReleased(ActionEvent event) {
-
-    }
-
+ 
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
-
-        SerialTest main = new SerialTest();
-        main.initialize();
-        Thread t = new Thread() {
-            public void run() {
-            //the following line will keep this app alive for 1000    seconds,
-                //waiting for events to occur and responding to them    (printing incoming messages to console).
-                try {
-                    Thread.sleep(1000000);
-                } catch (InterruptedException ie) {
-                }
-            }
-        };
-        t.start();
-        System.out.println("Started");
-        txtGrossWeight.setText(grossWeight);
+        
+        txtGrossWeight.setText(getScaleReading());
+        
     }
 
     @FXML
@@ -199,7 +207,7 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
-
+//        net = gross - core
     }
 
     @FXML
@@ -210,7 +218,67 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshCoreWeightOnAction(ActionEvent event) {
 
+        txtNetWeight1.setText(getScaleReading());
+        
     }
+    
+        @FXML
+    private void btnSearchSizeOnAction(ActionEvent event) {
+        
+        sizeTableDataLoader(txtSize.getText());
+        sizeIdTable.setItems(sizeData);
+        if (!sizeData.isEmpty()) {
+            sizeIdPop.show(btnSearchSize);
+        }
+        validatorInitialization();
+        
+    }
+
+    @FXML
+    private void btnRefreshSizeOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnSizeAddOnAction(ActionEvent event) {
+        
+           
+    }
+
+    @FXML
+    private void btnSearchMachineOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnRefreshMachineOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnMachineAddOnAction(ActionEvent event) {
+    }
+
+        @FXML
+    private void btnSearchCustomerOnAction(ActionEvent event) {
+        
+         customerTableDataLoader(txtCustomer.getText());
+        customerIdTable.setItems(customerData);
+        if (!customerData.isEmpty()) {
+            customerIdPop.show(btnSearchCustomer);
+        }
+        validatorInitialization();
+        
+    }
+
+    @FXML
+    private void btnRefreshCustomerOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnCustomerAddOnAction(ActionEvent event) {
+       
+    }
+
+
+    
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Click Events">
@@ -234,9 +302,32 @@ public class ScaleController implements Initializable, Validatable,
 //        tblItemList.setItems(TableItemData);
 //
 //        mb = SimpleMessageBoxFactory.createMessageBox();
-//        txtServiceId.setText(serviceDAO.generateID());
+        txtWeightScaleId.setText(scaleDAO.generateID());
         btnDelete.setVisible(false);
 
+    }
+    
+    private String getScaleReading(){
+        
+        SerialTest main = new SerialTest();
+        main.initialize();
+        Thread t = new Thread() {
+            public void run() {
+            //the following line will keep this app alive for 1000    seconds,
+                //waiting for events to occur and responding to them    (printing incoming messages to console).
+                try {
+                    Thread.sleep(1000000);
+                } catch (InterruptedException ie) {
+                }
+            }
+        };
+        t.start();
+        System.out.println("Serial Thread running...");
+        
+        
+        return currentReading;
+    
+    
     }
 
     @Override
@@ -256,6 +347,7 @@ public class ScaleController implements Initializable, Validatable,
 //            txtServiceId.setText(serviceDAO.generateID());
 //            no = 1;
 //             isupdate = false;
+        customerCode = "";
 
     }
 
@@ -517,6 +609,103 @@ public class ScaleController implements Initializable, Validatable,
 
         this.stage = stage;
 //        setUserAccessLevel();
+        
+        //CustomerId popup------------------------
+        customerIdTable = customerIdPopup.tableViewLoader(customerData);
+        
+        customerIdTable.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                try {
+                    CustomerIdPopup p = null;
+                    p = (CustomerIdPopup) customerIdTable.getSelectionModel().
+                            getSelectedItem();
+                    clearInput();
+                    
+                    if (p.getColCustomerName()!= null) {
+                        txtCustomer.setText(p.getColCustomerName());
+                        customerCode = p.getColCustomerCode();
+                        btnDelete.setVisible(true);
+                        
+                        
+                    }
+                    
+                } catch (NullPointerException n) {
+                    
+                }
+                
+                customerIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+        customerIdTable.setOnMousePressed(e -> {
+            
+            if (e.getButton() == MouseButton.SECONDARY) {
+                
+                customerIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+ 
+        
+            //Size popup------------------------
+        sizeIdTable = sizeIdPopup.tableViewLoader(sizeData);
+        
+        sizeIdTable.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                try {
+                    SizePopup p = null;
+                    p = (SizePopup) sizeIdTable.getSelectionModel().
+                            getSelectedItem();
+                    clearInput();
+                    
+                    if (p.getColSize()!= null) {
+                        txtSize.setText(p.getColSize());
+                        
+                        
+                    }
+                    
+                } catch (NullPointerException n) {
+                    
+                }
+                
+                sizeIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+        sizeIdTable.setOnMousePressed(e -> {
+            
+            if (e.getButton() == MouseButton.SECONDARY) {
+                
+                sizeIdPop.hide();
+                validatorInitialization();
+                
+            }
+            
+        });
+        
+        
+              customerIdPop = new PopOver(customerIdTable);
+              sizeIdPop = new PopOver(sizeIdTable);
+        
+        stage.setOnCloseRequest(e -> {
+            
+            if (customerIdPop.isShowing() || sizeIdPop.isShowing() ) {
+                e.consume();
+                customerIdPop.hide();
+                sizeIdPop.hide();
+                                
+            }
+        });
+
 //        
 //        //item popup------------------------
 //        itemTable = itemPopup.tableViewLoader(itemData);
@@ -608,46 +797,68 @@ public class ScaleController implements Initializable, Validatable,
 //                        ErrorMessages.EmptyListView));
     }
 
-    @FXML
-    private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
+    private void customerTableDataLoader(String keyword) {
+        
+        customerData.clear();
+        ArrayList<ArrayList<String>> itemInfo
+                = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> list = scaleDAO.searchCustomerDetailsDetails(keyword);
+        
+        if (list != null) {
+            
+            for (int i = 0; i < list.size(); i++) {
+                
+                itemInfo.add(list.get(i));
+            }
+            
+            if (itemInfo != null && itemInfo.size() > 0) {
+                for (int i = 0; i < itemInfo.size(); i++) {
+                    
+                    customerIdPopup = new CustomerIdPopup();
+                    customerIdPopup.colCustomerCode.setValue(itemInfo.get(i).get(0));
+                    customerIdPopup.colCustomerName.setValue(itemInfo.get(i).get(1));
+                    
+                    customerData.add(customerIdPopup);
+                }
+            }
+            
+        }
+        
+    }
+    
+    private void sizeTableDataLoader(String keyword) {
+        
+        sizeData.clear();
+        ArrayList<ArrayList<String>> itemInfo
+                = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> list = scaleDAO.searchSizeDetailsDetails(keyword);
+        
+        if (list != null) {
+            
+            for (int i = 0; i < list.size(); i++) {
+                
+                itemInfo.add(list.get(i));
+            }
+            
+            if (itemInfo != null && itemInfo.size() > 0) {
+                for (int i = 0; i < itemInfo.size(); i++) {
+                    
+                    sizeIdPopup = new SizePopup();
+                    sizeIdPopup.colSize.setValue(itemInfo.get(i).get(0));
+                    
+                    
+                    sizeData.add(sizeIdPopup);
+                }
+            }
+            
+        }
+        
     }
 
-    @FXML
-    private void btnSearchCustomerOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnRefreshCustomerOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnCustomerAddOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnSearchSizeOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnRefreshSizeOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnSizeAddOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnSearchMachineOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnRefreshMachineOnAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void btnMachineAddOnAction(ActionEvent event) {
-    }
-
+//</editor-fold>
+    
+    //<editor-fold defaultstate="collapsed" desc="Class">
+    
     public class Item {
 
         public SimpleStringProperty colServiceId = new SimpleStringProperty(
@@ -682,6 +893,6 @@ public class ScaleController implements Initializable, Validatable,
         }
 
     }
-
+    
 //</editor-fold>
 }

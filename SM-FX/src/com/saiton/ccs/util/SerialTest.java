@@ -82,7 +82,7 @@ public synchronized void serialEvent(SerialPortEvent oEvent) {
             if (input.ready()) {
                 inputLine = input.readLine();
                             System.out.println(inputLine);
-                            ScaleController.grossWeight = inputLine;
+                            ScaleController.currentReading = inputLine;
             }
 
         } catch (Exception e) {

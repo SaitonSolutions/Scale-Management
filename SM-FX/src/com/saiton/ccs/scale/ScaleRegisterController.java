@@ -165,10 +165,6 @@ public class ScaleRegisterController implements Initializable, Validatable,
             
         }
         
-        
-        
-        
-
     }
 
     @FXML

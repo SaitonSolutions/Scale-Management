@@ -4350,3 +4350,4 @@ on c.customer_code=s.customer_code and s.weight_scale_id=?
 2016-12-24 10:37:13 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@4c9e8569 for (null, null)
 2016-12-24 10:37:13 DEBUG JRBaseFiller:973 - Fill 1: ended
 2016-12-24 10:37:13 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2016-12-29 07:09:04 ERROR ScaleDAO:73 - Exception tag --> Invalid sql statement Column 'scale_id' not found.
