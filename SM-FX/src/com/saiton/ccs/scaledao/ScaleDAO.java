@@ -364,4 +364,84 @@ public class ScaleDAO {
         return mainList;
     }
   
+    public Boolean insertWeight(
+            String sundryBillId,
+            String roomNo,
+            String summaryId,
+            Integer type,
+            Double total,
+            String date,
+            String userId,
+            String cusId,
+            boolean hasCustomer) {
+
+        String encodedSundryBillId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, sundryBillId);
+        String encodedSummaryId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, summaryId);
+        String encodedRoomNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, roomNo);
+        String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
+        String encodedUserId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, userId);
+        String encodedCusId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusId);
+
+        if (star.con == null) {
+            log.error("Databse connection failiure.");
+            return null;
+        } else {
+            try {
+
+                PreparedStatement ps = star.con.prepareStatement("INSERT INTO "
+                        + "sundry_bill(`sundry_bill_id`, `is_other`, `total`,`date`, `user_id`) "
+                        + "VALUES(?,?,?,?,?)");
+
+                ps.setString(1, encodedSundryBillId);
+                ps.setInt(2, type);
+                ps.setDouble(3, total);
+                ps.setString(4, encodedDate);
+                ps.setString(5, encodedUserId);
+                int val = ps.executeUpdate();
+
+                if (roomNo != null && summaryId != null) {
+                    PreparedStatement ps1 = star.con.prepareStatement("INSERT INTO "
+                            + "sundry_bill_info(`sundry_bill_id`, `room_no`, `summary_id`) "
+                            + "VALUES(?,?,?)");
+
+                    ps1.setString(1, encodedSundryBillId);
+                    ps1.setString(2, encodedRoomNo);
+                    ps1.setString(3, encodedSummaryId);
+                    val = ps1.executeUpdate();
+
+                }
+
+                if (type == 1 && hasCustomer) {
+                    PreparedStatement ps2 = star.con.prepareStatement("INSERT INTO "
+                            + "sundry_bill_cus(`sundry_bill_id`, `cus_id` ) "
+                            + "VALUES(?,?)");
+
+                    ps2.setString(1, encodedSundryBillId);
+                    ps2.setString(2, encodedCusId);
+                    val = ps2.executeUpdate();
+                }
+
+                if (val == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } catch (NullPointerException | NumberFormatException | SQLException e) {
+
+                if (e instanceof NullPointerException) {
+                    log.error("Exception tag --> " + "Empty entry passed");
+                } else if (e instanceof NumberFormatException) {
+                    log.error("Exception tag --> " + "Invalid number found in current id");
+                } else if (e instanceof SQLException) {
+                    log.error("Exception tag --> " + "Invalid sql statement " + e.getMessage());
+                }
+                return false;
+            } catch (Exception e) {
+                log.error("Exception tag --> " + "Error");
+                return false;
+            }
+        }
+    }
+
 }

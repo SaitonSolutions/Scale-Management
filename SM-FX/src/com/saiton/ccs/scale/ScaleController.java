@@ -26,28 +26,40 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.util.Pair;
+import org.controlsfx.control.ButtonBar;
+import org.controlsfx.control.ButtonBar.ButtonType;
 import org.controlsfx.control.PopOver;
+import org.controlsfx.dialog.Dialog;
 import org.controlsfx.validation.ValidationResult;
 import org.controlsfx.validation.ValidationSupport;
 
@@ -173,6 +185,12 @@ public class ScaleController implements Initializable, Validatable,
     private PopOver machineIdPop;
     
     
+    //--------------
+    final TextField username = new TextField();
+    final TextField password = new TextField();
+    //--------------
+    
+    
     //<editor-fold defaultstate="collapsed" desc="Key Events">
       
        @FXML
@@ -196,7 +214,16 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
-
+        
+        boolean isSundryBillRegInserted = true ;
+//        isSundryBillRegInserted = scaleDAO.insertWeight(customerCode,
+//               customerCode, customerCode, Integer.SIZE, Double.NaN,
+//               customerCode, customerCode, customerCode, true);
+//        
+        
+                                        
+        if (isSundryBillRegInserted) {
+            
         HashMap param = new HashMap();
         param.put("weight_scale_id","WID0001");
         File fil
@@ -206,11 +233,23 @@ public class ScaleController implements Initializable, Validatable,
         String img = fil.getAbsolutePath();
         ReportGenerator r = new ReportGenerator(img, param);
         r.setVisible(true);
+        
+   
+        File filTwo
+                = new File(
+                        ReportPath.PATH_WEIGHT_TWO_REPORT.
+                        toString());
+        String report = filTwo.getAbsolutePath();
+        ReportGenerator rep = new ReportGenerator(report, param);
+        rep.setVisible(true);
+            
+        }
+        
     }
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
-
+        stage.close();
     }
 
     @FXML
@@ -244,12 +283,13 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnRefreshSizeOnAction(ActionEvent event) {
+        txtSize.clear();
     }
 
     @FXML
     private void btnSizeAddOnAction(ActionEvent event) {
         
-           
+        
     }
 
     @FXML
@@ -266,6 +306,7 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnRefreshMachineOnAction(ActionEvent event) {
+        txtMachine.clear();
     }
 
     @FXML
@@ -286,6 +327,7 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnRefreshCustomerOnAction(ActionEvent event) {
+        txtCustomer.clear();
     }
 
     @FXML
@@ -300,6 +342,9 @@ public class ScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Click Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Methods">
+    
+   
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -941,6 +986,11 @@ public class ScaleController implements Initializable, Validatable,
         }
         
     }
+    
+  
+    
+//</editor-fold>
+
 
 //</editor-fold>
     
@@ -981,5 +1031,4 @@ public class ScaleController implements Initializable, Validatable,
 
     }
     
-//</editor-fold>
 }
