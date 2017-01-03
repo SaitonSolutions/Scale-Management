@@ -20,14 +20,16 @@ import java.util.Enumeration;
 public class SerialTest implements SerialPortEventListener {
 SerialPort serialPort;
     /** The port we're normally going to use. */
-private static final String PORT_NAMES[] = {                  "/dev/tty.usbmodem1421", // Mac OS X
-        "/dev/ttyUSB0", // Linux
-        "COM35", // Windows
+private static final String PORT_NAMES[] = {   
+     "/dev/cu.usbserial", // Mac OS X
+//    "/dev/tty.usbmodem1421", // Mac OS X
+//        "/dev/ttyUSB0", // Linux
+//        "COM35", // Windows
 };
 private BufferedReader input;
 private OutputStream output;
 private static final int TIME_OUT = 2000;
-private static final int DATA_RATE = 9600;
+private static final int DATA_RATE = 1200;
 
 public void initialize() {
     CommPortIdentifier portId = null;
