@@ -66,7 +66,7 @@ public class ScaleDAO {
                     SQLException e) {
 
                 if (e instanceof ArrayIndexOutOfBoundsException) {
-                    log.error("Exception tag --> " + "Split character error");
+                    log.error("Exception tag --> " + "Split character error"+" "+e);
                 } else if (e instanceof NumberFormatException) {
                     log.error("Exception tag --> "
                             + "Invalid number found in current id");

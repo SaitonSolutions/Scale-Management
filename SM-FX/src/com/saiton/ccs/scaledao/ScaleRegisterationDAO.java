@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import org.apache.log4j.Logger;
 import org.owasp.esapi.ESAPI;
 import org.owasp.esapi.codecs.Codec;
@@ -139,6 +140,87 @@ public class ScaleRegisterationDAO {
                 return false;
             }
         }
+    }
+    
+    
+   
+    
+    public ArrayList<ArrayList<String>> loadScaleInfo() {
+
+   
+
+        String scaleId = null;
+        String comPort = null;
+        String cus_address = null;
+        String boardRate = null;
+        String scaleName = null;
+
+        ArrayList<ArrayList<String>> Mainlist = new ArrayList<>();
+
+        if (star.con == null) {
+
+            log.info(" Exception tag --> " + "Databse connection failiure. ");
+            return null;
+
+        } else {
+            try {
+
+                String query = "SELECT * FROM scale_register WHERE "
+                        + " scale_id LIKE ? ";
+                        
+
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                
+                pstmt.setString(1,  "%");
+
+                ResultSet r = pstmt.executeQuery();
+
+                while (r.next()) {
+
+                    ArrayList<String> list = new ArrayList<>();
+
+                    scaleId = r.getString("scale_id");
+                    scaleName = r.getString("scale_name");
+                    comPort = r.getString("com_port");
+                    boardRate = r.getString("board_rate");
+                    
+
+                    list.add(scaleId);
+                    list.add(scaleName);
+                    list.add(comPort);
+                    list.add(boardRate);
+                    
+
+                    Mainlist.add(list);
+
+                }
+
+            } catch (ArrayIndexOutOfBoundsException | SQLException |
+                    NullPointerException e) {
+
+                if (e instanceof ArrayIndexOutOfBoundsException) {
+
+                    log.error("Exception tag --> "
+                            + "Invalid entry location for list");
+
+                } else if (e instanceof SQLException) {
+
+                    log.error("Exception tag --> " + "Invalid sql statement");
+
+                } else if (e instanceof NullPointerException) {
+
+                    log.error("Exception tag --> " + "Empty entry for list");
+
+                }
+                return null;
+            } catch (Exception e) {
+
+                log.error("Exception tag --> " + "Error");
+
+                return null;
+            }
+        }
+        return Mainlist;
     }
 
 }

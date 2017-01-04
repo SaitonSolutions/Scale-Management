@@ -84,7 +84,7 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @FXML
     private TextField txtScaleName;
 
-    private ObservableList TableScaleData = FXCollections.
+    private ObservableList tableScaleData = FXCollections.
             observableArrayList();
 
 //</editor-fold>
@@ -123,20 +123,22 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
     @FXML
     private void txtBoardRateKeyReleased(KeyEvent event) {
-        if (event.getCode() == KeyCode.ENTER) {
-            scaleItem = new Scale();
-            scaleItem.colScaleId.setValue(txtScaleId.
-                    getText());
-            scaleItem.colScaleName.setValue(txtScaleName.
-                    getText());
-            scaleItem.colBoardRate.setValue(
-                    txtBoardRate.
-                    getText());
-            scaleItem.colComPort.setValue(txtNComPort.getText());
-
-            TableScaleData.add(scaleItem);
-            clearInput();
-        }
+//        if (event.getCode() == KeyCode.ENTER) {
+//            
+//            scaleItem = new Scale();
+//            scaleItem.colScaleId.setValue(txtScaleId.
+//                    getText());
+//            scaleItem.colScaleName.setValue(txtScaleName.
+//                    getText());
+//            scaleItem.colBoardRate.setValue(
+//                    txtBoardRate.
+//                    getText());
+//            scaleItem.colComPort.setValue(txtNComPort.getText());
+//
+//            tableScaleData.add(scaleItem);
+//            
+//            clearInput();
+//        }
 
     }
 
@@ -154,10 +156,17 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         
-        saveTableContent();
+        //saveTableContent();
+        
+        isTableContentSaved = scaleRegistrationDAO.insertScale(
+                        txtScaleId.getText(),
+                        txtScaleName.getText(),
+                        txtNComPort.getText(),
+                        txtBoardRate.getText());
         
         if (isTableContentSaved) {
-            
+            loadTableData();
+            clearInput();
             mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
                 MessageBoxTitle.INFORMATION.toString(),
                 MessageBox.MessageIcon.MSG_ICON_SUCCESS,
@@ -192,11 +201,13 @@ public class ScaleRegisterController implements Initializable, Validatable,
                 new PropertyValueFactory<Scale, String>(
                         "colComPort"));
 
-        tblItemList.setItems(TableScaleData);
+        tblItemList.setItems(tableScaleData);
 //
         mb = SimpleMessageBoxFactory.createMessageBox();
 //      txtServiceId.setText(serviceDAO.generateID());
         btnDelete.setVisible(false);
+        
+        loadTableData();
 
     }
 
@@ -210,10 +221,12 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @Override
     public void clearInput() {
 
+        
         txtScaleId.clear();
         txtScaleName.clear();
         txtBoardRate.clear();
         txtNComPort.clear();
+        txtScaleId.setText(scaleRegistrationDAO.generateID());
 
     }
 
@@ -597,6 +610,42 @@ public class ScaleRegisterController implements Initializable, Validatable,
 
             }
         }
+    }
+    
+    private void loadTableData() {
+
+        tableScaleData.clear();
+
+
+        ArrayList<ArrayList<String>> custInfo
+                = new ArrayList<>();
+        ArrayList<ArrayList<String>> list = scaleRegistrationDAO.loadScaleInfo();
+
+        if (list != null) {
+
+            for (int i = 0; i < list.size(); i++) {
+
+                custInfo.add(list.get(i));
+            }
+
+            if (custInfo != null && custInfo.size() > 0) {
+                for (int i = 0; i < custInfo.size(); i++) {
+
+                    scaleItem = new Scale();
+
+                    scaleItem.colScaleId.setValue(custInfo.get(i).get(0));
+                    scaleItem.colScaleName.setValue(custInfo.get(i).get(1));
+                    scaleItem.colComPort.setValue(custInfo.get(i).get(2));
+                    scaleItem.colBoardRate.setValue(custInfo.get(i).get(3));
+                    
+
+                    tableScaleData.add(scaleItem);
+                }
+            }
+
+        }
+
+     
     }
 
     public class Scale {

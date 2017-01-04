@@ -266,6 +266,12 @@ public class ScaleController implements Initializable, Validatable,
                     MessageBoxTitle.INFORMATION.toString(),
                     MessageBox.MessageIcon.MSG_ICON_SUCCESS,
                     MessageBox.MessageType.MSG_OK);
+            
+            try {
+            int val = Integer.parseInt(txtReelNo.getText())+1;
+            txtReelNo.setText(val+"");
+        } catch (Exception e) {
+        }
 
             //clearInput();
         }
@@ -353,6 +359,7 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private void btnRefreshCustomerOnAction(ActionEvent event) {
         txtCustomer.clear();
+        clearInput();
     }
 
     @FXML
@@ -389,6 +396,8 @@ public class ScaleController implements Initializable, Validatable,
 //        mb = SimpleMessageBoxFactory.createMessageBox();
         txtWeightScaleId.setText(scaleDAO.generateID());
         btnDelete.setVisible(false);
+        txtReelNo.setText("0");
+        System.out.println("Zero loaded");
 
     }
 
@@ -441,6 +450,9 @@ public class ScaleController implements Initializable, Validatable,
         txtNetWeight.clear();
         txtNetWeight1.clear();
         customerCode = "";
+        txtWeightScaleId.setText(scaleDAO.generateID());
+        System.out.println("ID : "+scaleDAO.generateID());
+        txtReelNo.setText("0");
 
     }
 
@@ -752,7 +764,7 @@ public class ScaleController implements Initializable, Validatable,
                     MachinePopup p = null;
                     p = (MachinePopup) machineIdTable.getSelectionModel().
                             getSelectedItem();
-                    clearInput();
+                    
 
                     if (p.getColMachine() != null) {
                         txtMachine.setText(p.getColMachine());
@@ -790,7 +802,7 @@ public class ScaleController implements Initializable, Validatable,
                     SizePopup p = null;
                     p = (SizePopup) sizeIdTable.getSelectionModel().
                             getSelectedItem();
-                    clearInput();
+                    
 
                     if (p.getColSize() != null) {
                         txtSize.setText(p.getColSize());
@@ -1060,6 +1072,8 @@ public class ScaleController implements Initializable, Validatable,
 
         }
     }
+    
+    
 
 //</editor-fold>
 //</editor-fold>
