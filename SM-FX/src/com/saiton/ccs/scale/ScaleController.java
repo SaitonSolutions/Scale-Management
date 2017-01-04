@@ -21,6 +21,7 @@ import com.saiton.ccs.validations.CustomTextAreaValidationImpl;
 import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
 import com.saiton.ccs.validations.ErrorMessages;
 import com.saiton.ccs.validations.FormatAndValidate;
+import com.saiton.ccs.validations.MessageBoxTitle;
 import com.saiton.ccs.validations.Validatable;
 import java.io.File;
 import java.net.URL;
@@ -172,42 +173,39 @@ public class ScaleController implements Initializable, Validatable,
     private ObservableList<CustomerIdPopup> customerData = FXCollections.
             observableArrayList();
     private PopOver customerIdPop;
-    
+
     //Customer Popup
     private TableView sizeIdTable = new TableView();
     private SizePopup sizeIdPopup = new SizePopup();
     private ObservableList<SizePopup> sizeData = FXCollections.
             observableArrayList();
     private PopOver sizeIdPop;
-    
+
     //Machine Popup
     private TableView machineIdTable = new TableView();
     private MachinePopup machineIdPopup = new MachinePopup();
     private ObservableList<MachinePopup> machineData = FXCollections.
             observableArrayList();
     private PopOver machineIdPop;
-    
-    
+    private MessageBox mb;
+
     //--------------
     final TextField username = new TextField();
     final TextField password = new TextField();
     //--------------
-    
-    
+
     //<editor-fold defaultstate="collapsed" desc="Key Events">
-      
-       @FXML
+    @FXML
     private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
     }
-    
+
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
- 
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
-        
+
         txtGrossWeight.setText(getScaleReading());
-        
+
     }
 
     @FXML
@@ -217,8 +215,8 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
-        
-        boolean isDataInserted = true ;
+
+        boolean isDataInserted = true;
         isDataInserted = scaleDAO.insertWeight(
                 txtWeightScaleId.getText(),
                 scaleDAO.getScaleId(cmbScale.getValue()),
@@ -233,40 +231,46 @@ public class ScaleController implements Initializable, Validatable,
                 txtBatchNo.getText(),
                 txtMachine.getText(),
                 txtGauge.getText(),
-//                Double.parseDouble(txtQty.getText()),
-//                Double.parseDouble(txtGrossWeight.getText()),
-//                Double.parseDouble(txtNetWeight.getText()),
-//                Double.parseDouble(txtNetWeight1.getText()),
+                //                Double.parseDouble(txtQty.getText()),
+                //                Double.parseDouble(txtGrossWeight.getText()),
+                //                Double.parseDouble(txtNetWeight.getText()),
+                //                Double.parseDouble(txtNetWeight1.getText()),
                 Double.parseDouble("100.00"),
                 Double.parseDouble("100.00"),
                 Double.parseDouble("100.00"),
                 Double.parseDouble("100.00"),
                 dtpDate.getValue().toString());
-        
-                                        
+
+        //<editor-fold defaultstate="collapsed" desc="Current Print Code">
         if (isDataInserted) {
-            
-        HashMap param = new HashMap();
-        param.put("weight_scale_id","WID0001");
-        File fil
-                = new File(
-                        ReportPath.PATH_WEIGHT_ONE_REPORT.
-                        toString());
-        String img = fil.getAbsolutePath();
-        ReportGenerator r = new ReportGenerator(img, param);
-        r.setVisible(true);
-        
-   
-        File filTwo
-                = new File(
-                        ReportPath.PATH_WEIGHT_TWO_REPORT.
-                        toString());
-        String report = filTwo.getAbsolutePath();
-        ReportGenerator rep = new ReportGenerator(report, param);
-        rep.setVisible(true);
-            
+
+            HashMap param = new HashMap();
+            param.put("weight_scale_id", txtWeightScaleId.getText());
+            File fileOne
+                    = new File(
+                            ReportPath.PATH_WEIGHT_ONE_REPORT.
+                            toString());
+            String img = fileOne.getAbsolutePath();
+            ReportGenerator r = new ReportGenerator(img, param);
+            r.setVisible(true);
+
+            File filTwo
+                    = new File(
+                            ReportPath.PATH_WEIGHT_TWO_REPORT.
+                            toString());
+            String report = filTwo.getAbsolutePath();
+            ReportGenerator rep = new ReportGenerator(report, param);
+            rep.setVisible(true);
+
+            mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
+                    MessageBoxTitle.INFORMATION.toString(),
+                    MessageBox.MessageIcon.MSG_ICON_SUCCESS,
+                    MessageBox.MessageType.MSG_OK);
+
+            //clearInput();
         }
-        
+
+//</editor-fold>
     }
 
     @FXML
@@ -288,19 +292,19 @@ public class ScaleController implements Initializable, Validatable,
     void btnRefreshCoreWeightOnAction(ActionEvent event) {
 
         txtNetWeight1.setText(getScaleReading());
-        
+
     }
-    
-        @FXML
+
+    @FXML
     private void btnSearchSizeOnAction(ActionEvent event) {
-        
+
         sizeTableDataLoader(txtSize.getText());
         sizeIdTable.setItems(sizeData);
         if (!sizeData.isEmpty()) {
             sizeIdPop.show(btnSearchSize);
         }
         validatorInitialization();
-        
+
     }
 
     @FXML
@@ -310,20 +314,19 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnSizeAddOnAction(ActionEvent event) {
-        
-        
+
     }
 
     @FXML
     private void btnSearchMachineOnAction(ActionEvent event) {
-    
-          machineTableDataLoader(txtMachine.getText());
+
+        machineTableDataLoader(txtMachine.getText());
         machineIdTable.setItems(machineData);
         if (!machineData.isEmpty()) {
             machineIdPop.show(btnSearchMachine);
         }
         validatorInitialization();
-    
+
     }
 
     @FXML
@@ -335,16 +338,16 @@ public class ScaleController implements Initializable, Validatable,
     private void btnMachineAddOnAction(ActionEvent event) {
     }
 
-        @FXML
+    @FXML
     private void btnSearchCustomerOnAction(ActionEvent event) {
-        
-         customerTableDataLoader(txtCustomer.getText());
+
+        customerTableDataLoader(txtCustomer.getText());
         customerIdTable.setItems(customerData);
         if (!customerData.isEmpty()) {
             customerIdPop.show(btnSearchCustomer);
         }
         validatorInitialization();
-        
+
     }
 
     @FXML
@@ -354,25 +357,20 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void btnCustomerAddOnAction(ActionEvent event) {
-       
+
     }
-
-
-    
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Click Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Methods">
-    
-   
-    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
         loadRoomCategory();
+        mb = SimpleMessageBoxFactory.createMessageBox();
 
 //        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
 //                "colServiceId"));
@@ -393,14 +391,14 @@ public class ScaleController implements Initializable, Validatable,
         btnDelete.setVisible(false);
 
     }
-    
-    private String getScaleReading(){
-        
+
+    private String getScaleReading() {
+
         SerialController main = new SerialController();
         main.initialize();
         Thread t = new Thread() {
             public void run() {
-            //the following line will keep this app alive for 1000    seconds,
+                //the following line will keep this app alive for 1000    seconds,
                 //waiting for events to occur and responding to them    (printing incoming messages to console).
                 try {
                     Thread.sleep(1000000);
@@ -410,11 +408,9 @@ public class ScaleController implements Initializable, Validatable,
         };
         t.start();
         System.out.println("Serial Thread running...");
-        
-        
+
         return currentReading;
-    
-    
+
     }
 
     @Override
@@ -426,14 +422,24 @@ public class ScaleController implements Initializable, Validatable,
 
     @Override
     public void clearInput() {
-//            txtDescription.clear();
-//            txtPrice.clear();
-//            txtService.clear();
-//            txtServiceId.clear();
-//            TableItemData.clear();
-//            txtServiceId.setText(serviceDAO.generateID());
-//            no = 1;
-//             isupdate = false;
+
+        txtWeightScaleId.clear();
+
+        txtCustomer.clear();
+        txtDescription.clear();
+        txtReelNo.clear();
+        txtJobNo.clear();
+        txtSize.clear();
+        txtLength.clear();
+        txtWidth.clear();
+        txtEPFNo.clear();
+        txtBatchNo.clear();
+        txtMachine.clear();
+        txtGauge.clear();
+        txtQty.clear();
+        txtGrossWeight.clear();
+        txtNetWeight.clear();
+        txtNetWeight1.clear();
         customerCode = "";
 
     }
@@ -696,10 +702,10 @@ public class ScaleController implements Initializable, Validatable,
 
         this.stage = stage;
 //        setUserAccessLevel();
-        
+
         //CustomerId popup------------------------
         customerIdTable = customerIdPopup.tableViewLoader(customerData);
-        
+
         customerIdTable.setOnMouseClicked(e -> {
             if (e.getClickCount() == 2) {
                 try {
@@ -707,40 +713,39 @@ public class ScaleController implements Initializable, Validatable,
                     p = (CustomerIdPopup) customerIdTable.getSelectionModel().
                             getSelectedItem();
                     clearInput();
-                    
-                    if (p.getColCustomerName()!= null) {
+
+                    if (p.getColCustomerName() != null) {
                         txtCustomer.setText(p.getColCustomerName());
                         customerCode = p.getColCustomerCode();
                         btnDelete.setVisible(true);
-                        
-                        
+
                     }
-                    
+
                 } catch (NullPointerException n) {
-                    
+
                 }
-                
+
                 customerIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
+
         customerIdTable.setOnMousePressed(e -> {
-            
+
             if (e.getButton() == MouseButton.SECONDARY) {
-                
+
                 customerIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
-          //Machine popup------------------------
+
+        //Machine popup------------------------
         machineIdTable = machineIdPopup.tableViewLoader(machineData);
-        
+
         machineIdTable.setOnMouseClicked(e -> {
             if (e.getClickCount() == 2) {
                 try {
@@ -748,41 +753,37 @@ public class ScaleController implements Initializable, Validatable,
                     p = (MachinePopup) machineIdTable.getSelectionModel().
                             getSelectedItem();
                     clearInput();
-                    
-                    if (p.getColMachine()!= null) {
+
+                    if (p.getColMachine() != null) {
                         txtMachine.setText(p.getColMachine());
-                        
-                        
+
                     }
-                    
+
                 } catch (NullPointerException n) {
-                    
+
                 }
-                
+
                 machineIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
+
         machineIdTable.setOnMousePressed(e -> {
-            
+
             if (e.getButton() == MouseButton.SECONDARY) {
-                
+
                 machineIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
- 
- 
-        
-            //Size popup------------------------
+
+        //Size popup------------------------
         sizeIdTable = sizeIdPopup.tableViewLoader(sizeData);
-        
+
         sizeIdTable.setOnMouseClicked(e -> {
             if (e.getClickCount() == 2) {
                 try {
@@ -790,48 +791,47 @@ public class ScaleController implements Initializable, Validatable,
                     p = (SizePopup) sizeIdTable.getSelectionModel().
                             getSelectedItem();
                     clearInput();
-                    
-                    if (p.getColSize()!= null) {
+
+                    if (p.getColSize() != null) {
                         txtSize.setText(p.getColSize());
-                        
-                        
+
                     }
-                    
+
                 } catch (NullPointerException n) {
-                    
+
                 }
-                
+
                 sizeIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
+
         sizeIdTable.setOnMousePressed(e -> {
-            
+
             if (e.getButton() == MouseButton.SECONDARY) {
-                
+
                 sizeIdPop.hide();
                 validatorInitialization();
-                
+
             }
-            
+
         });
-        
-        
-              customerIdPop = new PopOver(customerIdTable);
-              sizeIdPop = new PopOver(sizeIdTable);
-              machineIdPop = new PopOver(machineIdTable);
-        
+
+        customerIdPop = new PopOver(customerIdTable);
+        sizeIdPop = new PopOver(sizeIdTable);
+        machineIdPop = new PopOver(machineIdTable);
+
         stage.setOnCloseRequest(e -> {
-            
-            if (customerIdPop.isShowing() || sizeIdPop.isShowing() || machineIdPop.isShowing() ) {
+
+            if (customerIdPop.isShowing() || sizeIdPop.isShowing()
+                    || machineIdPop.isShowing()) {
                 e.consume();
                 customerIdPop.hide();
                 sizeIdPop.hide();
                 machineIdPop.hide();
-                                
+
             }
         });
 
@@ -927,92 +927,95 @@ public class ScaleController implements Initializable, Validatable,
     }
 
     private void customerTableDataLoader(String keyword) {
-        
+
         customerData.clear();
         ArrayList<ArrayList<String>> itemInfo
                 = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> list = scaleDAO.searchCustomerDetailsDetails(keyword);
-        
+        ArrayList<ArrayList<String>> list = scaleDAO.
+                searchCustomerDetailsDetails(keyword);
+
         if (list != null) {
-            
+
             for (int i = 0; i < list.size(); i++) {
-                
+
                 itemInfo.add(list.get(i));
             }
-            
+
             if (itemInfo != null && itemInfo.size() > 0) {
                 for (int i = 0; i < itemInfo.size(); i++) {
-                    
+
                     customerIdPopup = new CustomerIdPopup();
-                    customerIdPopup.colCustomerCode.setValue(itemInfo.get(i).get(0));
-                    customerIdPopup.colCustomerName.setValue(itemInfo.get(i).get(1));
-                    
+                    customerIdPopup.colCustomerCode.setValue(itemInfo.get(i).
+                            get(0));
+                    customerIdPopup.colCustomerName.setValue(itemInfo.get(i).
+                            get(1));
+
                     customerData.add(customerIdPopup);
                 }
             }
-            
+
         }
-        
+
     }
-    
+
     private void sizeTableDataLoader(String keyword) {
-        
+
         sizeData.clear();
         ArrayList<ArrayList<String>> itemInfo
                 = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> list = scaleDAO.searchSizeDetailsDetails(keyword);
-        
+        ArrayList<ArrayList<String>> list = scaleDAO.searchSizeDetailsDetails(
+                keyword);
+
         if (list != null) {
-            
+
             for (int i = 0; i < list.size(); i++) {
-                
+
                 itemInfo.add(list.get(i));
             }
-            
+
             if (itemInfo != null && itemInfo.size() > 0) {
                 for (int i = 0; i < itemInfo.size(); i++) {
-                    
+
                     sizeIdPopup = new SizePopup();
                     sizeIdPopup.colSize.setValue(itemInfo.get(i).get(0));
-                    
-                    
+
                     sizeData.add(sizeIdPopup);
                 }
             }
-            
+
         }
-        
+
     }
-    
+
     private void machineTableDataLoader(String keyword) {
-        
+
         machineData.clear();
         ArrayList<ArrayList<String>> itemInfo
                 = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> list = scaleDAO.searchMachineDetailsDetails(keyword);
-        
+        ArrayList<ArrayList<String>> list = scaleDAO.
+                searchMachineDetailsDetails(keyword);
+
         if (list != null) {
-            
+
             for (int i = 0; i < list.size(); i++) {
-                
+
                 itemInfo.add(list.get(i));
             }
-            
+
             if (itemInfo != null && itemInfo.size() > 0) {
                 for (int i = 0; i < itemInfo.size(); i++) {
-                    
+
                     machineIdPopup = new MachinePopup();
                     machineIdPopup.colMachine.setValue(itemInfo.get(i).get(0));
-                    
-                    
+
                     machineData.add(machineIdPopup);
                 }
             }
-            
+
         }
-        
+
     }
-    
+
     private void dateFormatter(String pattern) {
 
         dtpDate.setConverter(new StringConverter<LocalDate>() {
@@ -1039,8 +1042,8 @@ public class ScaleController implements Initializable, Validatable,
         });
 
     }
-    
-     private void loadRoomCategory() {
+
+    private void loadRoomCategory() {
 
         cmbScale.getItems().clear();
         ArrayList<String> list = null;
@@ -1057,16 +1060,10 @@ public class ScaleController implements Initializable, Validatable,
 
         }
     }
-     
-     
-    
-//</editor-fold>
-
 
 //</editor-fold>
-    
+//</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Class">
-    
     public class Item {
 
         public SimpleStringProperty colServiceId = new SimpleStringProperty(
@@ -1101,5 +1098,5 @@ public class ScaleController implements Initializable, Validatable,
         }
 
     }
-    
+
 }

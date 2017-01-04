@@ -21,10 +21,10 @@ public class SerialController implements SerialPortEventListener {
 SerialPort serialPort;
     /** The port we're normally going to use. */
 private static final String PORT_NAMES[] = {   
-     "/dev/cu.usbserial", // Mac OS X
+//     "/dev/cu.usbserial", // Mac OS X
 //    "/dev/tty.usbmodem1421", // Mac OS X
 //        "/dev/ttyUSB0", // Linux
-//        "COM35", // Windows
+        "COM5", // Windows
 };
 private BufferedReader input;
 private OutputStream output;
