@@ -24,6 +24,8 @@ import com.saiton.ccs.validations.FormatAndValidate;
 import com.saiton.ccs.validations.Validatable;
 import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
@@ -56,6 +58,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import javafx.util.StringConverter;
 import org.controlsfx.control.ButtonBar;
 import org.controlsfx.control.ButtonBar.ButtonType;
 import org.controlsfx.control.PopOver;
@@ -110,7 +113,7 @@ public class ScaleController implements Initializable, Validatable,
     private TextField txtLength;
 
     @FXML
-    private ComboBox<?> cmbScale;
+    private ComboBox<String> cmbScale;
 
     @FXML
     private TextField txtDescription;
@@ -216,10 +219,29 @@ public class ScaleController implements Initializable, Validatable,
     void btnPrintOnAction(ActionEvent event) {
         
         boolean isDataInserted = true ;
-        isDataInserted = scaleDAO.insertWeight(customerCode,
-               customerCode, customerCode, Integer.SIZE, Double.NaN,
-               customerCode, customerCode, customerCode, true);
-//        
+        isDataInserted = scaleDAO.insertWeight(
+                txtWeightScaleId.getText(),
+                scaleDAO.getScaleId(cmbScale.getValue()),
+                scaleDAO.getCustomerCode(txtCustomer.getText()),
+                txtDescription.getText(),
+                txtReelNo.getText(),
+                txtJobNo.getText(),
+                txtSize.getText(),
+                txtLength.getText(),
+                txtWidth.getText(),
+                txtEPFNo.getText(),
+                txtBatchNo.getText(),
+                txtMachine.getText(),
+                txtGauge.getText(),
+//                Double.parseDouble(txtQty.getText()),
+//                Double.parseDouble(txtGrossWeight.getText()),
+//                Double.parseDouble(txtNetWeight.getText()),
+//                Double.parseDouble(txtNetWeight1.getText()),
+                Double.parseDouble("100.00"),
+                Double.parseDouble("100.00"),
+                Double.parseDouble("100.00"),
+                Double.parseDouble("100.00"),
+                dtpDate.getValue().toString());
         
                                         
         if (isDataInserted) {
@@ -347,6 +369,10 @@ public class ScaleController implements Initializable, Validatable,
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+        dateFormatter("yyyy-MM-dd");
+        dtpDate.setValue(LocalDate.now());
+        loadRoomCategory();
 
 //        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
 //                "colServiceId"));
@@ -987,7 +1013,52 @@ public class ScaleController implements Initializable, Validatable,
         
     }
     
-  
+    private void dateFormatter(String pattern) {
+
+        dtpDate.setConverter(new StringConverter<LocalDate>() {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(
+                    pattern);
+
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+
+    }
+    
+     private void loadRoomCategory() {
+
+        cmbScale.getItems().clear();
+        ArrayList<String> list = null;
+        list = scaleDAO.loadScaleItem();
+        if (list != null) {
+            try {
+                ObservableList<String> List = FXCollections.observableArrayList(
+                        list);
+                cmbScale.setItems(List);
+                cmbScale.setValue(List.get(0));
+            } catch (Exception e) {
+
+            }
+
+        }
+    }
+     
+     
     
 //</editor-fold>
 

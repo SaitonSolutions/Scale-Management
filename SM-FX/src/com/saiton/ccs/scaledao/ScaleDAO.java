@@ -83,22 +83,48 @@ public class ScaleDAO {
         }
     }
 
-    public Boolean insertScale(
+    public Boolean insertWeight(
+            String weightScaleId,
             String scaleId,
-            String scaleName,
-            String comPort,
-            String buardrate
-            ) {
+            String customerCode,
+            String desc,
+            String reelNo,
+            String jobNo,
+            String size,
+            String length,
+            String width,
+            String epfNo,
+            String batchNo,
+            String machine,
+            String guage,
+            double qty,
+            double grossWeight,
+            double netweight,
+            double coreWeight,
+            String date
+    ) {
+        String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                weightScaleId);
         String encodedScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 scaleId);
-        String encodedScalename = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
-                scaleName);
-        String encodedcomPort = ESAPI.encoder().
-                encodeForSQL(ORACLE_CODEC, comPort);
-        String encodedBuardrate = ESAPI.encoder().encodeForSQL(
-                ORACLE_CODEC, buardrate);
+        String encodedCustomerCode = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                customerCode);
+        String encodedDesc = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, desc);
+        String encodedReelNo = ESAPI.encoder().
+                encodeForSQL(ORACLE_CODEC, reelNo);
+        String encodedJobNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, jobNo);
+        String encodedSize = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, size);
+        String encodedLength = ESAPI.encoder().
+                encodeForSQL(ORACLE_CODEC, length);
+        String encodedwidth = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, width);
+        String encodedEpfNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, epfNo);
+        String encodedBatchNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                batchNo);
+        String encodedMachine = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                machine);
+        String encodedGuage = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, guage);
+        String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
 
-       
         if (star.con == null) {
             log.error("Databse connection failiure.");
             return false;
@@ -106,19 +132,50 @@ public class ScaleDAO {
             try {
 
                 PreparedStatement ps = star.con.prepareStatement(
-                        "INSERT INTO scale_register("
-                                + "`scale_id`,"
-                                + "`scale_name`,"
-                                + "`com_port`,"
-                                + "`board_rate`"
-                                + " ) "
-                                + "VALUES(?,?,?,?)");
+                        "INSERT INTO scale("
+                        + " `weight_scale_id`,"
+                        + " `scale_id`,"
+                        + " `customer_code`,"
+                        + " `description`,"
+                        + " `reel_no`,"
+                        + " `job_no`,"
+                        + " `size`,"
+                        + " `length`,"
+                        + " `width`,"
+                        + " `epf_no`,"
+                        + " `batch_no`,"
+                        + " `machine`,"
+                        + " `gauge`,"
+                        + " `qty`,"
+                        + " `gross_weight`,"
+                        + " `net_weight`,"
+                        + " `core_weight`,"
+                        + " `date`"
+                        + " ) "
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
-                ps.setString(1, encodedScaleId);
-                ps.setString(2, encodedScalename);
-                ps.setString(3, encodedcomPort);
-                ps.setString(4, encodedBuardrate);
-              
+
+                ps.setString(1, encodedWeightScaleId);
+                ps.setString(2, encodedScaleId);
+                ps.setString(3, encodedCustomerCode);
+                ps.setString(4, encodedDesc );
+                ps.setString(5, encodedReelNo );
+                ps.setString(6, encodedJobNo );
+                ps.setString(7, encodedSize );
+                ps.setString(8, encodedLength );
+                ps.setString(9, encodedwidth );
+                ps.setString(10, encodedEpfNo );
+                ps.setString(11, encodedBatchNo);
+                ps.setString(12, encodedMachine );
+                ps.setString(13, encodedGuage);
+                ps.setDouble(14, qty);
+                ps.setDouble(15, grossWeight);
+                ps.setDouble(16, netweight);
+                ps.setDouble(17, coreWeight);
+                ps.setString(18, encodedDate );
+          
+          
+
                 int val = ps.executeUpdate();
 
                 if (val == 1) {
@@ -165,7 +222,6 @@ public class ScaleDAO {
                 String query = "SELECT * "
                         + "From customer "
                         + "Where customer_code LIKE ? or customer_name LIKE ? ";
-                        
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedSearchTerm + "%");
@@ -178,7 +234,6 @@ public class ScaleDAO {
 
                     customerCode = r.getString("customer_code");
                     customerName = r.getString("customer_name");
-                    
 
                     list.add(customerCode);
                     list.add(customerName);
@@ -215,15 +270,14 @@ public class ScaleDAO {
         }
         return mainList;
     }
-    
-      public ArrayList<ArrayList<String>> searchSizeDetailsDetails(
+
+    public ArrayList<ArrayList<String>> searchSizeDetailsDetails(
             String searchTerm) {
 
         String encodedSearchTerm = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 searchTerm);
 
         String size = null;
-        
 
         ArrayList<ArrayList<String>> mainList
                 = new ArrayList<ArrayList<String>>();
@@ -239,11 +293,10 @@ public class ScaleDAO {
                 String query = "SELECT * "
                         + "From size "
                         + "Where size LIKE ?  ";
-                        
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedSearchTerm + "%");
-                
+
                 ResultSet r = pstmt.executeQuery();
 
                 while (r.next()) {
@@ -251,11 +304,8 @@ public class ScaleDAO {
                     ArrayList<String> list = new ArrayList<String>();
 
                     size = r.getString("size");
-                    
-                    
 
                     list.add(size);
-                    
 
                     mainList.add(list);
 
@@ -289,7 +339,7 @@ public class ScaleDAO {
         }
         return mainList;
     }
-  
+
     public ArrayList<ArrayList<String>> searchMachineDetailsDetails(
             String searchTerm) {
 
@@ -297,7 +347,6 @@ public class ScaleDAO {
                 searchTerm);
 
         String size = null;
-        
 
         ArrayList<ArrayList<String>> mainList
                 = new ArrayList<ArrayList<String>>();
@@ -313,11 +362,10 @@ public class ScaleDAO {
                 String query = "SELECT * "
                         + "From machine "
                         + "Where machine_name LIKE ?  ";
-                        
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedSearchTerm + "%");
-                
+
                 ResultSet r = pstmt.executeQuery();
 
                 while (r.next()) {
@@ -325,11 +373,8 @@ public class ScaleDAO {
                     ArrayList<String> list = new ArrayList<String>();
 
                     size = r.getString("machine_name");
-                    
-                    
 
                     list.add(size);
-                    
 
                     mainList.add(list);
 
@@ -363,95 +408,149 @@ public class ScaleDAO {
         }
         return mainList;
     }
-  
-    public Boolean insertWeight(
-            String weightScaleId,
-            String scaleId,
-            String customerCode,
-            String desc,
-            String reelNo,
-            String jobNo,
-            String size,
-            String length,
-            String width,
-            String epfNo,
-            String batchNo,
-            String machine,
-            String guage,
-            double qty,
-            double grossWeight,
-            double netweight,
-            double coreWeight,
-            double userId,
-            String date) {
+    
+    public ArrayList<String> loadScaleItem() {
 
-        String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, weightScaleId);
-        String encodedScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, customerCode);
-        String encodedCustomerCode = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, scaleId);
-        String encodedDese = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, jobNo);
-        String encodedreelNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, size);
-        String encodedJobNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, length);
+        String scaleNames = null;
+        ArrayList list = new ArrayList();
 
         if (star.con == null) {
-            log.error("Databse connection failiure.");
+            log.error(" Exception tag --> " + "Databse connection failiure. ");
             return null;
+
         } else {
             try {
 
-                PreparedStatement ps = star.con.prepareStatement("INSERT INTO "
-                        + "sundry_bill(`sundry_bill_id`, `is_other`, `total`,`date`, `user_id`) "
-                        + "VALUES(?,?,?,?,?)");
+                String query = "SELECT * FROM scale_register ";
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                ResultSet r = pstmt.executeQuery();
 
-                ps.setString(1, encodedWeightScaleId);
-                ps.setInt(2, desc);
-                ps.setDouble(3, total);
-                ps.setString(4, encodedDese);
-                ps.setString(5, encodedreelNo);
-                int val = ps.executeUpdate();
-
-                if (scaleId != null && customerCode != null) {
-                    PreparedStatement ps1 = star.con.prepareStatement("INSERT INTO "
-                            + "sundry_bill_info(`sundry_bill_id`, `room_no`, `summary_id`) "
-                            + "VALUES(?,?,?)");
-
-                    ps1.setString(1, encodedWeightScaleId);
-                    ps1.setString(2, encodedCustomerCode);
-                    ps1.setString(3, encodedScaleId);
-                    val = ps1.executeUpdate();
+                while (r.next()) {
+                    scaleNames = r.getString("scale_name");
+                    list.add(scaleNames);
 
                 }
 
-                if (desc == 1 && hasCustomer) {
-                    PreparedStatement ps2 = star.con.prepareStatement("INSERT INTO "
-                            + "sundry_bill_cus(`sundry_bill_id`, `cus_id` ) "
-                            + "VALUES(?,?)");
+            } catch (ArrayIndexOutOfBoundsException | SQLException |
+                    NullPointerException e) {
 
-                    ps2.setString(1, encodedWeightScaleId);
-                    ps2.setString(2, encodedJobNo);
-                    val = ps2.executeUpdate();
-                }
-
-                if (val == 1) {
-                    return true;
-                } else {
-                    return false;
-                }
-
-            } catch (NullPointerException | NumberFormatException | SQLException e) {
-
-                if (e instanceof NullPointerException) {
-                    log.error("Exception tag --> " + "Empty entry passed");
-                } else if (e instanceof NumberFormatException) {
-                    log.error("Exception tag --> " + "Invalid number found in current id");
+                if (e instanceof ArrayIndexOutOfBoundsException) {
+                    log.error("Exception tag --> "
+                            + "Invalid entry location for list");
                 } else if (e instanceof SQLException) {
-                    log.error("Exception tag --> " + "Invalid sql statement " + e.getMessage());
+                    log.error("Exception tag --> " + "Invalid sql statement");
+                } else if (e instanceof NullPointerException) {
+                    log.error("Exception tag --> " + "Empty entry for list");
                 }
-                return false;
+                return null;
             } catch (Exception e) {
                 log.error("Exception tag --> " + "Error");
-                return false;
+                return null;
             }
         }
+        return list;
+    }
+    
+    public String getScaleId(String scaleName) {
+
+        String category = null;
+        if (star.con == null) {
+            log.info(" Exception tag --> " + "Databse connection failiure. ");
+            return category;
+        } else {
+            try {
+
+                String query = "SELECT * FROM "
+                        + " scale_register "
+                        + "where scale_name = ? ";
+
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                pstmt.setString(1, scaleName);
+
+                ResultSet r = pstmt.executeQuery();
+
+                while (r.next()) {
+                    category = r.getString("scale_id");
+                }
+
+            } catch (ArrayIndexOutOfBoundsException | SQLException |
+                    NullPointerException e) {
+
+                if (e instanceof ArrayIndexOutOfBoundsException) {
+
+                    log.error(
+                            "Exception tag --> "
+                            + "Invalid entry location for list");
+
+                } else if (e instanceof SQLException) {
+
+                    log.error("Exception tag --> " + "Invalid sql statement");
+
+                } else if (e instanceof NullPointerException) {
+
+                    log.error("Exception tag --> " + "Empty entry for list");
+
+                }
+                return category;
+            } catch (Exception e) {
+
+                log.error("Exception tag --> " + "Error");
+
+                return category;
+            }
+        }
+        return category;
+    }
+    
+    public String getCustomerCode(String customerName) {
+
+        String category = null;
+        if (star.con == null) {
+            log.info(" Exception tag --> " + "Databse connection failiure. ");
+            return category;
+        } else {
+            try {
+
+                String query = "SELECT * FROM "
+                        + " customer "
+                        + "where customer_name = ? ";
+
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                pstmt.setString(1, customerName);
+
+                ResultSet r = pstmt.executeQuery();
+
+                while (r.next()) {
+                    category = r.getString("customer_code");
+                }
+
+            } catch (ArrayIndexOutOfBoundsException | SQLException |
+                    NullPointerException e) {
+
+                if (e instanceof ArrayIndexOutOfBoundsException) {
+
+                    log.error(
+                            "Exception tag --> "
+                            + "Invalid entry location for list");
+
+                } else if (e instanceof SQLException) {
+
+                    log.error("Exception tag --> " + "Invalid sql statement");
+
+                } else if (e instanceof NullPointerException) {
+
+                    log.error("Exception tag --> " + "Empty entry for list");
+
+                }
+                return category;
+            } catch (Exception e) {
+
+                log.error("Exception tag --> " + "Error");
+
+                return category;
+            }
+        }
+        return category;
     }
 
 }

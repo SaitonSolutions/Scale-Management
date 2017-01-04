@@ -95,7 +95,7 @@
                                  <font>
                                     <Font size="22.0" />
                                  </font></Label>
-                              <TextField fx:id="txtGrossWeight" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Gross Weight">
+                              <TextField fx:id="txtGrossWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Gross Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font></TextField>
@@ -180,7 +180,7 @@
                                  <font>
                                     <Font size="22.0" />
                                  </font></Label>
-                              <TextField fx:id="txtQty" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Qty">
+                              <TextField fx:id="txtQty" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Qty">
                                  <font>
                                     <Font size="22.0" />
                                  </font></TextField>
@@ -237,7 +237,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtNetWeight" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Net Weight">
+                              <TextField fx:id="txtNetWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Net Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -263,7 +263,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtGauge" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Gauge">
+                              <TextField fx:id="txtGauge" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Gauge">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -277,7 +277,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="dtpDate" onAction="#dtpDateOnAction" prefHeight="50.0" prefWidth="300.0" />
+                              <DatePicker fx:id="dtpDate" editable="false" onAction="#dtpDateOnAction" prefHeight="50.0" prefWidth="300.0" />
                            </children>
                         </HBox>
                         <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="284.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
@@ -438,7 +438,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtNetWeight1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
+                              <TextField fx:id="txtNetWeight1" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -461,7 +461,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtBatchNo" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Batch No">
+                              <TextField fx:id="txtBatchNo" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Batch No">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
