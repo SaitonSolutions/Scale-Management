@@ -15,7 +15,7 @@ import com.saiton.ccs.scaledao.ScaleDAO;
 import com.saiton.ccs.uihandle.ReportGenerator;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
-import com.saiton.ccs.util.SerialTest;
+import com.saiton.ccs.util.SerialController;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
 import com.saiton.ccs.validations.CustomTextAreaValidationImpl;
 import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
@@ -215,14 +215,14 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnPrintOnAction(ActionEvent event) {
         
-        boolean isSundryBillRegInserted = true ;
-//        isSundryBillRegInserted = scaleDAO.insertWeight(customerCode,
-//               customerCode, customerCode, Integer.SIZE, Double.NaN,
-//               customerCode, customerCode, customerCode, true);
+        boolean isDataInserted = true ;
+        isDataInserted = scaleDAO.insertWeight(customerCode,
+               customerCode, customerCode, Integer.SIZE, Double.NaN,
+               customerCode, customerCode, customerCode, true);
 //        
         
                                         
-        if (isSundryBillRegInserted) {
+        if (isDataInserted) {
             
         HashMap param = new HashMap();
         param.put("weight_scale_id","WID0001");
@@ -370,7 +370,7 @@ public class ScaleController implements Initializable, Validatable,
     
     private String getScaleReading(){
         
-        SerialTest main = new SerialTest();
+        SerialController main = new SerialController();
         main.initialize();
         Thread t = new Thread() {
             public void run() {

@@ -17,7 +17,7 @@ import gnu.io.SerialPortEventListener;
 import java.util.Enumeration;
 
 
-public class SerialTest implements SerialPortEventListener {
+public class SerialController implements SerialPortEventListener {
 SerialPort serialPort;
     /** The port we're normally going to use. */
 private static final String PORT_NAMES[] = {   
@@ -95,7 +95,7 @@ public synchronized void serialEvent(SerialPortEvent oEvent) {
 }
 
 //public static void main(String[] args) throws Exception {
-//    SerialTest main = new SerialTest();
+//    SerialController main = new SerialController();
 //    main.initialize();
 //    Thread t=new Thread() {
 //        public void run() {

@@ -365,22 +365,32 @@ public class ScaleDAO {
     }
   
     public Boolean insertWeight(
-            String sundryBillId,
-            String roomNo,
-            String summaryId,
-            Integer type,
-            Double total,
-            String date,
-            String userId,
-            String cusId,
-            boolean hasCustomer) {
+            String weightScaleId,
+            String scaleId,
+            String customerCode,
+            String desc,
+            String reelNo,
+            String jobNo,
+            String size,
+            String length,
+            String width,
+            String epfNo,
+            String batchNo,
+            String machine,
+            String guage,
+            double qty,
+            double grossWeight,
+            double netweight,
+            double coreWeight,
+            double userId,
+            String date) {
 
-        String encodedSundryBillId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, sundryBillId);
-        String encodedSummaryId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, summaryId);
-        String encodedRoomNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, roomNo);
-        String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
-        String encodedUserId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, userId);
-        String encodedCusId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusId);
+        String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, weightScaleId);
+        String encodedScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, customerCode);
+        String encodedCustomerCode = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, scaleId);
+        String encodedDese = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, jobNo);
+        String encodedreelNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, size);
+        String encodedJobNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, length);
 
         if (star.con == null) {
             log.error("Databse connection failiure.");
@@ -392,32 +402,32 @@ public class ScaleDAO {
                         + "sundry_bill(`sundry_bill_id`, `is_other`, `total`,`date`, `user_id`) "
                         + "VALUES(?,?,?,?,?)");
 
-                ps.setString(1, encodedSundryBillId);
-                ps.setInt(2, type);
+                ps.setString(1, encodedWeightScaleId);
+                ps.setInt(2, desc);
                 ps.setDouble(3, total);
-                ps.setString(4, encodedDate);
-                ps.setString(5, encodedUserId);
+                ps.setString(4, encodedDese);
+                ps.setString(5, encodedreelNo);
                 int val = ps.executeUpdate();
 
-                if (roomNo != null && summaryId != null) {
+                if (scaleId != null && customerCode != null) {
                     PreparedStatement ps1 = star.con.prepareStatement("INSERT INTO "
                             + "sundry_bill_info(`sundry_bill_id`, `room_no`, `summary_id`) "
                             + "VALUES(?,?,?)");
 
-                    ps1.setString(1, encodedSundryBillId);
-                    ps1.setString(2, encodedRoomNo);
-                    ps1.setString(3, encodedSummaryId);
+                    ps1.setString(1, encodedWeightScaleId);
+                    ps1.setString(2, encodedCustomerCode);
+                    ps1.setString(3, encodedScaleId);
                     val = ps1.executeUpdate();
 
                 }
 
-                if (type == 1 && hasCustomer) {
+                if (desc == 1 && hasCustomer) {
                     PreparedStatement ps2 = star.con.prepareStatement("INSERT INTO "
                             + "sundry_bill_cus(`sundry_bill_id`, `cus_id` ) "
                             + "VALUES(?,?)");
 
-                    ps2.setString(1, encodedSundryBillId);
-                    ps2.setString(2, encodedCusId);
+                    ps2.setString(1, encodedWeightScaleId);
+                    ps2.setString(2, encodedJobNo);
                     val = ps2.executeUpdate();
                 }
 
