@@ -16,6 +16,7 @@ import com.saiton.ccs.uihandle.ReportGenerator;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
 import com.saiton.ccs.util.SerialController;
+import com.saiton.ccs.util.SimpleRead;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
 import com.saiton.ccs.validations.CustomTextAreaValidationImpl;
 import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
@@ -24,10 +25,12 @@ import com.saiton.ccs.validations.FormatAndValidate;
 import com.saiton.ccs.validations.MessageBoxTitle;
 import com.saiton.ccs.validations.Validatable;
 import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -60,6 +63,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import javafx.util.StringConverter;
+import javax.comm.CommPortIdentifier;
+import javax.comm.SerialPort;
 import org.controlsfx.control.ButtonBar;
 import org.controlsfx.control.ButtonBar.ButtonType;
 import org.controlsfx.control.PopOver;
@@ -194,18 +199,57 @@ public class ScaleController implements Initializable, Validatable,
     final TextField password = new TextField();
     //--------------
 
+    int baurdRate = 0;
+    String comPort = "";
+    String scaleName = "";
+    String scaleId = "";
+    SerialController main = null;
+    public static int count = 0;
+
+//    static CommPortIdentifier portId;
+//    static Enumeration portList;
+//
+//    InputStream inputStream;
+//    SerialPort serialPort;
+//    Thread readThread;
     //<editor-fold defaultstate="collapsed" desc="Key Events">
     @FXML
     private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
+
     }
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
+// count = 0;
+        count++;
 
+        main = new SerialController();
+        scaleCofigLoader(cmbScale.getValue());
         txtGrossWeight.setText(getScaleReading());
 
+//        if (count>=2) {
+//            count = 0;
+//            main.close();
+//            System.out.println("Closing");
+//        }
+        //<editor-fold defaultstate="collapsed" desc="Read Value">
+      /*  
+         portList = CommPortIdentifier.getPortIdentifiers();
+
+         while (portList.hasMoreElements()) {
+         portId = (CommPortIdentifier) portList.nextElement();
+         if (portId.getPortType() == CommPortIdentifier.PORT_PARALLEL) {
+         System.out.println("Initialized");
+         if (portId.getName().equals("COM1")) {
+         //if (portId.getName().equals("/dev/tty.usbmodem1421")) {
+         SimpleRead reader = new SimpleRead(1200);
+         }
+         }
+         }
+         */
+//</editor-fold>
     }
 
     @FXML
@@ -266,12 +310,12 @@ public class ScaleController implements Initializable, Validatable,
                     MessageBoxTitle.INFORMATION.toString(),
                     MessageBox.MessageIcon.MSG_ICON_SUCCESS,
                     MessageBox.MessageType.MSG_OK);
-            
+
             try {
-            int val = Integer.parseInt(txtReelNo.getText())+1;
-            txtReelNo.setText(val+"");
-        } catch (Exception e) {
-        }
+                int val = Integer.parseInt(txtReelNo.getText()) + 1;
+                txtReelNo.setText(val + "");
+            } catch (Exception e) {
+            }
 
             //clearInput();
         }
@@ -281,12 +325,15 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnCloseOnAction(ActionEvent event) {
+
         stage.close();
     }
 
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
 //        net = gross - core
+
+        main.close();
     }
 
     @FXML
@@ -376,7 +423,7 @@ public class ScaleController implements Initializable, Validatable,
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
-        loadRoomCategory();
+        loadScaleNames();
         mb = SimpleMessageBoxFactory.createMessageBox();
 
 //        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
@@ -397,26 +444,37 @@ public class ScaleController implements Initializable, Validatable,
         txtWeightScaleId.setText(scaleDAO.generateID());
         btnDelete.setVisible(false);
         txtReelNo.setText("0");
-        System.out.println("Zero loaded");
 
     }
 
     private String getScaleReading() {
 
-        SerialController main = new SerialController();
-        main.initialize();
-        Thread t = new Thread() {
-            public void run() {
-                //the following line will keep this app alive for 1000    seconds,
-                //waiting for events to occur and responding to them    (printing incoming messages to console).
-                try {
-                    Thread.sleep(1000000);
-                } catch (InterruptedException ie) {
-                }
-            }
-        };
-        t.start();
-        System.out.println("Serial Thread running...");
+//        SerialController main = new SerialController();
+        main = new SerialController();
+//        main.initialize("/dev/cu.usbmodem1421",1200);
+        main.initialize(comPort,baurdRate);
+//        Thread t = new Thread() {
+//            public void run() {
+//                //the following line will keep this app alive for 1000    seconds,
+//                //waiting for events to occur and responding to them    (printing incoming messages to console).
+//                try {
+//                    Thread.sleep(1000);
+//                    
+//                } catch (InterruptedException ie) {
+//                }
+//            }
+//        };
+//        t.start();
+
+        if (ScaleController.count >= 3) {
+            ScaleController.count = 0;
+            main =null;
+
+            System.out.println("Count reseted.");
+        }
+
+        System.out.println("Reading " + currentReading);
+//        main.close();
 
         return currentReading;
 
@@ -451,7 +509,7 @@ public class ScaleController implements Initializable, Validatable,
         txtNetWeight1.clear();
         customerCode = "";
         txtWeightScaleId.setText(scaleDAO.generateID());
-        System.out.println("ID : "+scaleDAO.generateID());
+        System.out.println("ID : " + scaleDAO.generateID());
         txtReelNo.setText("0");
 
     }
@@ -764,7 +822,6 @@ public class ScaleController implements Initializable, Validatable,
                     MachinePopup p = null;
                     p = (MachinePopup) machineIdTable.getSelectionModel().
                             getSelectedItem();
-                    
 
                     if (p.getColMachine() != null) {
                         txtMachine.setText(p.getColMachine());
@@ -802,7 +859,6 @@ public class ScaleController implements Initializable, Validatable,
                     SizePopup p = null;
                     p = (SizePopup) sizeIdTable.getSelectionModel().
                             getSelectedItem();
-                    
 
                     if (p.getColSize() != null) {
                         txtSize.setText(p.getColSize());
@@ -1055,7 +1111,7 @@ public class ScaleController implements Initializable, Validatable,
 
     }
 
-    private void loadRoomCategory() {
+    private void loadScaleNames() {
 
         cmbScale.getItems().clear();
         ArrayList<String> list = null;
@@ -1072,8 +1128,27 @@ public class ScaleController implements Initializable, Validatable,
 
         }
     }
-    
-    
+
+    private void scaleCofigLoader(String scaleName) {
+
+        ArrayList<String> dataList = null;
+
+        dataList = scaleDAO.loadingScaleConfigs(scaleName);
+
+        if (dataList != null) {
+
+            scaleId = dataList.get(0);
+            scaleName = dataList.get(1);
+            comPort = dataList.get(2);
+            baurdRate = Integer.parseInt(dataList.get(3));
+            System.out.println("Data Read : scaleId - " + scaleId
+                    + " scaleName - " + scaleName
+                    + " comPort - " + comPort
+                    + " baurdRate - " + baurdRate);
+
+        }
+
+    }
 
 //</editor-fold>
 //</editor-fold>

@@ -552,5 +552,66 @@ public class ScaleDAO {
         }
         return category;
     }
+    
+    public ArrayList<String> loadingScaleConfigs(String grnId) {
+        String encodedScaleName = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                grnId);
+
+        String scaleName = null;
+        String scaleId = null;
+        String comPort = null;
+        String boardRate = null;
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if (star.con == null) {
+            log.error("Databse connection failiure.");
+
+        } else {
+
+            try {
+                String query = "select * "
+                        + "from scale_register "
+                        + "where scale_name=? ";
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                pstmt.setString(1, encodedScaleName);
+
+                ResultSet r = pstmt.executeQuery();
+
+                while (r.next()) {
+
+                    scaleId = r.getString("scale_id");
+                    scaleName = r.getString("scale_name");
+                    comPort = r.getString("com_port");
+                    boardRate = r.getString("board_rate");
+
+                    list.add(scaleId);
+                    list.add(scaleName);
+                    list.add(comPort);
+                    list.add(boardRate);
+
+                }
+            } catch (NullPointerException | SQLException e) {
+
+                if (e instanceof NullPointerException) {
+
+                    log.error("Exception tag --> " + "Empty entry passed");
+
+                } else if (e instanceof SQLException) {
+
+                    log.error("Exception tag --> " + "Invalid sql statement "
+                            + e.getMessage());
+
+                }
+                return null;
+            } catch (Exception e) {
+
+                log.error("Exception tag --> " + "Error");
+
+                return null;
+            }
+        }
+        return list;
+    }
 
 }
