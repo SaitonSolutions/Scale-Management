@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WeightScale1" pageWidth="295" pageHeight="380" columnWidth="257" leftMargin="19" rightMargin="19" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="dcf61689-6c90-468a-b636-0647e262c817">
-	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="weight_scale_id" class="java.lang.String"/>
@@ -24,6 +24,7 @@
 	s.net_weight,
 	s.core_weight,
 	s.date,
+	s.film,
 	s.time_stamp
 
 FROM scale s
@@ -48,7 +49,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 	<field name="job_no" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="size" class="java.lang.Float">
+	<field name="size" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="length" class="java.lang.Float">
@@ -84,6 +85,9 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 	<field name="date" class="java.sql.Date">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="film" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="time_stamp" class="java.sql.Timestamp">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
@@ -91,7 +95,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="218" splitType="Stretch">
+		<band height="239" splitType="Stretch">
 			<staticText>
 				<reportElement x="56" y="2" width="152" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
 				<textElement verticalAlignment="Middle">
@@ -229,14 +233,14 @@ Mabole, Wattala.
 				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="114" y="136" width="69" height="20" uuid="1781ee87-0472-4628-bd64-2f9f7be3bfb7"/>
+				<reportElement x="114" y="156" width="69" height="20" uuid="1781ee87-0472-4628-bd64-2f9f7be3bfb7"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GROSS WGT]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="155" width="69" height="20" uuid="c0fef36b-0ab7-43bc-818c-f8e65051ea49"/>
+				<reportElement x="114" y="176" width="69" height="20" uuid="c0fef36b-0ab7-43bc-818c-f8e65051ea49"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
@@ -250,7 +254,7 @@ Mabole, Wattala.
 				<textFieldExpression><![CDATA[$F{length}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="155" width="50" height="20" uuid="69260693-6e91-4ae6-817c-bc8bed95c4c5"/>
+				<reportElement x="1" y="156" width="50" height="20" uuid="69260693-6e91-4ae6-817c-bc8bed95c4c5"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
@@ -264,7 +268,7 @@ Mabole, Wattala.
 				<text><![CDATA[LENGTH]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="52" y="155" width="8" height="20" uuid="645f5559-e0fd-41ac-b1c2-e8003799871d"/>
+				<reportElement x="52" y="156" width="8" height="20" uuid="645f5559-e0fd-41ac-b1c2-e8003799871d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
@@ -278,119 +282,119 @@ Mabole, Wattala.
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="136" width="8" height="20" uuid="55c70d09-8f57-4081-b0d1-dd1423df58c6"/>
+				<reportElement x="184" y="156" width="8" height="20" uuid="55c70d09-8f57-4081-b0d1-dd1423df58c6"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="61" y="155" width="53" height="20" uuid="0ceefd4f-e954-43ae-b9a7-9a4e89838bf5"/>
+				<reportElement x="61" y="156" width="53" height="20" uuid="0ceefd4f-e954-43ae-b9a7-9a4e89838bf5"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{width}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="184" y="155" width="8" height="20" uuid="1ca25ebf-5f86-42fe-aab1-4e43539d04c9"/>
+				<reportElement x="184" y="176" width="8" height="20" uuid="1ca25ebf-5f86-42fe-aab1-4e43539d04c9"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="193" y="155" width="63" height="20" uuid="bc9daa36-03bf-4eb0-beb0-6aa4d42296a6"/>
+				<reportElement x="193" y="176" width="63" height="20" uuid="bc9daa36-03bf-4eb0-beb0-6aa4d42296a6"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{net_weight}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="193" y="136" width="63" height="20" uuid="aee37a5e-1914-413f-8251-6e92ddfe5aa1"/>
+				<reportElement x="193" y="156" width="63" height="20" uuid="aee37a5e-1914-413f-8251-6e92ddfe5aa1"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gross_weight}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="175" width="50" height="20" uuid="44d8e5f5-4683-4f3e-b07f-6b712dbaeccd"/>
+				<reportElement x="1" y="176" width="50" height="20" uuid="44d8e5f5-4683-4f3e-b07f-6b712dbaeccd"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[GAUGE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="175" width="69" height="20" uuid="cdd9cf1b-836d-4de6-800f-d880a9ba1e55"/>
+				<reportElement x="114" y="196" width="69" height="20" uuid="cdd9cf1b-836d-4de6-800f-d880a9ba1e55"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[CORE WGT]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="175" width="8" height="20" uuid="08c0d963-6a33-4ff0-bc23-7ce5deb9a7eb"/>
+				<reportElement x="184" y="196" width="8" height="20" uuid="08c0d963-6a33-4ff0-bc23-7ce5deb9a7eb"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement x="193" y="175" width="63" height="20" uuid="2c481628-3092-4c5b-b199-7d779b6768c5"/>
+				<reportElement x="193" y="196" width="63" height="20" uuid="2c481628-3092-4c5b-b199-7d779b6768c5"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{core_weight}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="61" y="175" width="53" height="20" uuid="f53e0f1b-c0fd-4c21-934a-2fa877fd09bb"/>
+				<reportElement x="61" y="176" width="53" height="20" uuid="f53e0f1b-c0fd-4c21-934a-2fa877fd09bb"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gauge}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="52" y="175" width="8" height="20" uuid="091a6bfc-97f4-4408-88cb-f2260f588759"/>
+				<reportElement x="52" y="176" width="8" height="20" uuid="091a6bfc-97f4-4408-88cb-f2260f588759"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="52" y="195" width="8" height="20" uuid="d2ae04b6-db04-41df-acb9-71741a9323c3"/>
+				<reportElement x="52" y="196" width="8" height="20" uuid="d2ae04b6-db04-41df-acb9-71741a9323c3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="195" width="50" height="20" uuid="5b7e1909-bfcc-4cfa-af03-b6a7f4b84e9a"/>
+				<reportElement x="1" y="196" width="50" height="20" uuid="5b7e1909-bfcc-4cfa-af03-b6a7f4b84e9a"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[EPF NO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="184" y="195" width="8" height="20" uuid="ad5eb8ef-b116-4e47-a5af-297c2852014b"/>
+				<reportElement x="184" y="216" width="8" height="20" uuid="ad5eb8ef-b116-4e47-a5af-297c2852014b"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="114" y="195" width="69" height="20" uuid="eabace90-63d5-4209-ba89-caa80124c379"/>
+				<reportElement x="114" y="216" width="69" height="20" uuid="eabace90-63d5-4209-ba89-caa80124c379"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[DATE]]></text>
 			</staticText>
 			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
-				<reportElement x="193" y="195" width="63" height="20" uuid="a135b957-5e80-4693-a1b7-003f9ed7b572"/>
+				<reportElement x="193" y="216" width="63" height="20" uuid="a135b957-5e80-4693-a1b7-003f9ed7b572"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="61" y="195" width="53" height="20" uuid="07b6b4f8-819d-452e-a77a-b1e8de3b848d"/>
+				<reportElement x="61" y="196" width="53" height="20" uuid="07b6b4f8-819d-452e-a77a-b1e8de3b848d"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
@@ -408,6 +412,27 @@ Mabole, Wattala.
 				<reportElement x="193" y="0" width="84" height="37" uuid="da567c2d-08fd-4986-a104-5d98e79517b5"/>
 				<imageExpression><![CDATA["..//Reports//ISO.jpg"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="184" y="136" width="8" height="20" uuid="1089015e-114d-4cdf-8203-b6e66f671eae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="193" y="136" width="63" height="20" uuid="582f111b-d54c-46b6-abaa-844af8113340"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{film}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="114" y="136" width="69" height="20" uuid="39488762-805e-4a9f-a6b2-7f5ab72b6696"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FILM]]></text>
+			</staticText>
 		</band>
 	</title>
 </jasperReport>
