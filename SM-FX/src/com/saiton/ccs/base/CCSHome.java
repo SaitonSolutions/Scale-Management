@@ -153,6 +153,13 @@ public class CCSHome extends Application implements HomeCallback {
          e -> FxmlUiLauncher.launchOnNewStage(
          "/com/saiton/ccs/scale/SearchWeightScale.fxml",
                  "Search Weight Scale"));
+        
+        home.createTileButton("Customer \nRegistration",
+         TileColors.TILE_COLOR_MAGENTA,
+         "/com/saiton/ccs/res/img-customer.png", FxHome.HOME_PAGE,
+         e -> FxmlUiLauncher.launchOnNewStage(
+         "/com/saiton/ccs/base/CustomerRegistration.fxml",
+                 "Customer Registration"));
 
       
          

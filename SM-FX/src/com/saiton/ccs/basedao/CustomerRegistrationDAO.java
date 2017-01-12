@@ -51,17 +51,12 @@ public class CustomerRegistrationDAO {
         } else {
             try {
 
-                String query = "SELECT * FROM customer c LEFT JOIN customer_vehicle_no  vn ON "
-                        + "c.cus_id = vn.cus_id "
-                        + "WHERE (c.cus_name LIKE ? OR c.cus_address LIKE ? "
-                        + "OR c.cus_id LIKE ? or "
-                        + "vn.vehicle_no LIKE ? )";
+                String query = "SELECT * FROM customer c "
+                        + "WHERE (c.customer_name LIKE ? OR c.customer_code LIKE ? )";
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedSearch + "%");
                 pstmt.setString(2, encodedSearch + "%");
-                pstmt.setString(3, encodedSearch + "%");
-                pstmt.setString(4, encodedSearch + "%");
 
                 ResultSet r = pstmt.executeQuery();
 
@@ -69,19 +64,11 @@ public class CustomerRegistrationDAO {
 
                     ArrayList<String> list = new ArrayList<String>();
 
-                    cus_id = r.getString("cus_id");
-                    cus_title = r.getString("cus_title");
-                    cus_name = r.getString("cus_name");
-//                
-                    cus_address = r.getString("cus_address");
-                    cus_Vat = r.getString("cus_type");
+                    cus_id = r.getString("customer_code");
+                    cus_name = r.getString("customer_name");
                     
                     list.add(cus_id);
-                    list.add(cus_title);
                     list.add(cus_name);
-
-                    list.add(cus_address);
-                    list.add(cus_Vat);
                     Mainlist.add(list);
 
                 }
@@ -198,17 +185,11 @@ public class CustomerRegistrationDAO {
 
     public Boolean insertCustomerDetails(
             String cusId,
-            String cusName,
-            String cusAddress,
-            String cusTitle,
-            String VAT
+            String cusName
     ) {
 
         String encodedCusId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusId);
         String encodedCusName = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusName);
-        String encodedCusAddress = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusAddress);
-        String encodedCusTitle = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusTitle);
-        String encodedCusVat = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, VAT);
 
         if (star.con == null) {
 
@@ -217,13 +198,10 @@ public class CustomerRegistrationDAO {
         } else {
             try {
 
-                PreparedStatement ps = star.con.prepareStatement("insert into customer(cus_id,cus_name,cus_address,cus_title,cus_type) VALUES(?,?,?,?,?)");
+                PreparedStatement ps = star.con.prepareStatement("insert into customer(customer_code,customer_name) VALUES(?,?)");
 
                 ps.setString(1, encodedCusId);
                 ps.setString(2, encodedCusName);
-                ps.setString(3, encodedCusAddress);
-                ps.setString(4, encodedCusTitle);
-                ps.setString(5, encodedCusVat);
 
                 int val = ps.executeUpdate();
                 if (val == 1) {
@@ -265,7 +243,7 @@ public class CustomerRegistrationDAO {
         } else {
             try {
 
-                String query = "SELECT * FROM customer where cus_id = ? ";
+                String query = "SELECT * FROM customer where customer_code = ? ";
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedCusId);
@@ -806,7 +784,7 @@ public class CustomerRegistrationDAO {
         } else {
             try {
 
-                String query = "DELETE FROM customer WHERE cus_id = ? ";
+                String query = "DELETE FROM customer WHERE customer_code = ? ";
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedCusId);
@@ -1115,14 +1093,6 @@ public class CustomerRegistrationDAO {
         String encodedCusId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cus_id);
 
         String cus_name = null;
-        String cus_address = null;
-  //      String cus_nic = null;
-        String cus_title = null;
-  //      String cus_nationality = null;
-  //      String cus_id_type = null;
-  //      String cus_dob = null;
-  //      String cus_profession = null;
-        String cus_type = null;
         
         ArrayList<String> list = new ArrayList<>();
 
@@ -1134,7 +1104,7 @@ public class CustomerRegistrationDAO {
         } else {
             try {
 
-                String query = "SELECT * FROM customer  WHERE cus_id = ? ";
+                String query = "SELECT * FROM customer  WHERE customer_code = ? ";
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
                 pstmt.setString(1, encodedCusId);
@@ -1143,27 +1113,11 @@ public class CustomerRegistrationDAO {
 
                 while (r.next()) {
 
-                    cus_id = r.getString("cus_id");
-                    cus_title = r.getString("cus_title");
-                    cus_name = r.getString("cus_name");
-      //              cus_id_type = r.getString("customer.cus_nic_passport_id_Type");
-      //              cus_nic = r.getString("customer.cus_nic_passport_id");
-                    cus_address = r.getString("cus_address");
-       //             cus_nationality = r.getString("customer.cus_nationality");
-       //             cus_dob = r.getString("customer.cus_dob");
-        //            cus_profession = r.getString("profession.profession");
-                    cus_type = r.getString("cus_type");
+                    cus_id = r.getString("customer_code");
+                    cus_name = r.getString("customer_name");
 
                     list.add(cus_id);
-                    list.add(cus_title);
                     list.add(cus_name);
-         //           list.add(cus_id_type);
-        //            list.add(cus_nic);
-                    list.add(cus_address);
-         //           list.add(cus_nationality);
-         //           list.add(cus_dob);
-          //          list.add(cus_profession);
-                    list.add(cus_type);
 
                 }
 
@@ -1349,46 +1303,22 @@ public class CustomerRegistrationDAO {
 
     public Boolean updateCustomerInfo(
             String cusId,
-            String cusName,
-            String cusAddress,
-            //String cusNic,
-            String cusTitle,
-            String cusVat
-    //String cusDob,
-    //String cusNationality,
-    //String cusVerification,
-    //int cusProfession
-    ) {
+            String cusName) {
 
         String encodedCusId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusId);
         String encodedCusName = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusName);
-        String encodedCusAddress = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusAddress);
-        //String encodedCusNic = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusNic);
-        String encodedCusTitle = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusTitle);
-        String encodedCusVat = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusVat);
-        //String encodedCusDob = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusDob);
-        //String encodedCusNationality = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusNationality);
-        //String encodedCusVerification = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, cusVerification);
+
         if (star.con == null) {
             log.error("Databse connection failiure.");
             return null;
         } else {
             try {
 
-                String query = "UPDATE customer set cus_name = ? ,cus_address = ?,"
-                        + "cus_title = ?,cus_type = ? WHERE cus_id=?";
+                String query = "UPDATE customer set customer_name = ? WHERE customer_code=?";
                 PreparedStatement ps = star.con.prepareStatement(query);
 
                 ps.setString(1, encodedCusName);
-                ps.setString(2, encodedCusAddress);
-                //ps.setString(3, encodedCusNic);
-                ps.setString(3, encodedCusTitle);
-                ps.setString(4, encodedCusVat);
-                //ps.setString(5, encodedCusDob);
-                //ps.setString(6, encodedCusNationality);
-                //ps.setString(7, encodedCusVerification);
-                //ps.setInt(8, cusProfession);
-                ps.setString(5, encodedCusId);
+                ps.setString(2, encodedCusId);
 
                 int val = ps.executeUpdate();
 
