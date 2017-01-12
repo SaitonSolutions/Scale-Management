@@ -165,11 +165,10 @@
                                 <TableView fx:id="tvPermission" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="132.0" prefWidth="678.0" GridPane.columnIndex="1" GridPane.columnSpan="18" GridPane.rowIndex="12" GridPane.rowSpan="7">
                                     <columns>
                                         <TableColumn fx:id="tcFeature" editable="false" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="196.0" text="Feature" />
-                              <TableColumn fx:id="tcView" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="90.0" sortable="false" text="View" />
-                                        <TableColumn fx:id="tcInsert" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="90.0" sortable="false" text="Insert" />
-                                        <TableColumn fx:id="tcUpdate" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="90.0" sortable="false" text="Update" />
-                                        <TableColumn fx:id="tcDelete" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="90.0" sortable="false" text="Delete" />
-                              <TableColumn fx:id="tcPreviewPreference" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="120.0" sortable="false" text="Preview Preference" />
+                              <TableColumn fx:id="tcView" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="120.0" sortable="false" text="View" />
+                                        <TableColumn fx:id="tcInsert" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="120.0" sortable="false" text="Insert" />
+                                        <TableColumn fx:id="tcUpdate" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="120.0" sortable="false" text="Update" />
+                                        <TableColumn fx:id="tcDelete" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="120.0" sortable="false" text="Delete" />
                                     </columns>
                                     <GridPane.margin>
                                         <Insets top="30.0" />
