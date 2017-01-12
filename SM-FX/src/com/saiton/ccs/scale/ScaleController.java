@@ -251,14 +251,10 @@ public class ScaleController implements Initializable, Validatable,
                 txtBatchNo.getText(),
                 txtMachine.getText(),
                 txtGauge.getText(),
-                //                Double.parseDouble(txtQty.getText()),
-                //                Double.parseDouble(txtGrossWeight.getText()),
-                //                Double.parseDouble(txtNetWeight.getText()),
-                //                Double.parseDouble(txtNetWeight1.getText()),
-                Double.parseDouble("100.00"),
-                Double.parseDouble("100.00"),
-                Double.parseDouble("100.00"),
-                Double.parseDouble("100.00"),
+                Double.parseDouble(txtQty.getText()),
+                Double.parseDouble(txtGrossWeight.getText()),
+                Double.parseDouble(txtNetWeight.getText()),
+                Double.parseDouble(txtNetWeight1.getText()),
                 dtpDate.getValue().toString());
 
         //<editor-fold defaultstate="collapsed" desc="Current Print Code">
@@ -308,10 +304,8 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
 
-      calculate();
+        calculate();//        net = gross - core
 
-//        net = gross - core
-        //main.close();
     }
 
     @FXML
@@ -321,13 +315,10 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshCoreWeightOnAction(ActionEvent event) {
-       
-        
+
         scaleCofigLoader(cmbScale.getValue());
         txtNetWeight1.setText(getScaleReading());
         calculate();
-        
-        
 
     }
 
@@ -403,32 +394,17 @@ public class ScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Methods">
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
         txtGrossWeight.setText("0.00");
         txtNetWeight.setText("0.00");
         txtNetWeight1.setText("0.00");
-        
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
         loadScaleNames();
         mb = SimpleMessageBoxFactory.createMessageBox();
 
-//        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
-//                "colServiceId"));
-//        tcServiceName.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceName"));
-//        tcServicePrice.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServicePrice"));
-//        tcServiceDescription.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceDescription"));
-//
-//        tblItemList.setItems(TableItemData);
-//
-//        mb = SimpleMessageBoxFactory.createMessageBox();
+
         txtWeightScaleId.setText(scaleDAO.generateID());
         btnDelete.setVisible(false);
         txtReelNo.setText("0");
@@ -496,22 +472,22 @@ public class ScaleController implements Initializable, Validatable,
         return true;
 
     }
-    
-    void calculate(){
-    
+
+    void calculate() {
+
         try {
             Double gross = Double.parseDouble(txtGrossWeight.getText());
             Double core = Double.parseDouble(txtNetWeight1.getText());
             Double net = Double.parseDouble(txtNetWeight.getText());
             if (!txtNetWeight1.getText().isEmpty()) {
-                net = gross-core;
-                txtNetWeight.setText(net+"");
-                
+                net = gross - core;
+                txtNetWeight.setText(net + "");
+
             }
         } catch (Exception e) {
-            
+
         }
-    
+
     }
 
     @Override
@@ -536,9 +512,8 @@ public class ScaleController implements Initializable, Validatable,
         txtNetWeight1.clear();
         customerCode = "";
         txtWeightScaleId.setText(scaleDAO.generateID());
-        System.out.println("ID : " + scaleDAO.generateID());
         txtReelNo.setText("0");
-        
+
         txtGrossWeight.setText("0.00");
         txtNetWeight.setText("0.00");
         txtNetWeight1.setText("0.00");
@@ -547,25 +522,11 @@ public class ScaleController implements Initializable, Validatable,
 
     private void clearComponentsForNewEntry() {
 
-//        txtDescription.clear();
-//        txtPrice.clear();
-//        txtService.clear();
     }
 
     @Override
     public void clearValidations() {
 
-//        no = 1;
-//        
-////        txtPrice.clear();
-//        isupdate = true;
-//
-//        int count = TableItemData.size();
-//        if (count == 0) {
-//
-//            btnDelete.setVisible(true);
-//
-//        }
     }
 
     private void setUserAccessLevel() {
@@ -767,36 +728,7 @@ public class ScaleController implements Initializable, Validatable,
 //                220.00, 0.0, true);
     }
 
-    private void itemTableDataLoader(String keyword) {
-
-//        itemData.clear();
-//        ArrayList<ArrayList<String>> itemInfo
-//                = new ArrayList<ArrayList<String>>();
-//        ArrayList<ArrayList<String>> list = serviceDAO.searchItemDetails(keyword);
-//
-//        if (list != null) {
-//
-//            for (int i = 0; i < list.size(); i++) {
-//
-//                itemInfo.add(list.get(i));
-//            }
-//
-//            if (itemInfo != null && itemInfo.size() > 0) {
-//                for (int i = 0; i < itemInfo.size(); i++) {
-//
-//                    itemPopup = new ServiceInfoPopup();
-//                    itemPopup.colItemID.setValue(itemInfo.get(i).get(0));
-//                    itemPopup.colItemName.setValue(itemInfo.get(i).get(1));
-//                    itemPopup.colItemDesc.setValue(itemInfo.get(i).get(2));
-//                    itemPopup.colItemPrice.setValue(itemInfo.get(i).get(3));
-//                    
-//                    
-//                    itemData.add(itemPopup);
-//                }
-//            }
-//
-//        }
-    }
+ 
 
     @Override
     public void setStage(Stage stage, Object[] obj) {
@@ -934,67 +866,8 @@ public class ScaleController implements Initializable, Validatable,
             }
         });
 
-//        
-//        //item popup------------------------
-//        itemTable = itemPopup.tableViewLoader(itemData);
-//
-//        itemTable.setOnMouseClicked(e -> {
-//            if (e.getClickCount() == 2) {
-//                try {
-//                    btnDelete.setVisible(true);
-//                    ServiceInfoPopup p = null;
-//                    p = (ServiceInfoPopup) itemTable.getSelectionModel().
-//                            getSelectedItem();
-//                    if (p.getColItemID() != null) {
-//                        clearValidations();
-//
-//                        txtServiceId.setText(p.getColItemID());
-//                        txtService.setText(p.getColItemName());
-//                        txtDescription.setText(p.getColItemDesc());
-//                        txtPrice.setText(p.getColItemPrice());
-//                        txtUserName.setText(serviceDAO.getUserName(
-//                                txtServiceId.getText()));
-//                        
-//                        
-//                    }
-//
-//                } catch (NullPointerException n) {
-//
-//                }
-//
-//                itemPop.hide();
-//                validatorInitialization();
-//
-//            }
-//
-//        });
-//
-//        itemTable.setOnMousePressed(e -> {
-//
-//            if (e.getButton() == MouseButton.SECONDARY) {
-//
-//                itemPop.hide();
-//                validatorInitialization();
-//
-//            }
-//
-//        });
-//
-//        itemPop = new PopOver(itemTable);
-//
-//        stage.setOnCloseRequest(e -> {
-//
-//            if (itemPop.isShowing()) {
-//                e.consume();
-//                itemPop.hide();
-//
-//            }
-//        });
-//
-//        
-//        
-//        
-//        validatorInitialization();
+
+
     }
 
     private void validatorInitialization() {
@@ -1003,26 +876,7 @@ public class ScaleController implements Initializable, Validatable,
 //                new CustomTextAreaValidationImpl(txtService,
 //                        !fav.validName(txtService.getText()),
 //                        ErrorMessages.Error));
-//
-//        validationSupportTableData.registerValidator(txtDescription,
-//                new CustomTextAreaValidationImpl(txtDescription,
-//                        !fav.validName(txtDescription.getText()),
-//                        ErrorMessages.Error));
-//
-//        validationSupportTableData.registerValidator(txtDescription,
-//                new CustomTextAreaValidationImpl(txtDescription,
-//                        !fav.validName(txtDescription.getText()),
-//                        ErrorMessages.Error));
-//
-//        validationSupportTableData.registerValidator(txtPrice,
-//                new CustomTextFieldValidationImpl(txtPrice,
-//                        !fav.chkPrice(txtPrice.getText()),
-//                        ErrorMessages.InvalidPrice));
-//        
-//        validationSupportTable.registerValidator(tblItemList,
-//                new CustomTableViewValidationImpl(tblItemList,
-//                        !fav.validTableView(tblItemList),
-//                        ErrorMessages.EmptyListView));
+
     }
 
     private void customerTableDataLoader(String keyword) {
@@ -1183,9 +1037,9 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void cmbScaleOnAction(ActionEvent event) {
-        
+
         scaleCofigLoader(cmbScale.getValue());
-        
+
     }
 
 //</editor-fold>
