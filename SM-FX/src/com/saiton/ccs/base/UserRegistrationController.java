@@ -122,6 +122,9 @@ public class UserRegistrationController implements StagePassable, Initializable,
 
     @FXML
     private TableColumn<UserPermission, Boolean> tcView;
+    
+        @FXML
+    private TableColumn<UserPermission, Boolean> tcPreviewPreference;
 
     private ObservableList<UserPermission> permissionsData;
 

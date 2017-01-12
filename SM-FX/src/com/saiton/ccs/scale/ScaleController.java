@@ -45,6 +45,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -168,6 +169,10 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshMachine;
     @FXML
     private Button btnMachineAdd;
+    @FXML
+    private TextField txtFilm;
+    @FXML
+    private CheckBox chbPreviewReport;
 
     public static String currentReading = " ";
 

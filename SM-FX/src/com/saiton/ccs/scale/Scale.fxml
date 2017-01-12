@@ -11,9 +11,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saiton.ccs.scale.ScaleController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.saiton.ccs.scale.ScaleController">
   <children>
-    <StackPane prefHeight="400.0" prefWidth="732.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <StackPane prefHeight="450.0" prefWidth="732.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
           <children>
@@ -113,7 +113,7 @@
                               <Insets />
                            </GridPane.margin>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="170.0" GridPane.columnSpan="2" GridPane.rowIndex="10" GridPane.rowSpan="2">
+                        <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="170.0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="2">
                            <children>
                               <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="150.0" text="Delete">
                                  <graphic>
@@ -138,8 +138,9 @@
                               <Insets left="30.0" />
                            </padding>
                         </HBox>
-                <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="5" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="2">
+                <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="11" GridPane.rowSpan="2">
                   <children>
+                              <CheckBox fx:id="chbPreviewReport" mnemonicParsing="false" text="Preview Report" />
                     <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#btnPrintOnAction" prefHeight="50.0" prefWidth="150.0" text="Print">
                       <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
@@ -488,6 +489,23 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                         </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="530.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="10">
+                           <children>
+                              <Label prefWidth="200.0" text="Film">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtFilm" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Film">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="100.0" />
@@ -517,6 +535,7 @@
                 <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints />
