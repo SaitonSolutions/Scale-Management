@@ -14,6 +14,8 @@ import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Enumeration;
 
 public class SerialController implements SerialPortEventListener {
@@ -22,20 +24,22 @@ public class SerialController implements SerialPortEventListener {
     /**
      * The port we're normally going to use.
      */
-    private static final String PORT_NAMES[] = {
-        //     "/dev/cu.usbserial", // Mac OS X
-        "/dev/tty.usbmodem1421", // Mac OS X
-    //        "/dev/ttyUSB0", // Linux
-    //        "COM5", // Windows
-    };
+//    private static final String PORT_NAMES[] = {
+//        //     "/dev/cu.usbserial", // Mac OS X
+//        "/dev/tty.usbmodem1421", // Mac OS X
+//    //        "/dev/ttyUSB0", // Linux
+//    //        "COM5", // Windows
+//    };
 
 //    String port = "/dev/cu.usbmodem1421";
-    private BufferedReader input;
+    //private BufferedReader input;
+    private InputStream input;
+//     private BufferedReader input;
     private OutputStream output;
     private static final int TIME_OUT = 2000;
 //    private static final int DATA_RATE = 1200;
 
-    public void initialize(String port ,int DATA_RATE) {
+    public void initialize(String port, int DATA_RATE) {
         CommPortIdentifier portId = null;
         Enumeration portEnum = CommPortIdentifier.getPortIdentifiers();
 
@@ -63,15 +67,21 @@ public class SerialController implements SerialPortEventListener {
                     SerialPort.DATABITS_8,
                     SerialPort.STOPBITS_1,
                     SerialPort.PARITY_NONE);
+//            serialPort.setFlowControlMode(SerialPort.FLOWCONTROL_RTSCTS_IN
+//                    | SerialPort.FLOWCONTROL_RTSCTS_OUT);
+//            serialPort.setRTS(false);
 
             // open the streams
-            input = new BufferedReader(new InputStreamReader(serialPort.
-                    getInputStream()));
+//            input = new BufferedReader(new InputStreamReader(serialPort.
+//                    getInputStream()));
+            input = serialPort.
+                    getInputStream();
             output = serialPort.getOutputStream();
 
             serialPort.addEventListener(this);
             serialPort.notifyOnDataAvailable(true);
         } catch (Exception e) {
+
             System.err.println(e.toString());
         }
     }
@@ -88,31 +98,38 @@ public class SerialController implements SerialPortEventListener {
             try {
 
                 String inputLine = null;
-                if (input.ready()) {
-                    inputLine = input.readLine();
-                    System.out.println("Loading Data - " + inputLine);
-                    if (!inputLine.isEmpty()) {
-                        ScaleController.currentReading = inputLine;
 
-                        if (ScaleController.count >= 3) {
-                            
-                            close();
-                            System.out.println("Closing");
-                        }
-
+                byte[] readBuffer = new byte[100];
+                StringBuilder sb = new StringBuilder();
+                try {
+                    while (input.available() > 0) {
+                        int numBytes = input.read(readBuffer);
                     }
 
-//                            
+                    ScaleController.currentReading = new String(readBuffer);
+
+                    System.out.print("Original Value = "
+                            + new String(readBuffer));
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
+                
+                System.out.println("Reading from serial monitor"
+                        + ScaleController.currentReading);
+                close();
+
             } catch (Exception e) {
-                System.err.println(e.toString());
+//                System.out.println("Input Issue detected.");
+//                e.printStackTrace();
             }
         }
-    // Ignore all the other eventTypes, but you should consider the other ones.
+
     }
 
-//public static void main(String[] args) throws Exception {
+    //<editor-fold defaultstate="collapsed" desc="Main Method">
+    //public static void main(String[] args) throws Exception {
 //    SerialController main = new SerialController();
 //    main.initialize();
 //    Thread t=new Thread() {
@@ -125,4 +142,6 @@ public class SerialController implements SerialPortEventListener {
 //    t.start();
 //    System.out.println("Started");
 //}
+//</editor-fold>
+
 }

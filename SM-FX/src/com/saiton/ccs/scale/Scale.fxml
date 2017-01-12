@@ -324,7 +324,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <ComboBox fx:id="cmbScale" prefHeight="50.0" prefWidth="300.0" promptText="Scale" />
+                              <ComboBox fx:id="cmbScale" onAction="#cmbScaleOnAction" prefHeight="50.0" prefWidth="300.0" promptText="Scale" />
                            </children>
                            <opaqueInsets>
                               <Insets bottom="10.0" />

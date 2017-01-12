@@ -170,7 +170,10 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnMachineAdd;
 
     public static String currentReading = " ";
+
+    public static int count = 0;
     ScaleDAO scaleDAO = new ScaleDAO();
+    ;
     String customerCode = "";
     //Customer Popup
     private TableView customerIdTable = new TableView();
@@ -204,14 +207,7 @@ public class ScaleController implements Initializable, Validatable,
     String scaleName = "";
     String scaleId = "";
     SerialController main = null;
-    public static int count = 0;
 
-//    static CommPortIdentifier portId;
-//    static Enumeration portList;
-//
-//    InputStream inputStream;
-//    SerialPort serialPort;
-//    Thread readThread;
     //<editor-fold defaultstate="collapsed" desc="Key Events">
     @FXML
     private void txtWeightScaleIdOnKeyReleased(KeyEvent event) {
@@ -223,33 +219,13 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
 // count = 0;
-        count++;
-
-        main = new SerialController();
+//        count++;
+//
+//        main = new SerialController();
         scaleCofigLoader(cmbScale.getValue());
         txtGrossWeight.setText(getScaleReading());
+        calculate();
 
-//        if (count>=2) {
-//            count = 0;
-//            main.close();
-//            System.out.println("Closing");
-//        }
-        //<editor-fold defaultstate="collapsed" desc="Read Value">
-      /*  
-         portList = CommPortIdentifier.getPortIdentifiers();
-
-         while (portList.hasMoreElements()) {
-         portId = (CommPortIdentifier) portList.nextElement();
-         if (portId.getPortType() == CommPortIdentifier.PORT_PARALLEL) {
-         System.out.println("Initialized");
-         if (portId.getName().equals("COM1")) {
-         //if (portId.getName().equals("/dev/tty.usbmodem1421")) {
-         SimpleRead reader = new SimpleRead(1200);
-         }
-         }
-         }
-         */
-//</editor-fold>
     }
 
     @FXML
@@ -331,9 +307,11 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
-//        net = gross - core
 
-        main.close();
+      calculate();
+
+//        net = gross - core
+        //main.close();
     }
 
     @FXML
@@ -343,8 +321,13 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshCoreWeightOnAction(ActionEvent event) {
-
+       
+        
+        scaleCofigLoader(cmbScale.getValue());
         txtNetWeight1.setText(getScaleReading());
+        calculate();
+        
+        
 
     }
 
@@ -420,6 +403,11 @@ public class ScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Methods">
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+        txtGrossWeight.setText("0.00");
+        txtNetWeight.setText("0.00");
+        txtNetWeight1.setText("0.00");
+        
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
@@ -451,30 +439,52 @@ public class ScaleController implements Initializable, Validatable,
 
 //        SerialController main = new SerialController();
         main = new SerialController();
-//        main.initialize("/dev/cu.usbmodem1421",1200);
-        main.initialize(comPort,baurdRate);
-//        Thread t = new Thread() {
-//            public void run() {
-//                //the following line will keep this app alive for 1000    seconds,
-//                //waiting for events to occur and responding to them    (printing incoming messages to console).
-//                try {
-//                    Thread.sleep(1000);
-//                    
-//                } catch (InterruptedException ie) {
-//                }
-//            }
-//        };
-//        t.start();
+        main.initialize(comPort, baurdRate);
+        Thread t = new Thread() {
+            public void run() {
+                //the following line will keep this app alive for 1000    seconds,
+                //waiting for events to occur and responding to them    (printing incoming messages to console).
+                try {
+                    Thread.sleep(1000000);
 
-        if (ScaleController.count >= 3) {
-            ScaleController.count = 0;
-            main =null;
+                } catch (InterruptedException ie) {
+                }
+            }
+        };
+        t.start();
 
-            System.out.println("Count reseted.");
+        String s = currentReading;
+        try {
+
+            s = s.substring(s.indexOf("=") + 1);
+            s = s.substring(0, s.indexOf("="));
+
+            System.out.println("Sample Substring :" + s);
+            currentReading = s;
+
+        } catch (Exception e) {
+            // e.printStackTrace();
         }
 
-        System.out.println("Reading " + currentReading);
-//        main.close();
+        try {
+            //Reverse
+            String input = s;
+            byte[] strAsByteArray = input.getBytes();
+            byte[] result = new byte[strAsByteArray.length];
+
+            for (int i = 0; i < strAsByteArray.length; i++) {
+                result[i] = strAsByteArray[strAsByteArray.length - i - 1];
+            }
+
+            String finalValue = new String(result);
+            System.out.println("Reverse Print : " + finalValue);
+            currentReading = finalValue;
+            double valueInDecimal = Double.parseDouble(finalValue);
+
+            currentReading = valueInDecimal + "";
+        } catch (Exception e) {
+            // e.printStackTrace();
+        }
 
         return currentReading;
 
@@ -485,6 +495,23 @@ public class ScaleController implements Initializable, Validatable,
 
         return true;
 
+    }
+    
+    void calculate(){
+    
+        try {
+            Double gross = Double.parseDouble(txtGrossWeight.getText());
+            Double core = Double.parseDouble(txtNetWeight1.getText());
+            Double net = Double.parseDouble(txtNetWeight.getText());
+            if (!txtNetWeight1.getText().isEmpty()) {
+                net = gross-core;
+                txtNetWeight.setText(net+"");
+                
+            }
+        } catch (Exception e) {
+            
+        }
+    
     }
 
     @Override
@@ -511,6 +538,10 @@ public class ScaleController implements Initializable, Validatable,
         txtWeightScaleId.setText(scaleDAO.generateID());
         System.out.println("ID : " + scaleDAO.generateID());
         txtReelNo.setText("0");
+        
+        txtGrossWeight.setText("0.00");
+        txtNetWeight.setText("0.00");
+        txtNetWeight1.setText("0.00");
 
     }
 
@@ -1148,6 +1179,13 @@ public class ScaleController implements Initializable, Validatable,
 
         }
 
+    }
+
+    @FXML
+    private void cmbScaleOnAction(ActionEvent event) {
+        
+        scaleCofigLoader(cmbScale.getValue());
+        
     }
 
 //</editor-fold>
