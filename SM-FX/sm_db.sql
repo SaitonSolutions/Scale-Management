@@ -30,7 +30,7 @@ CREATE TABLE `customer` (
   `customer_name` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`customer_code`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -315,7 +315,7 @@ CREATE TABLE `scale` (
   `description` varchar(300) DEFAULT NULL,
   `reel_no` varchar(45) DEFAULT NULL,
   `job_no` varchar(45) DEFAULT NULL,
-  `size` float DEFAULT NULL,
+  `size` varchar(45) DEFAULT NULL,
   `length` float DEFAULT NULL,
   `width` float DEFAULT NULL,
   `epf_no` varchar(45) DEFAULT NULL,
@@ -328,13 +328,14 @@ CREATE TABLE `scale` (
   `core_weight` double DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time_stamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `film` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`weight_scale_id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `scale_fk1_idx` (`scale_id`),
   KEY `scale_fk2_idx` (`customer_code`),
   CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `scale_fk2` FOREIGN KEY (`customer_code`) REFERENCES `customer` (`customer_code`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `scale_fk2` FOREIGN KEY (`customer_code`) REFERENCES `customer` (`customer_code`) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -343,6 +344,7 @@ CREATE TABLE `scale` (
 
 LOCK TABLES `scale` WRITE;
 /*!40000 ALTER TABLE `scale` DISABLE KEYS */;
+INSERT INTO `scale` VALUES (1,'WT0001','SC0001','ABL','test lorem ispaal lorem ispal loram ispal','R0021564','JB12456874','50212',5426.25,452.86,'EPF125482','BT512648','Machine TT02154','5426.23',52000,562.23,5864.32,45924.23,'2016-12-23','2016-12-23 07:00:09',NULL);
 /*!40000 ALTER TABLE `scale` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -359,9 +361,12 @@ CREATE TABLE `scale_register` (
   `scale_name` varchar(45) DEFAULT NULL,
   `com_port` varchar(45) DEFAULT NULL,
   `board_rate` int(11) DEFAULT NULL,
+  `report` varchar(45) NOT NULL,
   PRIMARY KEY (`scale_id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `scale_register_fk1_idx` (`report`),
+  CONSTRAINT `scale_register_fk1` FOREIGN KEY (`report`) REFERENCES `report` (`rid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,6 +375,7 @@ CREATE TABLE `scale_register` (
 
 LOCK TABLES `scale_register` WRITE;
 /*!40000 ALTER TABLE `scale_register` DISABLE KEYS */;
+INSERT INTO `scale_register` VALUES (1,'SC0001','Front Scale','5000',7200,'RPT0001');
 /*!40000 ALTER TABLE `scale_register` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -560,7 +566,7 @@ CREATE TABLE `user_permission_type` (
   `type` varchar(45) NOT NULL,
   PRIMARY KEY (`type`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -569,7 +575,7 @@ CREATE TABLE `user_permission_type` (
 
 LOCK TABLES `user_permission_type` WRITE;
 /*!40000 ALTER TABLE `user_permission_type` DISABLE KEYS */;
-INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration'),(133,'Scale Registration'),(134,'Search Weight Scale');
+INSERT INTO `user_permission_type` VALUES (73,'User Registration'),(128,'Weight Scale'),(129,'Report Generator'),(130,'Report Registration'),(131,'Report Settings'),(132,'Printer Registration'),(133,'Scale Registration'),(134,'Search Weight Scale'),(135,'Customer Registration');
 /*!40000 ALTER TABLE `user_permission_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -587,6 +593,7 @@ CREATE TABLE `user_permissions` (
   `allow_update` int(11) NOT NULL DEFAULT '0',
   `allow_delete` int(11) NOT NULL DEFAULT '0',
   `allow_view` int(11) NOT NULL DEFAULT '0',
+  `preview_preference` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`EID`,`type`),
   KEY `fkuserperf2_idx` (`type`),
   CONSTRAINT `fkuserperf1` FOREIGN KEY (`EID`) REFERENCES `user` (`EID`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -600,7 +607,7 @@ CREATE TABLE `user_permissions` (
 
 LOCK TABLES `user_permissions` WRITE;
 /*!40000 ALTER TABLE `user_permissions` DISABLE KEYS */;
-INSERT INTO `user_permissions` VALUES ('EM0004','Printer Registration',1,1,1,1),('EM0004','Report Generator',1,1,1,1),('EM0004','Report Registration',1,1,1,1),('EM0004','Report Settings',1,1,1,1),('EM0004','Scale Registration',1,1,1,1),('EM0004','Search Weight Scale',1,1,1,1),('EM0004','User Registration',1,1,1,1),('EM0004','Weight Scale',1,1,1,1),('EM0005','Printer Registration',1,1,1,1),('EM0005','Report Generator',1,1,1,1),('EM0005','Report Registration',1,1,1,1),('EM0005','Report Settings',1,1,1,1),('EM0005','Scale Registration',1,1,1,1),('EM0005','Search Weight Scale',1,1,1,1),('EM0005','User Registration',1,1,1,1),('EM0005','Weight Scale',1,1,1,1);
+INSERT INTO `user_permissions` VALUES ('EM0004','Customer Registration',1,1,1,1,0),('EM0004','Printer Registration',1,1,1,1,0),('EM0004','Report Generator',1,1,1,1,0),('EM0004','Report Registration',1,1,1,1,0),('EM0004','Report Settings',1,1,1,1,0),('EM0004','Scale Registration',1,1,1,1,0),('EM0004','Search Weight Scale',1,1,1,1,0),('EM0004','User Registration',1,1,1,1,0),('EM0004','Weight Scale',1,1,1,1,0),('EM0005','Customer Registration',1,1,1,1,0),('EM0005','Printer Registration',1,1,1,1,0),('EM0005','Report Generator',1,1,1,1,0),('EM0005','Report Registration',1,1,1,1,0),('EM0005','Report Settings',1,1,1,1,0),('EM0005','Scale Registration',1,1,1,1,0),('EM0005','Search Weight Scale',1,1,1,1,0),('EM0005','User Registration',1,1,1,1,0),('EM0005','Weight Scale',1,1,1,1,0);
 /*!40000 ALTER TABLE `user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -663,4 +670,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-18 13:08:35
+-- Dump completed on 2017-01-12 16:23:39
