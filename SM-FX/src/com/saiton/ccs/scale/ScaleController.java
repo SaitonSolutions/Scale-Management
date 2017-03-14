@@ -142,6 +142,9 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private Button btnRefreshGrossWeight;
+    
+    @FXML
+    private ComboBox<String> cmbLabel;
 //</editor-fold>
 
     private Stage stage;
@@ -221,6 +224,11 @@ public class ScaleController implements Initializable, Validatable,
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
+    @FXML
+    void cmbLabelOnAction(ActionEvent event) {
+
+    }
+    
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
 // count = 0;
