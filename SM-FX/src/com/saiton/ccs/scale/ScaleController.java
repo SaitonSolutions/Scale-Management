@@ -310,6 +310,8 @@ public class ScaleController implements Initializable, Validatable,
             try {
                 int val = Integer.parseInt(txtReelNo.getText()) + 1;
                 txtReelNo.setText(val + "");
+                
+                txtWeightScaleId.setText(scaleDAO.generateID());
             } catch (Exception e) {
             }
 
