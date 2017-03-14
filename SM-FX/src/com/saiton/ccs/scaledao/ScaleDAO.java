@@ -66,7 +66,8 @@ public class ScaleDAO {
                     SQLException e) {
 
                 if (e instanceof ArrayIndexOutOfBoundsException) {
-                    log.error("Exception tag --> " + "Split character error"+" "+e);
+                    log.error("Exception tag --> " + "Split character error"
+                            + " " + e);
                 } else if (e instanceof NumberFormatException) {
                     log.error("Exception tag --> "
                             + "Invalid number found in current id");
@@ -101,7 +102,8 @@ public class ScaleDAO {
             double grossWeight,
             double netweight,
             double coreWeight,
-            String date
+            String date,
+            String film
     ) {
         String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 weightScaleId);
@@ -150,31 +152,30 @@ public class ScaleDAO {
                         + " `gross_weight`,"
                         + " `net_weight`,"
                         + " `core_weight`,"
-                        + " `date`"
+                        + " `date`,"
+                        + " `film`"
                         + " ) "
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
                 ps.setString(1, encodedWeightScaleId);
                 ps.setString(2, encodedScaleId);
                 ps.setString(3, encodedCustomerCode);
-                ps.setString(4, encodedDesc );
-                ps.setString(5, encodedReelNo );
-                ps.setString(6, encodedJobNo );
-                ps.setString(7, encodedSize );
-                ps.setString(8, encodedLength );
-                ps.setString(9, encodedwidth );
-                ps.setString(10, encodedEpfNo );
+                ps.setString(4, encodedDesc);
+                ps.setString(5, encodedReelNo);
+                ps.setString(6, encodedJobNo);
+                ps.setString(7, encodedSize);
+                ps.setString(8, encodedLength);
+                ps.setString(9, encodedwidth);
+                ps.setString(10, encodedEpfNo);
                 ps.setString(11, encodedBatchNo);
-                ps.setString(12, encodedMachine );
+                ps.setString(12, encodedMachine);
                 ps.setString(13, encodedGuage);
                 ps.setDouble(14, qty);
                 ps.setDouble(15, grossWeight);
                 ps.setDouble(16, netweight);
                 ps.setDouble(17, coreWeight);
-                ps.setString(18, encodedDate );
-          
-          
+                ps.setString(18, encodedDate);
+                ps.setString(19, film);
 
                 int val = ps.executeUpdate();
 
@@ -408,7 +409,7 @@ public class ScaleDAO {
         }
         return mainList;
     }
-    
+
     public ArrayList<String> loadScaleItem() {
 
         String scaleNames = null;
@@ -450,7 +451,7 @@ public class ScaleDAO {
         }
         return list;
     }
-    
+
     public String getScaleId(String scaleName) {
 
         String category = null;
@@ -501,7 +502,7 @@ public class ScaleDAO {
         }
         return category;
     }
-    
+
     public String getCustomerCode(String customerName) {
 
         String category = null;
@@ -552,7 +553,7 @@ public class ScaleDAO {
         }
         return category;
     }
-    
+
     public ArrayList<String> loadingScaleConfigs(String grnId) {
         String encodedScaleName = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 grnId);

@@ -272,7 +272,8 @@ public class ScaleController implements Initializable, Validatable,
                 Double.parseDouble("100.00"),
                 Double.parseDouble("100.00"),
                 Double.parseDouble("100.00"),
-                dtpDate.getValue().toString());
+                dtpDate.getValue().toString(),
+                txtFilm.getText());
 
         //<editor-fold defaultstate="collapsed" desc="Current Print Code">
         if (isDataInserted) {
@@ -285,7 +286,10 @@ public class ScaleController implements Initializable, Validatable,
                             toString());
             String img = fileOne.getAbsolutePath();
             ReportGenerator r = new ReportGenerator(img, param);
-            r.setVisible(true);
+            if (chbPreviewReport.isSelected()) {
+               r.setVisible(true); 
+            }
+            
 
             File filTwo
                     = new File(
@@ -293,7 +297,10 @@ public class ScaleController implements Initializable, Validatable,
                             toString());
             String report = filTwo.getAbsolutePath();
             ReportGenerator rep = new ReportGenerator(report, param);
-            rep.setVisible(true);
+            if (chbPreviewReport.isSelected()) {
+             rep.setVisible(true);   
+            }
+            
 
             mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
                     MessageBoxTitle.INFORMATION.toString(),
