@@ -52,10 +52,10 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 	<field name="size" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="length" class="java.lang.Float">
+	<field name="length" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="width" class="java.lang.Float">
+	<field name="width" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="epf_no" class="java.lang.String">
