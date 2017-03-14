@@ -30,7 +30,7 @@ CREATE TABLE `customer` (
   `customer_name` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`customer_code`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,8 +316,8 @@ CREATE TABLE `scale` (
   `reel_no` varchar(45) DEFAULT NULL,
   `job_no` varchar(45) DEFAULT NULL,
   `size` varchar(45) DEFAULT NULL,
-  `length` float DEFAULT NULL,
-  `width` float DEFAULT NULL,
+  `length` varchar(45) DEFAULT NULL,
+  `width` varchar(45) DEFAULT NULL,
   `epf_no` varchar(45) DEFAULT NULL,
   `batch_no` varchar(45) DEFAULT NULL,
   `machine` varchar(200) DEFAULT NULL,
@@ -344,7 +344,7 @@ CREATE TABLE `scale` (
 
 LOCK TABLES `scale` WRITE;
 /*!40000 ALTER TABLE `scale` DISABLE KEYS */;
-INSERT INTO `scale` VALUES (1,'WT0001','SC0001','ABL','test lorem ispaal lorem ispal loram ispal','R0021564','JB12456874','50212',5426.25,452.86,'EPF125482','BT512648','Machine TT02154','5426.23',52000,562.23,5864.32,45924.23,'2016-12-23','2016-12-23 07:00:09',NULL);
+INSERT INTO `scale` VALUES (1,'WT0001','SC0001','ABL','test lorem ispaal lorem ispal loram ispal','R0021564','JB12456874','50212','5426.25','452.86','EPF125482','BT512648','Machine TT02154','5426.23',52000,562.23,5864.32,45924.23,'2016-12-23','2016-12-23 07:00:09',NULL);
 /*!40000 ALTER TABLE `scale` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -670,4 +670,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-12 16:23:39
+-- Dump completed on 2017-03-14 23:53:19

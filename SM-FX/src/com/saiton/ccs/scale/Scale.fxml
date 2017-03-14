@@ -278,7 +278,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <DatePicker fx:id="dtpDate" editable="false" onAction="#dtpDateOnAction" prefHeight="50.0" prefWidth="300.0" />
+                              <DatePicker fx:id="dtpDate" disable="true" editable="false" onAction="#dtpDateOnAction" prefHeight="50.0" prefWidth="300.0" />
                            </children>
                         </HBox>
                         <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="284.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
@@ -505,6 +505,16 @@
                            <GridPane.margin>
                               <Insets left="30.0" />
                            </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="530.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="10">
+                           <children>
+                              <Label prefWidth="200.0" text="Label">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="cmbLabel" onAction="#cmbLabelOnAction" prefHeight="50.0" prefWidth="300.0" promptText="Select Label" />
+                           </children>
                         </HBox>
               </children>
               <columnConstraints>
