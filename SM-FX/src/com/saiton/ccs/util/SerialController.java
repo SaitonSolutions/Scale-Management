@@ -106,10 +106,13 @@ public class SerialController implements SerialPortEventListener {
                         int numBytes = input.read(readBuffer);
                     }
 
-                    ScaleController.currentReading = new String(readBuffer);
+//                    ScaleController.currentReading = new String(readBuffer);
 
+                    
+                    System.out.print("CurrentReading Value = "+ScaleController.currentReading);
                     System.out.print("Original Value = "
                             + new String(readBuffer));
+                    ScaleController.currentReading = new String(readBuffer);
 
                 } catch (IOException e) {
                     e.printStackTrace();
