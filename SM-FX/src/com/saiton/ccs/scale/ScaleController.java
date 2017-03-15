@@ -178,6 +178,7 @@ public class ScaleController implements Initializable, Validatable,
     private CheckBox chbPreviewReport;
 
     public static String currentReading = " ";
+    public static String reading = " ";
 
     public static int count = 0;
     ScaleDAO scaleDAO = new ScaleDAO();
@@ -476,13 +477,14 @@ public class ScaleController implements Initializable, Validatable,
         t.start();
 
         String s = currentReading;
+        System.out.println("currentReading :" + currentReading);
         try {
 
             s = s.substring(s.indexOf("=") + 1);
             s = s.substring(0, s.indexOf("="));
 
             System.out.println("Sample Substring :" + s);
-            currentReading = s;
+            reading = s;
 
         } catch (Exception e) {
             // e.printStackTrace();
@@ -500,15 +502,15 @@ public class ScaleController implements Initializable, Validatable,
 
             String finalValue = new String(result);
             System.out.println("Reverse Print : " + finalValue);
-            currentReading = finalValue;
+            reading = finalValue;
             double valueInDecimal = Double.parseDouble(finalValue);
 
-            currentReading = valueInDecimal + "";
+            reading = valueInDecimal + "";
         } catch (Exception e) {
             // e.printStackTrace();
         }
 
-        return currentReading;
+        return reading;
 
     }
 

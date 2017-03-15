@@ -439,7 +439,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtNetWeight1" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
+                              <TextField fx:id="txtNetWeight1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
