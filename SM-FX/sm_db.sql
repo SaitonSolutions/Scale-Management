@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `sm_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `sm_db`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
 --
 -- Host: localhost    Database: sm_db
 -- ------------------------------------------------------
--- Server version	5.5.44
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -335,7 +335,7 @@ CREATE TABLE `scale` (
   KEY `scale_fk2_idx` (`customer_code`),
   CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `scale_fk2` FOREIGN KEY (`customer_code`) REFERENCES `customer` (`customer_code`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -360,12 +360,9 @@ CREATE TABLE `scale_register` (
   `scale_name` varchar(45) DEFAULT NULL,
   `com_port` varchar(45) DEFAULT NULL,
   `board_rate` int(11) DEFAULT NULL,
-  `report` varchar(45) NOT NULL,
   PRIMARY KEY (`scale_id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `scale_register_fk1_idx` (`report`),
-  CONSTRAINT `scale_register_fk1` FOREIGN KEY (`report`) REFERENCES `report` (`rid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,7 +371,6 @@ CREATE TABLE `scale_register` (
 
 LOCK TABLES `scale_register` WRITE;
 /*!40000 ALTER TABLE `scale_register` DISABLE KEYS */;
-INSERT INTO `scale_register` VALUES (1,'SC0001','Front Scale','5000',7200,'RPT0001');
 /*!40000 ALTER TABLE `scale_register` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -669,4 +665,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-15  0:04:53
+-- Dump completed on 2017-03-16 10:28:00
