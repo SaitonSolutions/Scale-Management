@@ -142,7 +142,7 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private Button btnRefreshGrossWeight;
-    
+
     @FXML
     private ComboBox<String> cmbLabel;
 //</editor-fold>
@@ -211,6 +211,10 @@ public class ScaleController implements Initializable, Validatable,
     final TextField password = new TextField();
     //--------------
 
+    ObservableList<String> locationList = FXCollections.observableArrayList(
+            "Factory", "Studio"
+    );
+
     int baurdRate = 0;
     String comPort = "";
     String scaleName = "";
@@ -229,7 +233,7 @@ public class ScaleController implements Initializable, Validatable,
     void cmbLabelOnAction(ActionEvent event) {
 
     }
-    
+
     @FXML
     void btnRefreshGrossWeightOnAction(ActionEvent event) {
 // count = 0;
@@ -281,27 +285,31 @@ public class ScaleController implements Initializable, Validatable,
 
             HashMap param = new HashMap();
             param.put("weight_scale_id", txtWeightScaleId.getText());
-            File fileOne
-                    = new File(
-                            ReportPath.PATH_WEIGHT_ONE_REPORT.
-                            toString());
-            String img = fileOne.getAbsolutePath();
-            ReportGenerator r = new ReportGenerator(img, param);
-            if (chbPreviewReport.isSelected()) {
-               r.setVisible(true); 
-            }
-            
 
-            File filTwo
+            if (cmbLabel.getValue().toString() == "Studio") {
+                File fileOne
+                        = new File(
+                                ReportPath.PATH_WEIGHT_ONE_REPORT.
+                                toString());
+                String img = fileOne.getAbsolutePath();
+                ReportGenerator r = new ReportGenerator(img, param);
+                if (chbPreviewReport.isSelected()) {
+                    r.setVisible(true);
+                }
+
+            }else{
+                 File filTwo
                     = new File(
                             ReportPath.PATH_WEIGHT_TWO_REPORT.
                             toString());
             String report = filTwo.getAbsolutePath();
             ReportGenerator rep = new ReportGenerator(report, param);
             if (chbPreviewReport.isSelected()) {
-             rep.setVisible(true);   
+                rep.setVisible(true);
             }
-            
+            }
+
+           
 
             mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
                     MessageBoxTitle.INFORMATION.toString(),
@@ -311,7 +319,7 @@ public class ScaleController implements Initializable, Validatable,
             try {
                 int val = Integer.parseInt(txtReelNo.getText()) + 1;
                 txtReelNo.setText(val + "");
-                
+
                 txtWeightScaleId.setText(scaleDAO.generateID());
             } catch (Exception e) {
             }
@@ -331,7 +339,7 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
 
-      calculate();
+        calculate();
 
 //        net = gross - core
         //main.close();
@@ -344,13 +352,10 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnRefreshCoreWeightOnAction(ActionEvent event) {
-       
-        
+
         scaleCofigLoader(cmbScale.getValue());
         txtNetWeight1.setText(getScaleReading());
         calculate();
-        
-        
 
     }
 
@@ -426,11 +431,12 @@ public class ScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Methods">
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
         txtGrossWeight.setText("0.00");
         txtNetWeight.setText("0.00");
         txtNetWeight1.setText("0.00");
-        
+        cmbLabel.setItems(locationList);
+        cmbLabel.getSelectionModel().selectFirst();
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
@@ -520,22 +526,22 @@ public class ScaleController implements Initializable, Validatable,
         return true;
 
     }
-    
-    void calculate(){
-    
+
+    void calculate() {
+
         try {
             Double gross = Double.parseDouble(txtGrossWeight.getText());
             Double core = Double.parseDouble(txtNetWeight1.getText());
             Double net = Double.parseDouble(txtNetWeight.getText());
             if (!txtNetWeight1.getText().isEmpty()) {
-                net = gross-core;
-                txtNetWeight.setText(net+"");
-                
+                net = gross - core;
+                txtNetWeight.setText(net + "");
+
             }
         } catch (Exception e) {
-            
+
         }
-    
+
     }
 
     @Override
@@ -562,7 +568,7 @@ public class ScaleController implements Initializable, Validatable,
         txtWeightScaleId.setText(scaleDAO.generateID());
         System.out.println("ID : " + scaleDAO.generateID());
         txtReelNo.setText("0");
-        
+
         txtGrossWeight.setText("0.00");
         txtNetWeight.setText("0.00");
         txtNetWeight1.setText("0.00");
@@ -1207,9 +1213,9 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     private void cmbScaleOnAction(ActionEvent event) {
-        
+
         scaleCofigLoader(cmbScale.getValue());
-        
+
     }
 
 //</editor-fold>

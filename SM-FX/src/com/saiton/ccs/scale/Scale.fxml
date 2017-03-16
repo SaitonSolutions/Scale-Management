@@ -72,7 +72,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="btnCustomerAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnCustomerAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                              <Button fx:id="btnCustomerAdd" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnCustomerAddOnAction" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -115,7 +115,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="170.0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="2">
                            <children>
-                              <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="150.0" text="Delete">
+                              <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="150.0" text="Delete">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -217,7 +217,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="btnSizeAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSizeAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                              <Button fx:id="btnSizeAdd" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSizeAddOnAction" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -367,7 +367,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="btnMachineAdd" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnMachineAddOnAction" prefHeight="50.0" prefWidth="50.0">
+                              <Button fx:id="btnMachineAdd" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnMachineAddOnAction" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -444,7 +444,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="btnRefreshCoreWeight" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshCoreWeightOnAction" prefHeight="50.0" prefWidth="50.0">
+                              <Button fx:id="btnRefreshCoreWeight" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshCoreWeightOnAction" prefHeight="50.0" prefWidth="50.0">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

@@ -84,8 +84,8 @@ public class ScaleRegisterController implements Initializable, Validatable,
     @FXML
     private TextField txtScaleName;
     
-    @FXML
-    private ComboBox<?> cmbReport;
+//    @FXML
+//    private ComboBox<String> cmbReport;
 
 
     private ObservableList tableScaleData = FXCollections.
