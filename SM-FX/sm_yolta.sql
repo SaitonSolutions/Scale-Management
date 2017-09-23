@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `sm_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `sm_db`;
--- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
+CREATE DATABASE  IF NOT EXISTS `sm_yolta` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `sm_yolta`;
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: sm_db
+-- Host: localhost    Database: sm_yolta
 -- ------------------------------------------------------
--- Server version	5.6.21
+-- Server version	5.5.44
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -312,23 +312,9 @@ CREATE TABLE `scale` (
   `weight_scale_id` varchar(45) NOT NULL,
   `scale_id` varchar(45) NOT NULL,
   `customer_code` varchar(45) NOT NULL,
-  `description` varchar(300) DEFAULT NULL,
-  `reel_no` varchar(45) DEFAULT NULL,
-  `job_no` varchar(45) DEFAULT NULL,
-  `size` varchar(45) DEFAULT NULL,
-  `length` varchar(45) DEFAULT NULL,
-  `width` varchar(45) DEFAULT NULL,
-  `epf_no` varchar(45) DEFAULT NULL,
-  `batch_no` varchar(45) DEFAULT NULL,
-  `machine` varchar(200) DEFAULT NULL,
-  `gauge` varchar(200) DEFAULT NULL,
-  `qty` double DEFAULT NULL,
-  `gross_weight` double DEFAULT NULL,
-  `net_weight` double DEFAULT NULL,
-  `core_weight` double DEFAULT NULL,
+  `weight` double DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time_stamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `film` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`weight_scale_id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `scale_fk1_idx` (`scale_id`),
@@ -665,4 +651,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-16 10:28:00
+-- Dump completed on 2017-09-23 21:19:20
