@@ -89,30 +89,6 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                 </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="6">
-                           <children>
-                              <Label prefWidth="200.0" text="Gross Weight">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font></Label>
-                              <TextField fx:id="txtGrossWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Gross Weight">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font></TextField>
-                              <Button fx:id="btnRefreshGrossWeight" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshGrossWeightOnAction" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../res/img-refreshNew.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                        </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="170.0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="2">
                            <children>
                               <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="50.0" prefWidth="150.0" text="Delete">
@@ -175,63 +151,7 @@
                                  </font></Label>
                            </children>
                         </AnchorPane>
-                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="5">
-                           <children>
-                              <Label prefWidth="200.0" text="Qty">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font></Label>
-                              <TextField fx:id="txtQty" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Qty">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font></TextField>
-                           </children>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="228.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
-                           <children>
-                              <Label prefWidth="200.0" text="Size">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtSize" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" promptText="Size">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                              <Button fx:id="btnSearchSize" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSearchSizeOnAction" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../res/img-search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnRefreshSize" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshSizeOnAction" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../res/img-refreshNew.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <Button fx:id="btnSizeAdd" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSizeAddOnAction" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../res/img-add.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="7">
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="3">
                            <children>
                               <Label prefWidth="200.0" text="Net Weight">
                                  <font>
@@ -259,20 +179,6 @@
                         </HBox>
                         <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="4">
                            <children>
-                              <Label prefWidth="200.0" text="Gauge">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtGauge" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Gauge">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="9">
-                           <children>
                               <Label prefWidth="200.0" text="Date">
                                  <font>
                                     <Font size="22.0" />
@@ -280,40 +186,6 @@
                               </Label>
                               <DatePicker fx:id="dtpDate" disable="true" editable="false" onAction="#dtpDateOnAction" prefHeight="50.0" prefWidth="300.0" />
                            </children>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="284.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
-                           <children>
-                              <Label prefWidth="200.0" text="Job No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtJobNo" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Job No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="164.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="9">
-                           <children>
-                              <Label prefWidth="200.0" text="EPF No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtEPFNo" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="EPF No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
                         </HBox>
                         <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="74.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="1">
                            <children>
@@ -334,7 +206,7 @@
                               <Insets />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="3">
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="2">
                            <children>
                               <Label prefWidth="200.0" text="Machine">
                                  <font>
@@ -380,141 +252,6 @@
                            <opaqueInsets>
                               <Insets bottom="10.0" />
                            </opaqueInsets>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="244.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
-                           <children>
-                              <Label prefWidth="200.0" text="Description">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtDescription" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Description">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="244.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="7">
-                           <children>
-                              <Label prefWidth="200.0" text="Length">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtLength" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Length">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="364.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="8">
-                           <children>
-                              <Label prefWidth="200.0" text="Width">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtWidth" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Width">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="420.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="8">
-                           <children>
-                              <Label prefWidth="200.0" text="Core Weight">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtNetWeight1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                              <Button fx:id="btnRefreshCoreWeight" disable="true" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshCoreWeightOnAction" prefHeight="50.0" prefWidth="50.0">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../res/img-refreshNew.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="240.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="2">
-                           <children>
-                              <Label prefWidth="200.0" text="Batch No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtBatchNo" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Batch No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="240.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
-                           <children>
-                              <Label prefWidth="200.0" text="Reel No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtReelNo" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Reel No">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="530.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="10">
-                           <children>
-                              <Label prefWidth="200.0" text="Film">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="txtFilm" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" promptText="Film">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                           <GridPane.margin>
-                              <Insets left="30.0" />
-                           </GridPane.margin>
-                        </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="530.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="10">
-                           <children>
-                              <Label prefWidth="200.0" text="Label">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                              </Label>
-                              <ComboBox fx:id="cmbLabel" onAction="#cmbLabelOnAction" prefHeight="50.0" prefWidth="300.0" promptText="Select Label" />
-                           </children>
                         </HBox>
               </children>
               <columnConstraints>

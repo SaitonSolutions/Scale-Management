@@ -88,22 +88,9 @@ public class ScaleDAO {
             String weightScaleId,
             String scaleId,
             String customerCode,
-            String desc,
-            String reelNo,
-            String jobNo,
-            String size,
-            String length,
-            String width,
-            String epfNo,
-            String batchNo,
             String machine,
-            String guage,
-            double qty,
-            double grossWeight,
             double netweight,
-            double coreWeight,
-            String date,
-            String film
+            String date
     ) {
         String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 weightScaleId);
@@ -111,20 +98,10 @@ public class ScaleDAO {
                 scaleId);
         String encodedCustomerCode = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 customerCode);
-        String encodedDesc = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, desc);
-        String encodedReelNo = ESAPI.encoder().
-                encodeForSQL(ORACLE_CODEC, reelNo);
-        String encodedJobNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, jobNo);
-        String encodedSize = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, size);
-        String encodedLength = ESAPI.encoder().
-                encodeForSQL(ORACLE_CODEC, length);
-        String encodedwidth = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, width);
-        String encodedEpfNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, epfNo);
-        String encodedBatchNo = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
-                batchNo);
+
         String encodedMachine = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
                 machine);
-        String encodedGuage = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, guage);
+
         String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
 
         if (star.con == null) {
@@ -138,44 +115,18 @@ public class ScaleDAO {
                         + " `weight_scale_id`,"
                         + " `scale_id`,"
                         + " `customer_code`,"
-                        + " `description`,"
-                        + " `reel_no`,"
-                        + " `job_no`,"
-                        + " `size`,"
-                        + " `length`,"
-                        + " `width`,"
-                        + " `epf_no`,"
-                        + " `batch_no`,"
-                        + " `machine`,"
-                        + " `gauge`,"
-                        + " `qty`,"
-                        + " `gross_weight`,"
-                        + " `net_weight`,"
-                        + " `core_weight`,"
-                        + " `date`,"
-                        + " `film`"
+                        
+                        + " `weight`,"
+                        + " `date`"
                         + " ) "
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                        + "VALUES(?,?,?,?,?)");
 
                 ps.setString(1, encodedWeightScaleId);
                 ps.setString(2, encodedScaleId);
                 ps.setString(3, encodedCustomerCode);
-                ps.setString(4, encodedDesc);
-                ps.setString(5, encodedReelNo);
-                ps.setString(6, encodedJobNo);
-                ps.setString(7, encodedSize);
-                ps.setString(8, encodedLength);
-                ps.setString(9, encodedwidth);
-                ps.setString(10, encodedEpfNo);
-                ps.setString(11, encodedBatchNo);
-                ps.setString(12, encodedMachine);
-                ps.setString(13, encodedGuage);
-                ps.setDouble(14, qty);
-                ps.setDouble(15, grossWeight);
-                ps.setDouble(16, netweight);
-                ps.setDouble(17, coreWeight);
-                ps.setString(18, encodedDate);
-                ps.setString(19, film);
+                
+                ps.setDouble(4, netweight);
+                ps.setString(5, encodedDate);
 
                 int val = ps.executeUpdate();
 

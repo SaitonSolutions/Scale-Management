@@ -84,28 +84,13 @@ public class ScaleController implements Initializable, Validatable,
     private DatePicker dtpDate;
 
     @FXML
-    private TextField txtReelNo;
-
-    @FXML
-    private TextField txtGrossWeight;
-
-    @FXML
     private TextField txtNetWeight1;
 
     @FXML
     private Button btnDelete;
 
     @FXML
-    private TextField txtGauge;
-
-    @FXML
     private TextField txtNetWeight;
-
-    @FXML
-    private TextField txtWidth;
-
-    @FXML
-    private TextField txtBatchNo;
 
     @FXML
     private Button btnClose;
@@ -114,34 +99,17 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshNetWeight;
 
     @FXML
-    private TextField txtJobNo;
-
-    @FXML
-    private TextField txtLength;
-
-    @FXML
     private ComboBox<String> cmbScale;
-
-    @FXML
-    private TextField txtDescription;
-
-    @FXML
-    private TextField txtQty;
 
     @FXML
     private Button btnPrint;
 
-    @FXML
-    private Button btnRefreshCoreWeight;
+   
 
     @FXML
     private Label lblItemId;
 
-    @FXML
-    private TextField txtEPFNo;
-
-    @FXML
-    private Button btnRefreshGrossWeight;
+  
 
     @FXML
     private ComboBox<String> cmbLabel;
@@ -156,8 +124,7 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshCustomer;
     @FXML
     private Button btnCustomerAdd;
-    @FXML
-    private TextField txtSize;
+   
     @FXML
     private Button btnSearchSize;
     @FXML
@@ -172,8 +139,7 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshMachine;
     @FXML
     private Button btnMachineAdd;
-    @FXML
-    private TextField txtFilm;
+
     @FXML
     private CheckBox chbPreviewReport;
 
@@ -241,7 +207,7 @@ public class ScaleController implements Initializable, Validatable,
 //
 //        main = new SerialController();
         scaleCofigLoader(cmbScale.getValue());
-        txtGrossWeight.setText(getScaleReading());
+        txtNetWeight.setText(getScaleReading());
         calculate();
 
     }
@@ -253,32 +219,20 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
-
+        System.out.println("Scale id - "+txtWeightScaleId.getText());
         boolean isDataInserted = true;
         isDataInserted = scaleDAO.insertWeight(
                 txtWeightScaleId.getText(),
                 scaleDAO.getScaleId(cmbScale.getValue()),
                 scaleDAO.getCustomerCode(txtCustomer.getText()),
-                txtDescription.getText(),
-                txtReelNo.getText(),
-                txtJobNo.getText(),
-                txtSize.getText(),
-                txtLength.getText(),
-                txtWidth.getText(),
-                txtEPFNo.getText(),
-                txtBatchNo.getText(),
                 txtMachine.getText(),
-                txtGauge.getText(),
-                                Double.parseDouble(txtQty.getText()),
-                                Double.parseDouble(txtGrossWeight.getText()),
-                                Double.parseDouble(txtNetWeight.getText()),
-                                Double.parseDouble(txtNetWeight1.getText()),
-//                Double.parseDouble("100.00"),
-//                Double.parseDouble("100.00"),
-//                Double.parseDouble("100.00"),
-//                Double.parseDouble("100.00"),
-                dtpDate.getValue().toString(),
-                txtFilm.getText());
+                Double.parseDouble(txtNetWeight.getText()),
+                
+                //                Double.parseDouble("100.00"),
+                //                Double.parseDouble("100.00"),
+                //                Double.parseDouble("100.00"),
+                //                Double.parseDouble("100.00"),
+                dtpDate.getValue().toString());
 
         //<editor-fold defaultstate="collapsed" desc="Current Print Code">
         if (isDataInserted) {
@@ -286,7 +240,6 @@ public class ScaleController implements Initializable, Validatable,
             HashMap param = new HashMap();
             param.put("weight_scale_id", txtWeightScaleId.getText());
 
-            if (cmbLabel.getValue().toString() == "Studio") {
                 File fileOne
                         = new File(
                                 ReportPath.PATH_WEIGHT_ONE_REPORT.
@@ -297,19 +250,7 @@ public class ScaleController implements Initializable, Validatable,
                     r.setVisible(true);
                 }
 
-            }else{
-                 File filTwo
-                    = new File(
-                            ReportPath.PATH_WEIGHT_TWO_REPORT.
-                            toString());
-            String report = filTwo.getAbsolutePath();
-            ReportGenerator rep = new ReportGenerator(report, param);
-            if (chbPreviewReport.isSelected()) {
-                rep.setVisible(true);
-            }
-            }
-
-           
+            
 
             mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
                     MessageBoxTitle.INFORMATION.toString(),
@@ -317,8 +258,8 @@ public class ScaleController implements Initializable, Validatable,
                     MessageBox.MessageType.MSG_OK);
 
             try {
-                int val = Integer.parseInt(txtReelNo.getText()) + 1;
-                txtReelNo.setText(val + "");
+//                int val = Integer.parseInt(txtReelNo.getText()) + 1;
+//                txtReelNo.setText(val + "");
 
                 txtWeightScaleId.setText(scaleDAO.generateID());
             } catch (Exception e) {
@@ -359,22 +300,7 @@ public class ScaleController implements Initializable, Validatable,
 
     }
 
-    @FXML
-    private void btnSearchSizeOnAction(ActionEvent event) {
 
-        sizeTableDataLoader(txtSize.getText());
-        sizeIdTable.setItems(sizeData);
-        if (!sizeData.isEmpty()) {
-            sizeIdPop.show(btnSearchSize);
-        }
-        validatorInitialization();
-
-    }
-
-    @FXML
-    private void btnRefreshSizeOnAction(ActionEvent event) {
-        txtSize.clear();
-    }
 
     @FXML
     private void btnSizeAddOnAction(ActionEvent event) {
@@ -432,11 +358,10 @@ public class ScaleController implements Initializable, Validatable,
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        txtGrossWeight.setText("0.00");
+       
         txtNetWeight.setText("0.00");
-        txtNetWeight1.setText("0.00");
-        cmbLabel.setItems(locationList);
-        cmbLabel.getSelectionModel().selectFirst();
+
+
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
@@ -460,7 +385,7 @@ public class ScaleController implements Initializable, Validatable,
 //        mb = SimpleMessageBoxFactory.createMessageBox();
         txtWeightScaleId.setText(scaleDAO.generateID());
         btnDelete.setVisible(false);
-        txtReelNo.setText("0");
+       
 
     }
 
@@ -530,11 +455,11 @@ public class ScaleController implements Initializable, Validatable,
     void calculate() {
 
         try {
-            Double gross = Double.parseDouble(txtGrossWeight.getText());
+            
             Double core = Double.parseDouble(txtNetWeight1.getText());
             Double net = Double.parseDouble(txtNetWeight.getText());
             if (!txtNetWeight1.getText().isEmpty()) {
-                net = gross - core;
+                
                 txtNetWeight.setText(net + "");
 
             }
@@ -550,26 +475,16 @@ public class ScaleController implements Initializable, Validatable,
         txtWeightScaleId.clear();
 
         txtCustomer.clear();
-        txtDescription.clear();
-        txtReelNo.clear();
-        txtJobNo.clear();
-        txtSize.clear();
-        txtLength.clear();
-        txtWidth.clear();
-        txtEPFNo.clear();
-        txtBatchNo.clear();
+
+       
         txtMachine.clear();
-        txtGauge.clear();
-        txtQty.clear();
-        txtGrossWeight.clear();
+        
         txtNetWeight.clear();
         txtNetWeight1.clear();
         customerCode = "";
         txtWeightScaleId.setText(scaleDAO.generateID());
         System.out.println("ID : " + scaleDAO.generateID());
-        txtReelNo.setText("0");
-
-        txtGrossWeight.setText("0.00");
+        
         txtNetWeight.setText("0.00");
         txtNetWeight1.setText("0.00");
 
@@ -843,7 +758,7 @@ public class ScaleController implements Initializable, Validatable,
                     CustomerIdPopup p = null;
                     p = (CustomerIdPopup) customerIdTable.getSelectionModel().
                             getSelectedItem();
-                    clearInput();
+                    //clearInput();
 
                     if (p.getColCustomerName() != null) {
                         txtCustomer.setText(p.getColCustomerName());
@@ -911,54 +826,18 @@ public class ScaleController implements Initializable, Validatable,
 
         });
 
-        //Size popup------------------------
-        sizeIdTable = sizeIdPopup.tableViewLoader(sizeData);
 
-        sizeIdTable.setOnMouseClicked(e -> {
-            if (e.getClickCount() == 2) {
-                try {
-                    SizePopup p = null;
-                    p = (SizePopup) sizeIdTable.getSelectionModel().
-                            getSelectedItem();
-
-                    if (p.getColSize() != null) {
-                        txtSize.setText(p.getColSize());
-
-                    }
-
-                } catch (NullPointerException n) {
-
-                }
-
-                sizeIdPop.hide();
-                validatorInitialization();
-
-            }
-
-        });
-
-        sizeIdTable.setOnMousePressed(e -> {
-
-            if (e.getButton() == MouseButton.SECONDARY) {
-
-                sizeIdPop.hide();
-                validatorInitialization();
-
-            }
-
-        });
 
         customerIdPop = new PopOver(customerIdTable);
-        sizeIdPop = new PopOver(sizeIdTable);
+        
         machineIdPop = new PopOver(machineIdTable);
 
         stage.setOnCloseRequest(e -> {
 
-            if (customerIdPop.isShowing() || sizeIdPop.isShowing()
+            if (customerIdPop.isShowing() 
                     || machineIdPop.isShowing()) {
                 e.consume();
                 customerIdPop.hide();
-                sizeIdPop.hide();
                 machineIdPop.hide();
 
             }
