@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WeightInfo" pageWidth="595" pageHeight="842" columnWidth="557" leftMargin="19" rightMargin="19" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="dcf61689-6c90-468a-b636-0647e262c817">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="from_date" class="java.lang.String"/>
+	<parameter name="to_date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+	s.weight_scale_id,
+	s.customer_code,
+	c.customer_name,
+	s.weight,
+	s.date,
+	s.time_stamp
+
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code
+where s.date between $P{from_date} and $P{to_date}]]>
+	</queryString>
+	<field name="weight_scale_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="weight" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="time_stamp" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="2" width="556" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[YOLTA PLANTATION (PVT) LTD
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="56" width="243" height="17" uuid="079ff8eb-9f28-4eae-b7d8-01c446d5d162"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUS. NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="54" width="85" height="19" uuid="e5cde872-3b9b-412f-8ba9-100958d58009"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUS. CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="54" width="125" height="19" uuid="b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="56" width="101" height="17" uuid="c27e750b-3921-4177-b1bc-15c8be84bb05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEIGHT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="55" width="556" height="1" uuid="485974cc-55a2-4704-9f1a-e96fbdfe9aa6"/>
+			</line>
+			<line>
+				<reportElement x="0" y="55" width="1" height="18" uuid="ef47a5fb-2da3-48c3-9e22-fd2ebd6bd841"/>
+			</line>
+			<line>
+				<reportElement x="126" y="55" width="1" height="18" uuid="9b63cd92-c4de-4e5e-91cc-625583624462"/>
+			</line>
+			<line>
+				<reportElement x="212" y="55" width="1" height="18" uuid="e43c28ff-fb6a-479c-9f1e-99a3a7021685"/>
+			</line>
+			<line>
+				<reportElement x="454" y="55" width="1" height="18" uuid="4ca81fc3-3162-4dbb-985e-580e9cbfd2c0"/>
+			</line>
+			<line>
+				<reportElement x="556" y="55" width="1" height="18" uuid="4c56495a-dc6a-43b0-8f6a-fb01830076bc"/>
+			</line>
+			<line>
+				<reportElement x="0" y="72" width="557" height="1" uuid="5c357fd9-5ede-486b-b73a-ccbc381cdc8b"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="19">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="220" y="0" width="234" height="18" uuid="cae10bab-4c20-46a8-a23a-2df0d4746afa"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="130" y="1" width="83" height="17" uuid="1e7b435a-d954-43c5-9f32-f27a8d5bac7c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customer_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="455" y="-1" width="96" height="19" uuid="4436c9aa-5ca7-4bfe-a1f9-72ba970410f6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
+				<reportElement x="1" y="1" width="125" height="17" uuid="a135b957-5e80-4693-a1b7-003f9ed7b572"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="18" width="557" height="1" uuid="984cc717-9dbd-495a-b2c2-94ffd8712927"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="18" uuid="03151eac-5704-43de-8efe-4f7e095b95b7"/>
+			</line>
+			<line>
+				<reportElement x="126" y="0" width="1" height="18" uuid="d718d2b3-875c-4b6c-90be-2978fc110908"/>
+			</line>
+			<line>
+				<reportElement x="212" y="0" width="1" height="18" uuid="b05fbc56-7c32-4224-a81e-5fe378954abf"/>
+			</line>
+			<line>
+				<reportElement x="454" y="0" width="1" height="18" uuid="a90b88af-c131-47c6-a0e4-5b053b089c9f"/>
+			</line>
+			<line>
+				<reportElement x="556" y="0" width="1" height="18" uuid="4005f344-cc60-400c-a55b-2df750951000"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
