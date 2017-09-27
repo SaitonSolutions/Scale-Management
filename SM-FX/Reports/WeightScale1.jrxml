@@ -63,7 +63,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 			</textField>
 			<staticText>
 				<reportElement x="52" y="39" width="8" height="19" uuid="9b6039c3-0860-4eb5-87ef-217c7c95e4b0"/>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
@@ -84,7 +84,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 			</textField>
 			<staticText>
 				<reportElement x="52" y="58" width="8" height="19" uuid="a44e0f91-87f2-4edc-b557-78b87d7e7972"/>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
@@ -98,7 +98,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 			</staticText>
 			<staticText>
 				<reportElement x="52" y="77" width="8" height="19" uuid="ea77c049-61ca-4573-a59e-7cad8527e643"/>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
@@ -119,7 +119,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 			</staticText>
 			<staticText>
 				<reportElement x="52" y="96" width="8" height="19" uuid="b7b0995a-bb75-4262-8501-47905d7126e7"/>
-				<textElement verticalAlignment="Middle">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[:]]></text>
