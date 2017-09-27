@@ -1,12 +1,8 @@
 package com.saiton.ccs.scale;
 
-import com.saiton.ccs.base.UserPermission;
-import com.saiton.ccs.base.UserSession;
-import com.saiton.ccs.msgbox.MessageBox;
-import com.saiton.ccs.msgbox.SimpleMessageBoxFactory;
-import com.saiton.ccs.popup.ItemInfoPopup;
-import com.saiton.ccs.popup.ServiceInfoPopup;
-import com.saiton.ccs.salesdao.ServiceDAO;
+import com.saiton.ccs.printerservice.ReportPath;
+import com.saiton.ccs.scaledao.ScaleDAO;
+import com.saiton.ccs.uihandle.ReportGenerator;
 import com.saiton.ccs.uihandle.StagePassable;
 import com.saiton.ccs.uihandle.UiMode;
 import com.saiton.ccs.validations.CustomTableViewValidationImpl;
@@ -15,8 +11,12 @@ import com.saiton.ccs.validations.CustomTextFieldValidationImpl;
 import com.saiton.ccs.validations.ErrorMessages;
 import com.saiton.ccs.validations.FormatAndValidate;
 import com.saiton.ccs.validations.Validatable;
+import java.io.File;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -38,6 +38,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import org.controlsfx.control.PopOver;
 import org.controlsfx.validation.ValidationResult;
 import org.controlsfx.validation.ValidationSupport;
@@ -45,95 +46,76 @@ import org.controlsfx.validation.ValidationSupport;
 public class SearchWeightScaleController implements Initializable, Validatable,
         StagePassable {
 
-    //<editor-fold defaultstate="collapsed" desc="Initcomponent">
-    @FXML
-    private TableColumn<?, ?> tcCoreWeight;
-
     @FXML
     private Button btnClose;
 
     @FXML
-    private TableColumn<?, ?> tcWeightScaleID;
+    private TableColumn<Item, String> tcDate;
+    @FXML
+    private TableColumn<Item, String> tcWeightScaleID;
 
     @FXML
-    private ComboBox<?> cmbScale;
+    private TableColumn<Item, String> tcScale;
 
     @FXML
-    private TableColumn<?, ?> tcGrossWeight;
+    private TableColumn<Item, String> tcCustomer;
 
     @FXML
-    private TableColumn<?, ?> tcBatchNo;
+    private TableColumn<Item, String> tcNetWeight;
 
     @FXML
-    private TableColumn<?, ?> tcJobNo;
-
-    @FXML
-    private TableColumn<?, ?> tcNetWeight;
+    private ComboBox<String> cmbScale;
 
     @FXML
     private DatePicker dtpFromDate;
 
     @FXML
-    private TableColumn<?, ?> tcLenght;
-
-    @FXML
-    private TableColumn<?, ?> tcWidth;
-
-    @FXML
-    private TableColumn<?, ?> tcGauge;
-
-    @FXML
-    private TableColumn<?, ?> tcCustomer;
-
-    @FXML
-    private TableColumn<?, ?> tcReelNo;
-
-    @FXML
-    private TableColumn<?, ?> tcQty;
-
-    @FXML
     private DatePicker dtpToDate;
 
     @FXML
-    private TableColumn<?, ?> tcMachine;
+    private TableView<Item> tblItemList;
 
-    @FXML
-    private TableColumn<?, ?> tcDate;
+    private ObservableList tableScaleData = FXCollections.
+            observableArrayList();
 
-    @FXML
-    private TableColumn<?, ?> tcScale;
-
-    @FXML
-    private TableColumn<?, ?> tcEPFNo;
-
-    @FXML
-    private TableColumn<?, ?> tcDescription;
-
-    @FXML
-    private TableColumn<?, ?> tcSize;
 //</editor-fold>
-    
     private Stage stage;
-    
+
+    ScaleDAO scaleDAO = new ScaleDAO();
+    Item scaleItem = new Item();
+
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
-
     @FXML
     void btnCloseOnAction(ActionEvent event) {
+
+        HashMap param = new HashMap();
+        param.put("from_date", dtpFromDate.
+                getValue().toString());
+        param.put("to_date", dtpToDate.
+                getValue().toString());
+
+        File fileOne
+                = new File(
+                        ReportPath.PATH_WEIGHT_INFO.
+                        toString());
+        String img = fileOne.getAbsolutePath();
+        ReportGenerator r = new ReportGenerator(img, param);
+
+        r.setVisible(true);
 
     }
 
     @FXML
     void dtpFromDateOnAction(ActionEvent event) {
-
+        loadTableData();
     }
 
     @FXML
     void dtpToDateOnAction(ActionEvent event) {
-
+        loadTableData();
     }
-
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Click Events">
@@ -142,24 +124,35 @@ public class SearchWeightScaleController implements Initializable, Validatable,
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-//        tcServiceId.setCellValueFactory(new PropertyValueFactory<Item, String>(
-//                "colServiceId"));
-//        tcServiceName.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceName"));
-//        tcServicePrice.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServicePrice"));
-//        tcServiceDescription.setCellValueFactory(
-//                new PropertyValueFactory<Item, String>(
-//                        "colServiceDescription"));
+        tcDate.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colDate"));
+        tcWeightScaleID.setCellValueFactory(
+                new PropertyValueFactory<Item, String>(
+                        "colWeightScaleID"));
+        tcScale.setCellValueFactory(
+                new PropertyValueFactory<Item, String>(
+                        "colScale"));
+
+        tcCustomer.setCellValueFactory(
+                new PropertyValueFactory<Item, String>(
+                        "colCustomer"));
 //
-//        tblItemList.setItems(TableItemData);
+        tcNetWeight.setCellValueFactory(
+                new PropertyValueFactory<Item, String>(
+                        "colNetWeight"));
 //
+        tblItemList.setItems(tableScaleData);
+
+        loadScaleNames();
+
+        dateFormatter("yyyy-MM-dd");
+        dtpFromDate.setValue(LocalDate.now());
+        dtpToDate.setValue(LocalDate.now());
+
+        loadTableData();
 //        mb = SimpleMessageBoxFactory.createMessageBox();
 //        txtServiceId.setText(serviceDAO.generateID());
 //        btnDelete.setVisible(false);
-
     }
 
     @Override
@@ -327,163 +320,118 @@ public class SearchWeightScaleController implements Initializable, Validatable,
 //        }
     }
 
-    private void setUiMode(UiMode uiMode) {
-
-        switch (uiMode) {
-
-            case SAVE:
-                disableUi(false);
-                deactivateSearch();
-
-                break;
-
-            case DELETE:
-                disableUi(false);
-
-
-                deactivateCombo();
-
-                break;
-
-            case READ_ONLY:
-                disableUi(false);
-                deactivateCombo();
-
-                break;
-
-            case ALL_BUT_DELETE:
-                disableUi(false);
-
-                break;
-
-            case FULL_ACCESS:
-                disableUi(false);
-                break;
-
-            case NO_ACCESS:
-                disableUi(true);
-
-                break;
-
-        }
-
-    }
-
     private void disableUi(boolean state) {
 
         btnClose.setDisable(state);
         btnClose.setVisible(!state);
     }
 
-    private void deactivateSearch() {
-
-//        componentControl.deactivateSearch(lblItemName, txtItemName,
-//                btnItemNameSearch,
-//                220.00, 0.00);
-    }
-
-    private void deactivateCombo() {
-//        componentControl.controlCComboBox(lblItemId1, cmbBatchNo, btnBatchNo,
-//                220.00, 0.0, true);
-    }
-
-    private void itemTableDataLoader(String keyword) {
-
-//        itemData.clear();
-//        ArrayList<ArrayList<String>> itemInfo
-//                = new ArrayList<ArrayList<String>>();
-//        ArrayList<ArrayList<String>> list = serviceDAO.searchItemDetails(keyword);
-//
-//        if (list != null) {
-//
-//            for (int i = 0; i < list.size(); i++) {
-//
-//                itemInfo.add(list.get(i));
-//            }
-//
-//            if (itemInfo != null && itemInfo.size() > 0) {
-//                for (int i = 0; i < itemInfo.size(); i++) {
-//
-//                    itemPopup = new ServiceInfoPopup();
-//                    itemPopup.colItemID.setValue(itemInfo.get(i).get(0));
-//                    itemPopup.colItemName.setValue(itemInfo.get(i).get(1));
-//                    itemPopup.colItemDesc.setValue(itemInfo.get(i).get(2));
-//                    itemPopup.colItemPrice.setValue(itemInfo.get(i).get(3));
-//                    
-//                    
-//                    itemData.add(itemPopup);
-//                }
-//            }
-//
-//        }
-    }
-
     @Override
     public void setStage(Stage stage, Object[] obj) {
 
         this.stage = stage;
-//        setUserAccessLevel();
-//        
-//        //item popup------------------------
-//        itemTable = itemPopup.tableViewLoader(itemData);
-//
-//        itemTable.setOnMouseClicked(e -> {
-//            if (e.getClickCount() == 2) {
-//                try {
-//                    btnDelete.setVisible(true);
-//                    ServiceInfoPopup p = null;
-//                    p = (ServiceInfoPopup) itemTable.getSelectionModel().
-//                            getSelectedItem();
-//                    if (p.getColItemID() != null) {
-//                        clearValidations();
-//
-//                        txtServiceId.setText(p.getColItemID());
-//                        txtService.setText(p.getColItemName());
-//                        txtDescription.setText(p.getColItemDesc());
-//                        txtPrice.setText(p.getColItemPrice());
-//                        txtUserName.setText(serviceDAO.getUserName(
-//                                txtServiceId.getText()));
-//                        
-//                        
-//                    }
-//
-//                } catch (NullPointerException n) {
-//
-//                }
-//
-//                itemPop.hide();
-//                validatorInitialization();
-//
-//            }
-//
-//        });
-//
-//        itemTable.setOnMousePressed(e -> {
-//
-//            if (e.getButton() == MouseButton.SECONDARY) {
-//
-//                itemPop.hide();
-//                validatorInitialization();
-//
-//            }
-//
-//        });
-//
-//        itemPop = new PopOver(itemTable);
-//
-//        stage.setOnCloseRequest(e -> {
-//
-//            if (itemPop.isShowing()) {
-//                e.consume();
-//                itemPop.hide();
-//
-//            }
-//        });
-//
-//        
-//        
-//        
-//        validatorInitialization();
+    }
+
+    private void loadScaleNames() {
+
+        cmbScale.getItems().clear();
+        ArrayList<String> list = null;
+        list = scaleDAO.loadScaleItem();
+        if (list != null) {
+            try {
+                ObservableList<String> List = FXCollections.observableArrayList(
+                        list);
+                cmbScale.setItems(List);
+                cmbScale.setValue(List.get(0));
+            } catch (Exception e) {
+
+            }
+
+        }
+    }
+
+    private void dateFormatter(String pattern) {
+
+        dtpFromDate.setConverter(new StringConverter<LocalDate>() {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(
+                    pattern);
+
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+
+        dtpToDate.setConverter(new StringConverter<LocalDate>() {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(
+                    pattern);
+
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+
+    }
+
+    private void loadTableData() {
+
+        tableScaleData.clear();
+
+        ArrayList<ArrayList<String>> scaleInfo
+                = new ArrayList<>();
+        ArrayList<ArrayList<String>> list = scaleDAO.loadScaleInfo(dtpFromDate.
+                getValue().toString(), dtpToDate.getValue().toString());
+
+        if (list != null) {
+
+            for (int i = 0; i < list.size(); i++) {
+
+                scaleInfo.add(list.get(i));
+            }
+
+            if (scaleInfo != null && scaleInfo.size() > 0) {
+                for (int i = 0; i < scaleInfo.size(); i++) {
+
+                    scaleItem = new Item();
+                    scaleItem.colDate.setValue(scaleInfo.get(i).get(0));
+                    scaleItem.colWeightScaleID.setValue(scaleInfo.get(i).get(1));
+                    scaleItem.colScale.setValue(scaleInfo.get(i).get(2));
+                    scaleItem.colCustomer.setValue(scaleInfo.get(i).get(3));
+                    scaleItem.colNetWeight.setValue(scaleInfo.get(i).get(4));
+
+                    tableScaleData.add(scaleItem);
+                }
+            }
+
+        }
+
     }
 
     private void validatorInitialization() {
@@ -514,39 +462,46 @@ public class SearchWeightScaleController implements Initializable, Validatable,
 //                        ErrorMessages.EmptyListView));
     }
 
-
-
     public class Item {
 
-        public SimpleStringProperty colServiceId = new SimpleStringProperty(
-                "tcServiceId");
-        public SimpleStringProperty colServiceName = new SimpleStringProperty(
-                "tcServiceName");
-        public SimpleStringProperty colServicePrice
+        public SimpleStringProperty colDate = new SimpleStringProperty(
+                "tcDate");
+        public SimpleStringProperty colWeightScaleID
                 = new SimpleStringProperty(
-                        "tcServicePrice");
-        public SimpleStringProperty colServiceDescription
+                        "tcWeightScaleID");
+
+        public SimpleStringProperty colScale = new SimpleStringProperty(
+                "tcScale");
+
+        public SimpleStringProperty colCustomer = new SimpleStringProperty(
+                "tcCustomer");
+
+        public SimpleStringProperty colNetWeight
                 = new SimpleStringProperty(
-                        "tcServiceDescription");
+                        "tcNetWeight");
 
-        public String getColServiceId() {
-            return colServiceId.get();
+        public String getColDate() {
+            return colDate.get();
         }
 
-        public String getColServiceName() {
-            return colServiceName.get();
+        public String getColWeightScaleID() {
+            return colWeightScaleID.get();
         }
 
-        public String getColServicePrice() {
-            return colServicePrice.get();
+        public String getColScale() {
+            return colScale.get();
         }
 
-        public String getColServiceDescription() {
-            return colServiceDescription.get();
+        public String getColCustomer() {
+            return colCustomer.get();
         }
 
-        public void setColServiceName(String serviceName) {
-            colServiceName.setValue(serviceName);
+        public String getColNetWeight() {
+            return colNetWeight.get();
+        }
+
+        public void setColNetWeight(String serviceName) {
+            colNetWeight.setValue(serviceName);
         }
 
     }

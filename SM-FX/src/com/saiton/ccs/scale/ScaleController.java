@@ -280,6 +280,10 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
 
+       // calculate();
+        System.out.println("Reading value...");
+        scaleCofigLoader(cmbScale.getValue());
+        txtNetWeight.setText(getScaleReading());
         calculate();
 
 //        net = gross - core

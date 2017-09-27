@@ -565,5 +565,86 @@ public class ScaleDAO {
         }
         return list;
     }
+    
+    public ArrayList<ArrayList<String>> loadScaleInfo(String dateFrom , String dateTo) {
+
+   
+
+        String scaleId = null;
+        String weight_scale_id = null;
+        String cus_code = null;
+        String weight = null;
+        String date = null;
+
+        ArrayList<ArrayList<String>> Mainlist = new ArrayList<>();
+
+        if (star.con == null) {
+
+            log.info(" Exception tag --> " + "Databse connection failiure. ");
+            return null;
+
+        } else {
+            try {
+
+                String query = "SELECT * FROM scale WHERE (date BETWEEN ? AND ? )";
+                       
+                        
+
+                PreparedStatement pstmt = star.con.prepareStatement(query);
+                
+                pstmt.setString(1, dateFrom );
+                pstmt.setString(2,  dateTo);
+
+                ResultSet r = pstmt.executeQuery();
+
+                while (r.next()) {
+
+                    ArrayList<String> list = new ArrayList<>();
+
+                    weight_scale_id = r.getString("weight_scale_id");
+                    scaleId = r.getString("scale_id");
+                    cus_code = r.getString("customer_code");
+                    weight = r.getString("weight");
+                    date = r.getString("date");
+                    
+                    list.add(date);
+                    list.add(weight_scale_id);
+                    list.add(scaleId);
+                    list.add(cus_code);
+                    list.add(weight);
+                    
+                    
+
+                    Mainlist.add(list);
+
+                }
+
+            } catch (ArrayIndexOutOfBoundsException | SQLException |
+                    NullPointerException e) {
+
+                if (e instanceof ArrayIndexOutOfBoundsException) {
+
+                    log.error("Exception tag --> "
+                            + "Invalid entry location for list");
+
+                } else if (e instanceof SQLException) {
+
+                    log.error("Exception tag --> " + "Invalid sql statement");
+
+                } else if (e instanceof NullPointerException) {
+
+                    log.error("Exception tag --> " + "Empty entry for list");
+
+                }
+                return null;
+            } catch (Exception e) {
+
+                log.error("Exception tag --> " + "Error");
+
+                return null;
+            }
+        }
+        return Mainlist;
+    }
 
 }

@@ -21,11 +21,11 @@
               <children>
                 <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="6" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="2">
                   <children>
-                    <Button fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="50.0" prefWidth="150.0" text="Close">
+                    <Button fx:id="btnClose" mnemonicParsing="false" onAction="#btnCloseOnAction" prefHeight="50.0" prefWidth="150.0" text="Print">
                       <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                           <image>
-                            <Image url="@../res/img-close.png" />
+                            <Image url="@../res/img-print.png" />
                           </image>
                         </ImageView>
                       </graphic>
@@ -88,26 +88,13 @@
                               <Insets right="35.0" />
                            </GridPane.margin>
                         </HBox>
-                        <TableView prefHeight="420.0" prefWidth="1079.0" GridPane.columnSpan="10" GridPane.rowIndex="3" GridPane.rowSpan="7">
+                        <TableView fx:id="tblItemList" prefHeight="420.0" prefWidth="1079.0" GridPane.columnSpan="10" GridPane.rowIndex="3" GridPane.rowSpan="7">
                           <columns>
-                            <TableColumn fx:id="tcWeightScaleID" prefWidth="75.0" text="Weight Scale ID" />
-                            <TableColumn fx:id="tcScale" prefWidth="50.0" text="Scale" />
-                              <TableColumn fx:id="tcCustomer" prefWidth="75.0" text="Customer" />
-                              <TableColumn fx:id="tcBatchNo" prefWidth="50.0" text="Batch No" />
-                              <TableColumn fx:id="tcDescription" prefWidth="75.0" text="Description" />
-                              <TableColumn fx:id="tcMachine" prefWidth="75.0" text="Machine" />
-                              <TableColumn fx:id="tcJobNo" prefWidth="75.0" text="Job No" />
-                              <TableColumn fx:id="tcGauge" prefWidth="60.0" text="Gauge" />
-                              <TableColumn fx:id="tcReelNo" prefWidth="50.0" text="Reel No" />
-                              <TableColumn fx:id="tcQty" prefWidth="50.0" text="Qty" />
-                              <TableColumn fx:id="tcSize" prefWidth="50.0" text="Size" />
-                              <TableColumn fx:id="tcGrossWeight" prefWidth="75.0" text="Gross Weight" />
-                              <TableColumn fx:id="tcNetWeight" prefWidth="75.0" text="Net Weight" />
-                              <TableColumn fx:id="tcCoreWeight" prefWidth="75.0" text="Core Weight" />
-                              <TableColumn fx:id="tcLenght" prefWidth="50.0" text="Length" />
-                              <TableColumn fx:id="tcWidth" prefWidth="50.0" text="Width" />
-                              <TableColumn fx:id="tcEPFNo" prefWidth="75.0" text="EPF No" />
-                              <TableColumn fx:id="tcDate" prefWidth="50.0" text="Date" />
+                              <TableColumn fx:id="tcDate" prefWidth="148.0" text="Date" />
+                            <TableColumn fx:id="tcWeightScaleID" prefWidth="128.0" text="Weight Scale ID" />
+                            <TableColumn fx:id="tcScale" minWidth="0.0" prefWidth="196.0" text="Scale" />
+                              <TableColumn fx:id="tcCustomer" prefWidth="526.0" text="Customer" />
+                              <TableColumn fx:id="tcNetWeight" minWidth="0.0" prefWidth="136.0" text="Net Weight" />
                           </columns>
                            <GridPane.margin>
                               <Insets left="30.0" right="35.0" />
