@@ -131,6 +131,9 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="0" y="140" width="190" height="1" uuid="a91338c6-a622-4a32-8c82-b51d3ee644b8"/>
+			</line>
 		</band>
 	</title>
 </jasperReport>
