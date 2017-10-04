@@ -107,6 +107,31 @@
                               <Insets left="30.0" right="35.0" />
                            </GridPane.margin>
                         </TableView>
+                        <HBox id="HBox" alignment="CENTER" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="lblSearch" prefWidth="200.0" text="Customer">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="txtRentCost" fx:id="txtSCustomer" onKeyReleased="#txtSCustomerKeyReleased" prefHeight="50.0" prefWidth="240.0" promptText="Customer" HBox.hgrow="ALWAYS" />
+                              <Button id="btnSearch" fx:id="btnSearchCustomer" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnSearchCustomerOnAction" prefHeight="50.0" prefWidth="50.0" text="">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="26.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" right="27.0" />
+                           </GridPane.margin>
+                        </HBox>
               </children>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="100.0" />

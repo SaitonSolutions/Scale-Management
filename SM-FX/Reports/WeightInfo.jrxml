@@ -171,15 +171,29 @@ Weight (Kgs.)]]></text>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{to_date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="125" y="26" width="22" height="9" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
+				<reportElement x="105" y="26" width="42" height="9" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[Date :]]></text>
+				<text><![CDATA[To Date :]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="2" y="26" width="42" height="9" uuid="73f9176f-d32f-4fc2-81a1-c05951616f68"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[From Date :]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="43" y="26" width="45" height="9" uuid="26e32868-92aa-4132-bc54-92198ac3928e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<detail>
