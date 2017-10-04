@@ -177,7 +177,7 @@
                               <Insets />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="4">
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="168.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="6">
                            <children>
                               <Label prefWidth="200.0" text="Date">
                                  <font>
@@ -252,6 +252,167 @@
                            <opaqueInsets>
                               <Insets bottom="10.0" />
                            </opaqueInsets>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="lblItemId1" prefWidth="200.0" text="No Of Bags">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtNoOfBags" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtNoOfBagsOnKeyReleased" prefWidth="300.0" promptText="No Of Bags">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="lblItemId11" prefWidth="200.0" text="Tare">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtTare" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtTareOnKeyReleased" prefWidth="300.0" promptText="Tare">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="230.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="lblItemId111" prefWidth="200.0" text="Coarse Leaf">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCoarseLeaf" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtCoarseLeafOnKeyReleased" prefWidth="300.0" promptText="Coarse Leaf">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="290.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="lblItemId1111" prefWidth="200.0" text="Water">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtWater" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtWaterOnKeyReleased" prefWidth="300.0" promptText="Water">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="350.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="lblItemId11111" prefWidth="200.0" text="Boil Leaf">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtBoilLeaf" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtBoilLeafOnKeyReleased" prefWidth="300.0" promptText="Boil Leaf">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="170.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="4">
+                           <children>
+                              <Label prefWidth="200.0" text="Core Weight">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtCoreWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnRefreshCoreWeight" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshCoreWeightOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-refreshNew.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="230.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="5">
+                           <children>
+                              <Label prefWidth="200.0" text="GrossWeight">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtGrossWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Gross Weight">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnRefreshGrossWeight" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#btnRefreshGrossWeightOnAction" prefHeight="50.0" prefWidth="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../res/img-refreshNew.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
                         </HBox>
               </children>
               <columnConstraints>

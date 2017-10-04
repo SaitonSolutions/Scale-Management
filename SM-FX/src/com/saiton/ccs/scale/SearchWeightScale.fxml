@@ -90,11 +90,18 @@
                         </HBox>
                         <TableView fx:id="tblItemList" prefHeight="420.0" prefWidth="1079.0" GridPane.columnSpan="10" GridPane.rowIndex="3" GridPane.rowSpan="7">
                           <columns>
-                              <TableColumn fx:id="tcDate" prefWidth="148.0" text="Date" />
-                            <TableColumn fx:id="tcWeightScaleID" prefWidth="128.0" text="Weight Scale ID" />
-                            <TableColumn fx:id="tcScale" minWidth="0.0" prefWidth="196.0" text="Scale" />
-                              <TableColumn fx:id="tcCustomer" prefWidth="526.0" text="Customer" />
-                              <TableColumn fx:id="tcNetWeight" minWidth="0.0" prefWidth="136.0" text="Net Weight" />
+                              <TableColumn fx:id="tcDate" prefWidth="100.0" text="Date" />
+                            <TableColumn fx:id="tcWeightScaleID" prefWidth="100.0" text="Weight Scale ID" />
+                            <TableColumn fx:id="tcScale" minWidth="0.0" prefWidth="100.0" text="Scale" />
+                              <TableColumn fx:id="tcCustomer" prefWidth="195.0" text="Customer" />
+                              <TableColumn fx:id="tcNoOfBags" minWidth="0.0" text="No Of Bags" />
+                              <TableColumn fx:id="tcGrossWeight" minWidth="0.0" text="GrossWeight" />
+                              <TableColumn fx:id="tcTare" minWidth="0.0" text="Tare" />
+                              <TableColumn fx:id="tcCoarseLeaf" minWidth="0.0" text="Coarse Leaf" />
+                              <TableColumn fx:id="tcWater" minWidth="0.0" text="Water" />
+                              <TableColumn fx:id="tcBoilLeaf" minWidth="0.0" text="Boil Leaf" />
+                              <TableColumn fx:id="tcNetWeight" minWidth="0.0" text="Net Weight" />
+                              <TableColumn fx:id="tcCoreWeight" minWidth="0.0" text="Core Weight" />
                           </columns>
                            <GridPane.margin>
                               <Insets left="30.0" right="35.0" />
