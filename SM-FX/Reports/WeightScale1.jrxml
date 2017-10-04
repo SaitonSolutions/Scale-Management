@@ -9,7 +9,7 @@
 	s.weight_scale_id,
 	s.customer_code,
 	c.customer_name,
-	s.weight,
+	s.net_weight,
 	s.date,
 	s.time_stamp
 
@@ -26,7 +26,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 	<field name="customer_name" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="weight" class="java.lang.Double">
+	<field name="net_weight" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="date" class="java.sql.Date">
@@ -45,7 +45,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="14" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[YOLTA TEA FACTORY]]></text>
+				<text><![CDATA[YALTA TEA FACTORY]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="39" width="52" height="19" uuid="079ff8eb-9f28-4eae-b7d8-01c446d5d162"/>
@@ -129,7 +129,7 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{weight}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{net_weight}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="140" width="190" height="1" uuid="a91338c6-a622-4a32-8c82-b51d3ee644b8"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WeightInfo" pageWidth="190" pageHeight="802" columnWidth="190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="dcf61689-6c90-468a-b636-0647e262c817">
-	<property name="ireport.zoom" value="4.0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="WeightInfoA4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcf61689-6c90-468a-b636-0647e262c817">
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="from_date" class="java.lang.String"/>
@@ -63,7 +63,7 @@ where s.date between $P{from_date} and $P{to_date}]]>
 	<title>
 		<band height="73" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="0" width="189" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
+				<reportElement x="1" y="0" width="554" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="16" isBold="true" isUnderline="false"/>
 				</textElement>
@@ -72,111 +72,110 @@ where s.date between $P{from_date} and $P{to_date}]]>
 ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="33" y="37" width="19" height="36" uuid="e5cde872-3b9b-412f-8ba9-100958d58009"/>
+				<reportElement x="112" y="37" width="72" height="36" uuid="e5cde872-3b9b-412f-8ba9-100958d58009"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[No. of
 Bags]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="37" width="33" height="36" uuid="b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c"/>
+				<reportElement x="2" y="37" width="110" height="36" uuid="b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true"/>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[CUS.
-CODE]]></text>
+				<text><![CDATA[CUS. CODE]]></text>
 			</staticText>
 			<line>
-				<reportElement x="-1" y="37" width="191" height="1" uuid="485974cc-55a2-4704-9f1a-e96fbdfe9aa6"/>
+				<reportElement x="-1" y="37" width="555" height="1" uuid="485974cc-55a2-4704-9f1a-e96fbdfe9aa6"/>
 			</line>
 			<line>
 				<reportElement x="-1" y="38" width="1" height="35" uuid="ef47a5fb-2da3-48c3-9e22-fd2ebd6bd841"/>
 			</line>
 			<line>
-				<reportElement x="139" y="38" width="1" height="35" uuid="9b63cd92-c4de-4e5e-91cc-625583624462"/>
+				<reportElement x="487" y="38" width="1" height="35" uuid="9b63cd92-c4de-4e5e-91cc-625583624462"/>
 			</line>
 			<line>
-				<reportElement x="160" y="38" width="1" height="35" uuid="e43c28ff-fb6a-479c-9f1e-99a3a7021685"/>
+				<reportElement x="438" y="38" width="1" height="35" uuid="e43c28ff-fb6a-479c-9f1e-99a3a7021685"/>
 			</line>
 			<line>
-				<reportElement x="189" y="38" width="1" height="35" uuid="4ca81fc3-3162-4dbb-985e-580e9cbfd2c0"/>
+				<reportElement x="328" y="38" width="1" height="35" uuid="4ca81fc3-3162-4dbb-985e-580e9cbfd2c0"/>
 			</line>
 			<line>
-				<reportElement x="33" y="38" width="1" height="35" uuid="4c56495a-dc6a-43b0-8f6a-fb01830076bc"/>
+				<reportElement x="554" y="38" width="1" height="35" uuid="4c56495a-dc6a-43b0-8f6a-fb01830076bc"/>
 			</line>
 			<line>
-				<reportElement x="0" y="72" width="190" height="1" uuid="5c357fd9-5ede-486b-b73a-ccbc381cdc8b"/>
+				<reportElement x="0" y="72" width="554" height="1" uuid="5c357fd9-5ede-486b-b73a-ccbc381cdc8b"/>
 			</line>
 			<staticText>
-				<reportElement x="51" y="37" width="26" height="36" uuid="6c652696-b2e4-49f8-b9a4-6e96ab21db93"/>
+				<reportElement x="186" y="37" width="95" height="36" uuid="6c652696-b2e4-49f8-b9a4-6e96ab21db93"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[Gross
-Weight (Kgs.)]]></text>
+				<text><![CDATA[Gross Weight
+(Kgs.)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="77" y="37" width="18" height="36" uuid="4324c052-51b4-495a-87fa-ba400622b0b3"/>
+				<reportElement x="281" y="37" width="46" height="36" uuid="4324c052-51b4-495a-87fa-ba400622b0b3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Tare]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="95" y="36" width="22" height="36" uuid="50e3dfa6-88ad-4dd5-9230-79b990bc986a"/>
+				<reportElement x="328" y="37" width="58" height="36" uuid="50e3dfa6-88ad-4dd5-9230-79b990bc986a"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Coarse
 Leaf]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="117" y="36" width="22" height="36" uuid="058cfda6-1c3d-4240-8495-5bd0ed71c59f"/>
+				<reportElement x="387" y="37" width="52" height="36" uuid="058cfda6-1c3d-4240-8495-5bd0ed71c59f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Water]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="139" y="36" width="22" height="36" uuid="be295e26-d3b8-4096-adcd-01048606a5c1"/>
+				<reportElement x="439" y="37" width="49" height="36" uuid="be295e26-d3b8-4096-adcd-01048606a5c1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Boil
 Leaf]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="161" y="36" width="28" height="36" uuid="a1aefe82-da8a-4c77-b265-dd40252686cc"/>
+				<reportElement x="488" y="37" width="67" height="36" uuid="a1aefe82-da8a-4c77-b265-dd40252686cc"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Net
 Weight (Kgs.)]]></text>
 			</staticText>
 			<line>
-				<reportElement x="51" y="37" width="1" height="35" uuid="c203c69b-8952-409e-a932-53017ac23952"/>
+				<reportElement x="387" y="37" width="1" height="35" uuid="c203c69b-8952-409e-a932-53017ac23952"/>
 			</line>
 			<line>
-				<reportElement x="76" y="37" width="1" height="35" uuid="8d121f87-5799-4555-971f-23abe527d281"/>
+				<reportElement x="281" y="37" width="1" height="35" uuid="8d121f87-5799-4555-971f-23abe527d281"/>
 			</line>
 			<line>
-				<reportElement x="94" y="37" width="1" height="35" uuid="ef871899-8f98-4d53-b791-2662d7fe88a3"/>
+				<reportElement x="186" y="37" width="1" height="35" uuid="ef871899-8f98-4d53-b791-2662d7fe88a3"/>
 			</line>
 			<line>
-				<reportElement x="116" y="37" width="1" height="35" uuid="7ebb10ae-9618-46a0-9fc5-74c250eb9ffc"/>
+				<reportElement x="112" y="37" width="1" height="35" uuid="7ebb10ae-9618-46a0-9fc5-74c250eb9ffc"/>
 			</line>
 			<textField pattern="yyyy/MM/dd">
-				<reportElement x="146" y="26" width="45" height="9" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
+				<reportElement x="486" y="14" width="69" height="21" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
 				<textElement verticalAlignment="Middle">
-					<font size="7"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="125" y="26" width="22" height="9" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
+				<reportElement x="453" y="14" width="31" height="21" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7" isBold="true" isStrikeThrough="false"/>
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
 				<text><![CDATA[Date :]]></text>
 			</staticText>
@@ -185,98 +184,91 @@ Weight (Kgs.)]]></text>
 	<detail>
 		<band height="19">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="140" y="1" width="20" height="17" uuid="cae10bab-4c20-46a8-a23a-2df0d4746afa"/>
+				<reportElement x="438" y="1" width="49" height="17" uuid="cae10bab-4c20-46a8-a23a-2df0d4746afa"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{boil_leaf}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="-1" y="18" width="191" height="1" uuid="984cc717-9dbd-495a-b2c2-94ffd8712927"/>
+				<reportElement x="-1" y="18" width="556" height="1" uuid="984cc717-9dbd-495a-b2c2-94ffd8712927"/>
 			</line>
 			<line>
 				<reportElement x="-1" y="0" width="1" height="18" uuid="03151eac-5704-43de-8efe-4f7e095b95b7"/>
 			</line>
 			<line>
-				<reportElement x="116" y="0" width="1" height="18" uuid="d718d2b3-875c-4b6c-90be-2978fc110908"/>
+				<reportElement x="112" y="0" width="1" height="18" uuid="d718d2b3-875c-4b6c-90be-2978fc110908"/>
 			</line>
 			<line>
-				<reportElement x="160" y="0" width="1" height="18" uuid="b05fbc56-7c32-4224-a81e-5fe378954abf"/>
+				<reportElement x="281" y="0" width="1" height="18" uuid="b05fbc56-7c32-4224-a81e-5fe378954abf"/>
 			</line>
 			<line>
-				<reportElement x="139" y="0" width="1" height="18" uuid="a90b88af-c131-47c6-a0e4-5b053b089c9f"/>
+				<reportElement x="328" y="0" width="1" height="18" uuid="a90b88af-c131-47c6-a0e4-5b053b089c9f"/>
 			</line>
 			<line>
-				<reportElement x="189" y="0" width="1" height="18" uuid="4005f344-cc60-400c-a55b-2df750951000"/>
+				<reportElement x="186" y="0" width="1" height="18" uuid="4005f344-cc60-400c-a55b-2df750951000"/>
 			</line>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="2" y="1" width="32" height="17" uuid="1e7b435a-d954-43c5-9f32-f27a8d5bac7c"/>
+				<reportElement x="2" y="1" width="110" height="17" uuid="1e7b435a-d954-43c5-9f32-f27a8d5bac7c"/>
 				<textElement textAlignment="Justified" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{customer_code}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="159" y="1" width="28" height="17" uuid="b6466e10-2088-440b-842e-a663a1c2efd7"/>
+				<reportElement x="486" y="1" width="66" height="17" uuid="b6466e10-2088-440b-842e-a663a1c2efd7"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{net_weight}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="94" y="0" width="1" height="18" uuid="a98eafec-01fe-45ea-b6cd-c8af4eee6775"/>
+				<reportElement x="387" y="0" width="1" height="18" uuid="a98eafec-01fe-45ea-b6cd-c8af4eee6775"/>
 			</line>
 			<line>
-				<reportElement x="76" y="0" width="1" height="18" uuid="6439f87e-106b-4250-baad-612f94b3a174"/>
+				<reportElement x="438" y="0" width="1" height="18" uuid="6439f87e-106b-4250-baad-612f94b3a174"/>
 			</line>
 			<line>
-				<reportElement x="51" y="0" width="1" height="18" uuid="300b1d41-0b13-4a50-b335-23fec3df593b"/>
+				<reportElement x="487" y="0" width="1" height="18" uuid="300b1d41-0b13-4a50-b335-23fec3df593b"/>
 			</line>
 			<line>
-				<reportElement x="33" y="0" width="1" height="18" uuid="3d12bd21-4b3a-4b01-8fb1-af966c5f9b7c"/>
+				<reportElement x="554" y="0" width="1" height="18" uuid="3d12bd21-4b3a-4b01-8fb1-af966c5f9b7c"/>
 			</line>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="34" y="1" width="17" height="17" uuid="5ff16d96-3ee0-41b2-973c-ec9c8fffb246"/>
+				<reportElement x="113" y="1" width="73" height="17" uuid="5ff16d96-3ee0-41b2-973c-ec9c8fffb246"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{no_of_bags}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="50" y="1" width="24" height="17" uuid="51111a56-9e20-44f0-8aa0-7d160872301f"/>
+				<reportElement x="184" y="1" width="95" height="17" uuid="51111a56-9e20-44f0-8aa0-7d160872301f"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gross_weight}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="76" y="1" width="18" height="17" uuid="1a4fecb7-1949-430d-a139-c882098e7169"/>
+				<reportElement x="282" y="1" width="45" height="17" uuid="1a4fecb7-1949-430d-a139-c882098e7169"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{tare}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="95" y="1" width="21" height="17" uuid="402391fc-b4ae-4b7e-a375-9309afa14eb1"/>
+				<reportElement x="329" y="1" width="57" height="17" uuid="402391fc-b4ae-4b7e-a375-9309afa14eb1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{corse_leaf}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="117" y="1" width="23" height="17" uuid="9c9a1096-0e90-4418-b398-41de50814a45"/>
+				<reportElement x="388" y="1" width="50" height="17" uuid="9c9a1096-0e90-4418-b398-41de50814a45"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="7"/>
+					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{water}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="28">
-			<line>
-				<reportElement x="-1" y="17" width="191" height="1" uuid="598d8da0-62ae-42d5-ab61-f41f176967d4"/>
-			</line>
-		</band>
-	</columnFooter>
 </jasperReport>

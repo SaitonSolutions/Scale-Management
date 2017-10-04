@@ -310,10 +310,17 @@ DROP TABLE IF EXISTS `scale`;
 CREATE TABLE `scale` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `weight_scale_id` varchar(45) NOT NULL,
+  `date` date DEFAULT NULL,
   `scale_id` varchar(45) NOT NULL,
   `customer_code` varchar(45) NOT NULL,
-  `weight` double DEFAULT NULL,
-  `date` date DEFAULT NULL,
+  `no_of_bags` int(11) DEFAULT NULL,
+  `gross_weight` double DEFAULT NULL,
+  `tare` int(11) DEFAULT NULL,
+  `corse_leaf` varchar(45) DEFAULT NULL,
+  `water` int(11) DEFAULT NULL,
+  `boil_leaf` varchar(45) DEFAULT NULL,
+  `net_weight` double DEFAULT NULL,
+  `core_weight` double DEFAULT NULL,
   `time_stamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`weight_scale_id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
@@ -321,7 +328,7 @@ CREATE TABLE `scale` (
   KEY `scale_fk2_idx` (`customer_code`),
   CONSTRAINT `scale_fk1` FOREIGN KEY (`scale_id`) REFERENCES `scale_register` (`scale_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `scale_fk2` FOREIGN KEY (`customer_code`) REFERENCES `customer` (`customer_code`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -330,6 +337,7 @@ CREATE TABLE `scale` (
 
 LOCK TABLES `scale` WRITE;
 /*!40000 ALTER TABLE `scale` DISABLE KEYS */;
+INSERT INTO `scale` VALUES (1,'WS0001','2017-09-27','SK0001','ABL',2,35,3,NULL,1,'A',55,39,'2017-10-04 18:03:23'),(2,'WS0002','2017-09-27','SK0001','ABL',1,17,2,NULL,1,'A',35,20,'2017-10-04 18:03:23');
 /*!40000 ALTER TABLE `scale` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -348,7 +356,7 @@ CREATE TABLE `scale_register` (
   `board_rate` int(11) DEFAULT NULL,
   PRIMARY KEY (`scale_id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -357,6 +365,7 @@ CREATE TABLE `scale_register` (
 
 LOCK TABLES `scale_register` WRITE;
 /*!40000 ALTER TABLE `scale_register` DISABLE KEYS */;
+INSERT INTO `scale_register` VALUES (1,'SK0001','Skle01','0056',26);
 /*!40000 ALTER TABLE `scale_register` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -651,4 +660,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-23 21:19:20
+-- Dump completed on 2017-10-05  0:07:57
