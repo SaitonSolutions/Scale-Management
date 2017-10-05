@@ -246,13 +246,6 @@ Weight (Kgs.)]]></text>
 	</title>
 	<detail>
 		<band height="19">
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="465" y="1" width="37" height="17" uuid="cae10bab-4c20-46a8-a23a-2df0d4746afa"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{boil_leaf}]]></textFieldExpression>
-			</textField>
 			<line>
 				<reportElement x="-1" y="18" width="556" height="1" uuid="984cc717-9dbd-495a-b2c2-94ffd8712927"/>
 			</line>
@@ -274,13 +267,6 @@ Weight (Kgs.)]]></text>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="504" y="1" width="48" height="17" uuid="b6466e10-2088-440b-842e-a663a1c2efd7"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{net_weight}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="430" y="0" width="1" height="18" uuid="a98eafec-01fe-45ea-b6cd-c8af4eee6775"/>
@@ -307,27 +293,6 @@ Weight (Kgs.)]]></text>
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gross_weight}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="336" y="1" width="45" height="17" uuid="1a4fecb7-1949-430d-a139-c882098e7169"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{tare}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="382" y="1" width="48" height="17" uuid="402391fc-b4ae-4b7e-a375-9309afa14eb1"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{corse_leaf}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="431" y="1" width="35" height="17" uuid="9c9a1096-0e90-4418-b398-41de50814a45"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{water}]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement x="261" y="0" width="1" height="18" uuid="1190fd05-3d67-41fb-a9b5-b766124c8aff"/>
@@ -422,6 +387,13 @@ Weight (Kgs.)]]></text>
 			<line>
 				<reportElement x="409" y="50" width="143" height="1" uuid="836a8019-3b77-4480-9dec-e62c67be2636"/>
 			</line>
+			<staticText>
+				<reportElement x="2" y="0" width="92" height="17" uuid="2943130e-96fc-4731-8cb4-a86451d5855e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
 		</band>
 	</summary>
 </jasperReport>
