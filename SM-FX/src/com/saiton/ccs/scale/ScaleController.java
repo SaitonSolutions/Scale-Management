@@ -83,7 +83,6 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private DatePicker dtpDate;
 
-    @FXML
     private TextField txtNetWeight1;
 
     @FXML
@@ -104,16 +103,8 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private Button btnPrint;
 
-   
-
     @FXML
     private Label lblItemId;
-
-  
-
-    @FXML
-    private ComboBox<String> cmbLabel;
-//</editor-fold>
 
     private Stage stage;
     @FXML
@@ -124,13 +115,7 @@ public class ScaleController implements Initializable, Validatable,
     private Button btnRefreshCustomer;
     @FXML
     private Button btnCustomerAdd;
-   
-    @FXML
-    private Button btnSearchSize;
-    @FXML
-    private Button btnRefreshSize;
-    @FXML
-    private Button btnSizeAdd;
+
     @FXML
     private TextField txtMachine;
     @FXML
@@ -178,7 +163,7 @@ public class ScaleController implements Initializable, Validatable,
     //--------------
 
     ObservableList<String> locationList = FXCollections.observableArrayList(
-            "Factory", "Studio"
+            "Factory"
     );
 
     int baurdRate = 0;
@@ -186,6 +171,42 @@ public class ScaleController implements Initializable, Validatable,
     String scaleName = "";
     String scaleId = "";
     SerialController main = null;
+    @FXML
+    private Label lblItemId1;
+    @FXML
+    private TextField txtNoOfBags;
+    @FXML
+    private Label lblItemId11;
+    @FXML
+    private TextField txtTare;
+    @FXML
+    private Label lblItemId111;
+    @FXML
+    private TextField txtCoarseLeaf;
+    @FXML
+    private Label lblItemId1111;
+    @FXML
+    private TextField txtWater;
+    @FXML
+    private Label lblItemId11111;
+    @FXML
+    private TextField txtBoilLeaf;
+    @FXML
+    private TextField txtCoreWeight;
+    @FXML
+    private Button btnRefreshCoreWeight;
+    @FXML
+    private TextField txtGrossWeight;
+    @FXML
+    private Button btnRefreshGrossWeight;
+    @FXML
+    private Label lblItemId12;
+    @FXML
+    private TextField txtName;
+    @FXML
+    private Label lblItemId111111;
+    @FXML
+    private TextField txtVehicleNo;
 
     //<editor-fold defaultstate="collapsed" desc="Key Events">
     @FXML
@@ -195,22 +216,11 @@ public class ScaleController implements Initializable, Validatable,
 
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
-    @FXML
     void cmbLabelOnAction(ActionEvent event) {
 
     }
 
-    @FXML
-    void btnRefreshGrossWeightOnAction(ActionEvent event) {
-// count = 0;
-//        count++;
-//
-//        main = new SerialController();
-        scaleCofigLoader(cmbScale.getValue());
-        txtNetWeight.setText(getScaleReading());
-        calculate();
 
-    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
@@ -219,19 +229,27 @@ public class ScaleController implements Initializable, Validatable,
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
-        System.out.println("Scale id - "+txtWeightScaleId.getText());
+        System.out.println("Scale id - " + txtWeightScaleId.getText());
         boolean isDataInserted = true;
         isDataInserted = scaleDAO.insertWeight(
                 txtWeightScaleId.getText(),
                 scaleDAO.getScaleId(cmbScale.getValue()),
                 scaleDAO.getCustomerCode(txtCustomer.getText()),
                 txtMachine.getText(),
-                Double.parseDouble(txtNetWeight.getText()),
-                
+                txtNetWeight.getText(),
+                Double.parseDouble(txtGrossWeight.getText()),
+                txtNoOfBags.getText(),
+                txtTare.getText(),
+                txtCoarseLeaf.getText(),
+                txtWater.getText(),
+                txtBoilLeaf.getText(),
+                txtCoreWeight.getText(),
                 //                Double.parseDouble("100.00"),
                 //                Double.parseDouble("100.00"),
                 //                Double.parseDouble("100.00"),
                 //                Double.parseDouble("100.00"),
+                txtName.getText(),
+                txtVehicleNo.getText(),
                 dtpDate.getValue().toString());
 
         //<editor-fold defaultstate="collapsed" desc="Current Print Code">
@@ -240,17 +258,15 @@ public class ScaleController implements Initializable, Validatable,
             HashMap param = new HashMap();
             param.put("weight_scale_id", txtWeightScaleId.getText());
 
-                File fileOne
-                        = new File(
-                                ReportPath.PATH_WEIGHT_ONE_REPORT.
-                                toString());
-                String img = fileOne.getAbsolutePath();
-                ReportGenerator r = new ReportGenerator(img, param);
-                if (chbPreviewReport.isSelected()) {
-                    r.setVisible(true);
-                }
-
-            
+            File fileOne
+                    = new File(
+                            ReportPath.PATH_WEIGHT_ONE_REPORT.
+                            toString());
+            String img = fileOne.getAbsolutePath();
+            ReportGenerator r = new ReportGenerator(img, param);
+            if (chbPreviewReport.isSelected()) {
+                r.setVisible(true);
+            }
 
             mb.ShowMessage(stage, ErrorMessages.SuccesfullyCreated,
                     MessageBoxTitle.INFORMATION.toString(),
@@ -280,36 +296,40 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     void btnRefreshNetWeightOnAction(ActionEvent event) {
 
-       // calculate();
+        // calculate();
         System.out.println("Reading value...");
         scaleCofigLoader(cmbScale.getValue());
-        txtNetWeight.setText(getScaleReading());
+        txtGrossWeight.setText(getScaleReading());
         calculate();
 
 //        net = gross - core
         //main.close();
     }
+    
+        @FXML
+    void btnRefreshGrossWeightOnAction(ActionEvent event) {
 
+        scaleCofigLoader(cmbScale.getValue());
+        txtGrossWeight.setText(getScaleReading());
+        calculate();
+
+    }
+
+     @FXML
+    void btnRefreshCoreWeightOnAction(ActionEvent event) {
+
+        scaleCofigLoader(cmbScale.getValue());
+        txtGrossWeight.setText(getScaleReading());
+        calculate();
+
+    }
+    
     @FXML
     void dtpDateOnAction(ActionEvent event) {
 
     }
 
-    @FXML
-    void btnRefreshCoreWeightOnAction(ActionEvent event) {
-
-        scaleCofigLoader(cmbScale.getValue());
-        txtNetWeight1.setText(getScaleReading());
-        calculate();
-
-    }
-
-
-
-    @FXML
-    private void btnSizeAddOnAction(ActionEvent event) {
-
-    }
+   
 
     @FXML
     private void btnSearchMachineOnAction(ActionEvent event) {
@@ -362,10 +382,10 @@ public class ScaleController implements Initializable, Validatable,
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-       
-        txtNetWeight.setText("0.00");
-
-
+//        txtNetWeight.setText("0.00");
+//        txtCoreWeight.setText("0.00");
+        txtGrossWeight.setText("0.00");
+//        txtTare.setText("0.00");
 
         dateFormatter("yyyy-MM-dd");
         dtpDate.setValue(LocalDate.now());
@@ -388,8 +408,8 @@ public class ScaleController implements Initializable, Validatable,
 //
 //        mb = SimpleMessageBoxFactory.createMessageBox();
         txtWeightScaleId.setText(scaleDAO.generateID());
+        System.out.println("Gerneate - "+scaleDAO.generateID());
         btnDelete.setVisible(false);
-       
 
     }
 
@@ -459,16 +479,22 @@ public class ScaleController implements Initializable, Validatable,
     void calculate() {
 
         try {
-            
-            Double core = Double.parseDouble(txtNetWeight1.getText());
-            Double net = Double.parseDouble(txtNetWeight.getText());
-            if (!txtNetWeight1.getText().isEmpty()) {
-                
-                txtNetWeight.setText(net + "");
 
-            }
+//            Double core = Double.parseDouble(txtCoreWeight.getText());
+//            Double gross = Double.parseDouble(txtGrossWeight.getText());
+//            Double tare = Double.parseDouble(txtTare.getText());
+//
+//            if (!txtGrossWeight.getText().isEmpty() 
+////                    && !txtCoreWeight.getText().
+////                    isEmpty() && !txtTare.getText().isEmpty()
+//                    ) {
+//
+//                txtNetWeight.setText(gross - (core + tare) + "");
+//
+//            }
         } catch (Exception e) {
-
+            System.out.println("Exception on Calculate function ");
+            e.printStackTrace();
         }
 
     }
@@ -480,17 +506,24 @@ public class ScaleController implements Initializable, Validatable,
 
         txtCustomer.clear();
 
-       
         txtMachine.clear();
-        
+
         txtNetWeight.clear();
         txtNetWeight1.clear();
         customerCode = "";
         txtWeightScaleId.setText(scaleDAO.generateID());
         System.out.println("ID : " + scaleDAO.generateID());
-        
-        txtNetWeight.setText("0.00");
-        txtNetWeight1.setText("0.00");
+
+        txtNoOfBags.clear();
+
+        txtCoarseLeaf.clear();
+        txtWater.clear();
+        txtBoilLeaf.clear();
+
+        txtNetWeight.clear();
+        txtCoreWeight.clear();
+        txtGrossWeight.setText("0.00");
+        txtTare.clear();
 
     }
 
@@ -830,15 +863,13 @@ public class ScaleController implements Initializable, Validatable,
 
         });
 
-
-
         customerIdPop = new PopOver(customerIdTable);
-        
+
         machineIdPop = new PopOver(machineIdTable);
 
         stage.setOnCloseRequest(e -> {
 
-            if (customerIdPop.isShowing() 
+            if (customerIdPop.isShowing()
                     || machineIdPop.isShowing()) {
                 e.consume();
                 customerIdPop.hide();
@@ -1099,6 +1130,38 @@ public class ScaleController implements Initializable, Validatable,
 
         scaleCofigLoader(cmbScale.getValue());
 
+    }
+
+    @FXML
+    private void txtNoOfBagsOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtTareOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtCoarseLeafOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtWaterOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtBoilLeafOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtCoreWeightOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtNameOnKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void txtVehicleNoOnKeyReleased(KeyEvent event) {
     }
 
 //</editor-fold>

@@ -1,5 +1,6 @@
 package com.saiton.ccs.scale;
 
+import com.saiton.ccs.popup.CustomerIdPopup;
 import com.saiton.ccs.printerservice.ReportPath;
 import com.saiton.ccs.scaledao.ScaleDAO;
 import com.saiton.ccs.uihandle.ReportGenerator;
@@ -64,6 +65,21 @@ public class SearchWeightScaleController implements Initializable, Validatable,
     private TableColumn<Item, String> tcNetWeight;
 
     @FXML
+    private TableColumn<Item, String> tcNoOfBags;
+    @FXML
+    private TableColumn<Item, String> tcGrossWeight;
+    @FXML
+    private TableColumn<Item, String> tcTare;
+    @FXML
+    private TableColumn<Item, String> tcCoarseLeaf;
+    @FXML
+    private TableColumn<Item, String> tcWater;
+    @FXML
+    private TableColumn<Item, String> tcBoilLeaf;
+    @FXML
+    private TableColumn<Item, String> tcCoreWeight;
+
+    @FXML
     private ComboBox<String> cmbScale;
 
     @FXML
@@ -84,6 +100,21 @@ public class SearchWeightScaleController implements Initializable, Validatable,
     ScaleDAO scaleDAO = new ScaleDAO();
     Item scaleItem = new Item();
 
+    @FXML
+    private Label lblSearch;
+    @FXML
+    private TextField txtSCustomer;
+    @FXML
+    private Button btnSearchCustomer;
+
+    String customerCode = "";
+    //Customer Popup
+    private TableView customerIdTable = new TableView();
+    private CustomerIdPopup customerIdPopup = new CustomerIdPopup();
+    private ObservableList<CustomerIdPopup> customerData = FXCollections.
+            observableArrayList();
+    private PopOver customerIdPop;
+
     //<editor-fold defaultstate="collapsed" desc="Key Events">
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Action Events">
@@ -95,10 +126,11 @@ public class SearchWeightScaleController implements Initializable, Validatable,
                 getValue().toString());
         param.put("to_date", dtpToDate.
                 getValue().toString());
+                        param.put("cus_code", customerCode);
 
         File fileOne
                 = new File(
-                        ReportPath.PATH_WEIGHT_INFO.
+                        ReportPath.PATH_WEIGHT_INFO_A4.
                         toString());
         String img = fileOne.getAbsolutePath();
         ReportGenerator r = new ReportGenerator(img, param);
@@ -123,6 +155,25 @@ public class SearchWeightScaleController implements Initializable, Validatable,
     //<editor-fold defaultstate="collapsed" desc="Methods">
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        tcGrossWeight.setCellValueFactory(
+                new PropertyValueFactory<Item, String>(
+                        "colGrossWeight"));
+        tcTare.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colTare"));
+
+        tcCoarseLeaf.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colCoarseLeaf"));
+        tcWater.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colWater"));
+        tcBoilLeaf.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colBoilLeaf"));
+
+        tcCoreWeight.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colCoreWeight"));
+
+        tcNoOfBags.setCellValueFactory(new PropertyValueFactory<Item, String>(
+                "colNoOfBags"));
 
         tcDate.setCellValueFactory(new PropertyValueFactory<Item, String>(
                 "colDate"));
@@ -330,6 +381,64 @@ public class SearchWeightScaleController implements Initializable, Validatable,
     public void setStage(Stage stage, Object[] obj) {
 
         this.stage = stage;
+        
+         
+
+        //CustomerId popup------------------------
+        customerIdTable = customerIdPopup.tableViewLoader(customerData);
+
+        customerIdTable.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                try {
+                    CustomerIdPopup p = null;
+                    p = (CustomerIdPopup) customerIdTable.getSelectionModel().
+                            getSelectedItem();
+                    //clearInput();
+
+                    if (p.getColCustomerName() != null) {
+                        txtSCustomer.setText(p.getColCustomerName());
+                        customerCode = p.getColCustomerCode();
+//                        btnDelete.setVisible(true);
+                        loadTableData();
+
+                    }
+
+                } catch (NullPointerException n) {
+
+                }
+
+                customerIdPop.hide();
+                validatorInitialization();
+
+            }
+
+        });
+
+        customerIdTable.setOnMousePressed(e -> {
+
+            if (e.getButton() == MouseButton.SECONDARY) {
+
+                customerIdPop.hide();
+                validatorInitialization();
+
+            }
+
+        });
+        
+          customerIdPop = new PopOver(customerIdTable);
+
+        
+
+        stage.setOnCloseRequest(e -> {
+
+            if (customerIdPop.isShowing()
+                    ) {
+                e.consume();
+                customerIdPop.hide();
+               
+
+            }
+        });
     }
 
     private void loadScaleNames() {
@@ -407,7 +516,7 @@ public class SearchWeightScaleController implements Initializable, Validatable,
         ArrayList<ArrayList<String>> scaleInfo
                 = new ArrayList<>();
         ArrayList<ArrayList<String>> list = scaleDAO.loadScaleInfo(dtpFromDate.
-                getValue().toString(), dtpToDate.getValue().toString());
+                getValue().toString(), dtpToDate.getValue().toString(),customerCode);
 
         if (list != null) {
 
@@ -425,8 +534,16 @@ public class SearchWeightScaleController implements Initializable, Validatable,
                     scaleItem.colScale.setValue(scaleInfo.get(i).get(2));
                     scaleItem.colCustomer.setValue(scaleInfo.get(i).get(3));
                     scaleItem.colNetWeight.setValue(scaleInfo.get(i).get(4));
+                    scaleItem.colNoOfBags.setValue(scaleInfo.get(i).get(5));
+                    scaleItem.colGrossWeight.setValue(scaleInfo.get(i).get(6));
+                    scaleItem.colTare.setValue(scaleInfo.get(i).get(7));
+                    scaleItem.colCoarseLeaf.setValue(scaleInfo.get(i).get(8));
+                    scaleItem.colWater.setValue(scaleInfo.get(i).get(9));
+                    scaleItem.colBoilLeaf.setValue(scaleInfo.get(i).get(10));
+                    scaleItem.colCoreWeight.setValue(scaleInfo.get(i).get(11));
 
                     tableScaleData.add(scaleItem);
+
                 }
             }
 
@@ -461,8 +578,106 @@ public class SearchWeightScaleController implements Initializable, Validatable,
 //                        !fav.validTableView(tblItemList),
 //                        ErrorMessages.EmptyListView));
     }
+    
+    
+      private void customerTableDataLoader(String keyword) {
+
+        customerData.clear();
+        ArrayList<ArrayList<String>> itemInfo
+                = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> list = scaleDAO.
+                searchCustomerDetailsDetails(keyword);
+
+        if (list != null) {
+
+            for (int i = 0; i < list.size(); i++) {
+
+                itemInfo.add(list.get(i));
+            }
+
+            if (itemInfo != null && itemInfo.size() > 0) {
+                for (int i = 0; i < itemInfo.size(); i++) {
+
+                    customerIdPopup = new CustomerIdPopup();
+                    customerIdPopup.colCustomerCode.setValue(itemInfo.get(i).
+                            get(0));
+                    customerIdPopup.colCustomerName.setValue(itemInfo.get(i).
+                            get(1));
+
+                    customerData.add(customerIdPopup);
+                }
+            }
+
+        }
+
+    }
+
+    @FXML
+    private void txtSCustomerKeyReleased(KeyEvent event) {
+    }
+
+    @FXML
+    private void btnSearchCustomerOnAction(ActionEvent event) {
+        
+        customerTableDataLoader(txtSCustomer.getText());
+        customerIdTable.setItems(customerData);
+        if (!customerData.isEmpty()) {
+            customerIdPop.show(btnSearchCustomer);
+        }
+        validatorInitialization();
+        
+    }
 
     public class Item {
+
+        public SimpleStringProperty colGrossWeight
+                = new SimpleStringProperty(
+                        "tcGrossWeight");
+           public String getColGrossWeight() {
+            return colGrossWeight.get();
+        }
+
+        public SimpleStringProperty colTare
+                = new SimpleStringProperty(
+                        "tcTare");
+             public String getColTare() {
+            return colTare.get();
+        }
+
+        public SimpleStringProperty colCoarseLeaf
+                = new SimpleStringProperty(
+                        "tcCoarseLeaf");
+              public String getColCoarseLeaf() {
+            return colCoarseLeaf.get();
+        }
+
+        public SimpleStringProperty colWater
+                = new SimpleStringProperty(
+                        "tcWater");
+            public String getColWater() {
+            return colWater.get();
+        }
+
+        public SimpleStringProperty colBoilLeaf
+                = new SimpleStringProperty(
+                        "tcBoilLeaf");
+          public String getColBoilLeaf() {
+            return colBoilLeaf.get();
+        }
+
+        public SimpleStringProperty colCoreWeight
+                = new SimpleStringProperty(
+                        "tcCoreWeight");
+        public String getColCoreWeight() {
+            return colCoreWeight.get();
+        }
+
+        public SimpleStringProperty colNoOfBags
+                = new SimpleStringProperty(
+                        "tcNoOfBags");
+        public String getColNoOfBags() {
+            return colNoOfBags.get();
+        }
 
         public SimpleStringProperty colDate = new SimpleStringProperty(
                 "tcDate");

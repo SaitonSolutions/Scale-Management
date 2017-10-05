@@ -89,7 +89,16 @@ public class ScaleDAO {
             String scaleId,
             String customerCode,
             String machine,
-            double netweight,
+            String netweight,
+            double grossweight,
+            String noOfBags,
+            String tare,
+            String coarseLeaf,
+            String water,
+            String boilLeaf,
+            String coreweight,
+            String name,
+            String vehicleNo,
             String date
     ) {
         String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
@@ -105,7 +114,7 @@ public class ScaleDAO {
         String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
 
         if (star.con == null) {
-            log.error("Databse connection failiure.");
+            log.error("Database connection failiure.");
             return false;
         } else {
             try {
@@ -115,18 +124,35 @@ public class ScaleDAO {
                         + " `weight_scale_id`,"
                         + " `scale_id`,"
                         + " `customer_code`,"
-                        
-                        + " `weight`,"
+                        + " `net_weight`,"
+                        + " `gross_weight`,"
+                        + " `no_of_bags`,"
+                        + " `tare`,"
+                        + " `corse_leaf`,"
+                        + " `water`,"
+                        + " `boil_leaf`,"
+                        + " `core_weight`,"
+                        + " `name`,"
+                                 + " `vehicle_no`,"
                         + " `date`"
                         + " ) "
-                        + "VALUES(?,?,?,?,?)");
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
                 ps.setString(1, encodedWeightScaleId);
                 ps.setString(2, encodedScaleId);
                 ps.setString(3, encodedCustomerCode);
-                
-                ps.setDouble(4, netweight);
-                ps.setString(5, encodedDate);
+
+                ps.setString(4, netweight);
+                ps.setDouble(5, grossweight);
+                ps.setString(6, noOfBags);
+                ps.setString(7, tare);
+                ps.setString(8, coarseLeaf);
+                ps.setString(9, water);
+                ps.setString(10, boilLeaf);
+                ps.setString(11, coreweight);
+                ps.setString(12, name);
+                ps.setString(13, vehicleNo);
+                ps.setString(14, encodedDate);
 
                 int val = ps.executeUpdate();
 
@@ -565,16 +591,22 @@ public class ScaleDAO {
         }
         return list;
     }
-    
-    public ArrayList<ArrayList<String>> loadScaleInfo(String dateFrom , String dateTo) {
 
-   
+    public ArrayList<ArrayList<String>> loadScaleInfo(String dateFrom,
+            String dateTo, String customerCode) {
 
         String scaleId = null;
         String weight_scale_id = null;
         String cus_code = null;
         String weight = null;
         String date = null;
+        String noOfBags = null;
+        String grossWeight = null;
+        String tare = null;
+        String corseLeaf = null;
+        String water = null;
+        String boilLeaf = null;
+        String coreWeight = null;
 
         ArrayList<ArrayList<String>> Mainlist = new ArrayList<>();
 
@@ -586,14 +618,15 @@ public class ScaleDAO {
         } else {
             try {
 
-                String query = "SELECT * FROM scale WHERE (date BETWEEN ? AND ? )";
-                       
-                        
+                String query
+                        //                        = "SELECT * FROM scale WHERE (date BETWEEN ? AND ? ) ";
+                        = "SELECT * FROM scale WHERE (date BETWEEN ? AND ? ) AND customer_code = ?";
 
                 PreparedStatement pstmt = star.con.prepareStatement(query);
-                
-                pstmt.setString(1, dateFrom );
-                pstmt.setString(2,  dateTo);
+
+                pstmt.setString(1, dateFrom);
+                pstmt.setString(2, dateTo);
+                pstmt.setString(3, customerCode);
 
                 ResultSet r = pstmt.executeQuery();
 
@@ -604,16 +637,28 @@ public class ScaleDAO {
                     weight_scale_id = r.getString("weight_scale_id");
                     scaleId = r.getString("scale_id");
                     cus_code = r.getString("customer_code");
-                    weight = r.getString("weight");
+                    weight = r.getString("net_weight");
                     date = r.getString("date");
-                    
+                    noOfBags = r.getString("no_of_bags");
+                    grossWeight = r.getString("gross_weight");
+                    tare = r.getString("tare");
+                    corseLeaf = r.getString("corse_leaf");
+                    water = r.getString("water");
+                    boilLeaf = r.getString("boil_leaf");
+                    coreWeight = r.getString("core_weight");
+
                     list.add(date);
                     list.add(weight_scale_id);
                     list.add(scaleId);
                     list.add(cus_code);
                     list.add(weight);
-                    
-                    
+                    list.add(noOfBags);
+                    list.add(grossWeight);
+                    list.add(tare);
+                    list.add(corseLeaf);
+                    list.add(water);
+                    list.add(boilLeaf);
+                    list.add(coreWeight);
 
                     Mainlist.add(list);
 

@@ -117,7 +117,7 @@
                 <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="11" GridPane.rowSpan="2">
                   <children>
                               <CheckBox fx:id="chbPreviewReport" mnemonicParsing="false" text="Preview Report" />
-                    <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#btnPrintOnAction" prefHeight="50.0" prefWidth="150.0" text="Print">
+                    <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#btnPrintOnAction" prefHeight="50.0" prefWidth="150.0" text="Save">
                       <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                           <image>
@@ -253,7 +253,7 @@
                               <Insets bottom="10.0" />
                            </opaqueInsets>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
                            <children>
                               <Label fx:id="lblItemId1" prefWidth="200.0" text="No Of Bags">
                                  <font>
@@ -263,7 +263,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="txtNoOfBags" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtNoOfBagsOnKeyReleased" prefWidth="300.0" promptText="No Of Bags">
+                              <TextField fx:id="txtNoOfBags" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtNoOfBagsOnKeyReleased" prefWidth="300.0" promptText="No Of Bags">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -276,7 +276,7 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
                            <children>
                               <Label fx:id="lblItemId11" prefWidth="200.0" text="Tare">
                                  <font>
@@ -286,7 +286,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="txtTare" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtTareOnKeyReleased" prefWidth="300.0" promptText="Tare">
+                              <TextField fx:id="txtTare" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtTareOnKeyReleased" prefWidth="300.0" promptText="Tare">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -299,7 +299,7 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="230.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="5">
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="230.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="7">
                            <children>
                               <Label fx:id="lblItemId111" prefWidth="200.0" text="Coarse Leaf">
                                  <font>
@@ -309,7 +309,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="txtCoarseLeaf" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtCoarseLeafOnKeyReleased" prefWidth="300.0" promptText="Coarse Leaf">
+                              <TextField fx:id="txtCoarseLeaf" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtCoarseLeafOnKeyReleased" prefWidth="300.0" promptText="Coarse Leaf">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -322,7 +322,7 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="290.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="6">
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="290.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="8">
                            <children>
                               <Label fx:id="lblItemId1111" prefWidth="200.0" text="Water">
                                  <font>
@@ -332,7 +332,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="txtWater" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtWaterOnKeyReleased" prefWidth="300.0" promptText="Water">
+                              <TextField fx:id="txtWater" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtWaterOnKeyReleased" prefWidth="300.0" promptText="Water">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -345,7 +345,7 @@
                               <Insets left="30.0" />
                            </GridPane.margin>
                         </HBox>
-                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="350.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="7">
+                        <HBox id="HBox" alignment="CENTER_LEFT" layoutX="40.0" layoutY="350.0" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="9">
                            <children>
                               <Label fx:id="lblItemId11111" prefWidth="200.0" text="Boil Leaf">
                                  <font>
@@ -355,7 +355,7 @@
                                     <Insets />
                                  </HBox.margin>
                               </Label>
-                              <TextField fx:id="txtBoilLeaf" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtBoilLeafOnKeyReleased" prefWidth="300.0" promptText="Boil Leaf">
+                              <TextField fx:id="txtBoilLeaf" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtBoilLeafOnKeyReleased" prefWidth="300.0" promptText="Boil Leaf">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -375,7 +375,7 @@
                                     <Font size="22.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtCoreWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="245.0" promptText="Core Weight">
+                              <TextField fx:id="txtCoreWeight" editable="false" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtCoreWeightOnKeyReleased" prefWidth="245.0" promptText="Core Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -393,7 +393,7 @@
                         </HBox>
                         <HBox id="HBox" alignment="CENTER_LEFT" layoutX="570.0" layoutY="230.0" spacing="5.0" GridPane.columnIndex="4" GridPane.columnSpan="5" GridPane.rowIndex="5">
                            <children>
-                              <Label prefWidth="200.0" text="GrossWeight">
+                              <Label prefWidth="200.0" text="Gross Weight">
                                  <font>
                                     <Font size="22.0" />
                                  </font>
@@ -413,6 +413,52 @@
                                  </graphic>
                               </Button>
                            </children>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="lblItemId12" prefWidth="200.0" text="Name">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtName" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtNameOnKeyReleased" prefWidth="300.0" promptText="Name">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" GridPane.columnSpan="4" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="lblItemId111111" prefWidth="200.0" text="Vehicle No">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="txtVehicleNo" maxWidth="-Infinity" minWidth="-Infinity" onKeyReleased="#txtVehicleNoOnKeyReleased" prefWidth="300.0" promptText="Vehicle No">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
                         </HBox>
               </children>
               <columnConstraints>

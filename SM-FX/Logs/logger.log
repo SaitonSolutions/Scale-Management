@@ -4640,3 +4640,796 @@ where s.date between ? and ?
 2017-09-27 12:27:22 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 45.556640625
 2017-09-27 12:27:22 DEBUG JRBaseFiller:973 - Fill 1: ended
 2017-09-27 12:27:22 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 10:00:20 ERROR ScaleDAO:69 - Exception tag --> Split character error java.lang.ArrayIndexOutOfBoundsException: 1
+2017-10-05 10:04:36 ERROR ScaleDAO:69 - Exception tag --> Split character error java.lang.ArrayIndexOutOfBoundsException: 1
+2017-10-05 10:04:59 ERROR ScaleDAO:161 - Exception tag --> Invalid sql statement Column count doesn't match value count at row 1
+2017-10-05 10:09:22 ERROR ScaleDAO:69 - Exception tag --> Split character error java.lang.ArrayIndexOutOfBoundsException: 1
+2017-10-05 10:09:23 ERROR ScaleDAO:69 - Exception tag --> Split character error java.lang.ArrayIndexOutOfBoundsException: 1
+2017-10-05 10:11:56 ERROR ScaleDAO:161 - Exception tag --> Invalid sql statement Column count doesn't match value count at row 1
+2017-10-05 10:16:56 ERROR ScaleDAO:162 - Exception tag --> Invalid sql statement Unknown column 'weight' in 'field list'
+2017-10-05 10:17:54 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 10:17:54 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run2081307176/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run2081307176/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 10:17:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 10:17:55 DEBUG JRBaseFiller:356 - Fill 1: created for WeightScale1
+2017-10-05 10:17:55 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 1504794209
+2017-10-05 10:17:55 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 610589127
+2017-10-05 10:17:55 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 1054747127
+2017-10-05 10:17:55 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 340, columnFooterOffsetY: 340, lastPageColumnFooterOffsetY: 340
+2017-10-05 10:17:55 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 10:17:55 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 2097152000, columnFooterOffsetY: 2097152000, lastPageColumnFooterOffsetY: 2097152000
+2017-10-05 10:17:55 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 10:17:55 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT
+	s.weight_scale_id,
+	s.customer_code,
+	c.customer_name,
+	s.net_weight,
+	s.date,
+	s.time_stamp
+
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code and s.weight_scale_id=?
+2017-10-05 10:17:55 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (weight_scale_id of type java.lang.String): WID0003
+2017-10-05 10:17:56 DEBUG JRBaseFiller:1857 - Fill 1: adding page 1
+2017-10-05 10:17:56 DEBUG JRVerticalFiller:340 - Fill 1: title at 0
+2017-10-05 10:17:56 DEBUG SimpleTextLineWrapper:303 - creating element font infos cache of size 2000
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14] has complex layout false, leading 0.59472656
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 14.0, style: 1} and element 925cca97-22d8-4926-ad03-828141b6b259
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 17 in width 189.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 154.013671875
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9] has complex layout false, leading 0.38232422
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element 079ff8eb-9f28-4eae-b7d8-01c446d5d162
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 9
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 50.0009765625
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9] has complex layout false, leading 0.38232422
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element cae10bab-4c20-46a8-a23a-2df0d4746afa
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 29 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 16 at width 77.98974609375
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 17 to 29 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 29 at width 66.50244140625
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10] has complex layout false, leading 0.4248047
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element 9b6039c3-0860-4eb5-87ef-217c7c95e4b0
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 1
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 1e7b435a-d954-43c5-9f32-f27a8d5bac7c
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 24.99609375
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element a44e0f91-87f2-4edc-b557-78b87d7e7972
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element e5cde872-3b9b-412f-8ba9-100958d58009
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 48.5068359375
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element a135b957-5e80-4693-a1b7-003f9ed7b572
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 41.0009765625
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element ea77c049-61ca-4573-a59e-7cad8527e643
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 25.0048828125
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element c27e750b-3921-4177-b1bc-15c8be84bb05
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 6 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 6 at width 38.50927734375
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element b7b0995a-bb75-4262-8501-47905d7126e7
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 4436c9aa-5ca7-4bfe-a1f9-72ba970410f6
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 10:17:56 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 11.25
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@34bb440e
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@761fc537
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@4c922e98
+2017-10-05 10:17:56 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@4c922e98 for (null, null)
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@12b8b9ab
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@1a86f0b6
+2017-10-05 10:17:56 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@1a86f0b6 for (null, {java.sql.Date, yyyy/MM/dd,null,null,null})
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@4c922e98 for object net.sf.jasperreports.engine.fill.JRTemplateText@473dfb90
+2017-10-05 10:17:56 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@4c922e98 for (null, null)
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@12b8b9ab for object net.sf.jasperreports.engine.fill.JRTemplateText@568eee82
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@761fc537 for object net.sf.jasperreports.engine.fill.JRTemplateText@12c7019
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@12b8b9ab for object net.sf.jasperreports.engine.fill.JRTemplateText@2c0223ca
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@761fc537 for object net.sf.jasperreports.engine.fill.JRTemplateText@44baca1
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@761fc537 for object net.sf.jasperreports.engine.fill.JRTemplateText@2590a854
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@12b8b9ab for object net.sf.jasperreports.engine.fill.JRTemplateText@47deb847
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@7a7fcf05
+2017-10-05 10:17:56 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@7a7fcf05 for (null, {java.lang.Double, null,null,null,null})
+2017-10-05 10:17:56 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateLine@28160794
+2017-10-05 10:17:56 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 10:17:56 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 12:28:49 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:28:49 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run49739881/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run49739881/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 12:28:49 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 12:28:50 DEBUG JRBaseFiller:356 - Fill 1: created for WeightInfoA4
+2017-10-05 12:28:50 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 576931857
+2017-10-05 12:28:50 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 131323165
+2017-10-05 12:28:50 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 1976637119
+2017-10-05 12:28:50 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 842, columnFooterOffsetY: 822, lastPageColumnFooterOffsetY: 822
+2017-10-05 12:28:50 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 12:28:50 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 12:28:50 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT *
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code
+where (s.date between ? and ?) AND c.customer_code=?
+2017-10-05 12:28:50 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (from_date of type java.lang.String): 2017-10-05
+2017-10-05 12:28:50 DEBUG JRJdbcQueryExecuter:396 - Parameter #2 (to_date of type java.lang.String): 2017-10-05
+2017-10-05 12:28:50 DEBUG JRJdbcQueryExecuter:396 - Parameter #3 (cus_code of type java.lang.String): null
+2017-10-05 12:28:51 DEBUG JRVerticalFiller:165 - Fill 1: no data
+2017-10-05 12:28:51 DEBUG JRVerticalFiller:241 - Fill 1: no pages
+2017-10-05 12:28:51 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 12:28:51 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 12:30:36 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:30:36 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1776842819/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1776842819/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 12:30:36 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 12:30:37 DEBUG JRBaseFiller:356 - Fill 1: created for WeightInfoA4
+2017-10-05 12:30:38 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 1993180555
+2017-10-05 12:30:38 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 354132272
+2017-10-05 12:30:38 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 1200215004
+2017-10-05 12:30:38 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 842, columnFooterOffsetY: 822, lastPageColumnFooterOffsetY: 822
+2017-10-05 12:30:38 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 12:30:38 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 12:30:38 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT *
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code
+where (s.date between ? and ?) AND c.customer_code=?
+2017-10-05 12:30:38 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (from_date of type java.lang.String): 2017-10-05
+2017-10-05 12:30:38 DEBUG JRJdbcQueryExecuter:396 - Parameter #2 (to_date of type java.lang.String): 2017-10-05
+2017-10-05 12:30:38 DEBUG JRJdbcQueryExecuter:396 - Parameter #3 (cus_code of type java.lang.String): AHEH
+2017-10-05 12:30:38 DEBUG JRBaseFiller:1857 - Fill 1: adding page 1
+2017-10-05 12:30:38 DEBUG JRVerticalFiller:340 - Fill 1: title at 20
+2017-10-05 12:30:38 DEBUG SimpleTextLineWrapper:303 - creating element font infos cache of size 2000
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=16] has complex layout false, leading 0.6796875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 16.0, style: 1} and element 925cca97-22d8-4926-ad03-828141b6b259
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 17 in width 554.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=16]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 176.015625
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 18, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 18 to 19 in width 554.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=16]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 19 at width 4.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=12] has complex layout false, leading 0.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: SansSerif, size: 12.0, style: 0} and element a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 69.0 with font java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 8
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 8 at width 59.4140625
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 8 to 10 in width 69.0 with font java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 15.17578125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12] has complex layout false, leading 0.5097656
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element f781b658-bebf-4382-a5ac-99e3312cea84
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 65.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 9
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 47.98828125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element 76fde54f-fe7c-4f1c-a321-bf0eee4372d5
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 11 in width 65.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 11 at width 62.63671875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: SansSerif, size: 12.0, style: 0} and element 3ee00384-cea1-477a-afe6-325d17c9a204
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 69.0 with font java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 74.58984375
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 8 at width 59.4140625
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 8 to 10 in width 69.0 with font java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 15.17578125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element f5f5fa3d-8dfe-4039-bb5a-c0e0c27cfd2e
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 23.98828125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element e5cde872-3b9b-412f-8ba9-100958d58009
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 6 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 6 at width 30.662109375
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 7, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 7 to 11 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 11 at width 24.673828125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 110.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 64.67578125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element 6c652696-b2e4-49f8-b9a4-6e96ab21db93
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 12 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 12 at width 70.330078125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 13, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 13 to 19 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 19 at width 30.99609375
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element 4324c052-51b4-495a-87fa-ba400622b0b3
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 46.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 24.65625
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element 50e3dfa6-88ad-4dd5-9230-79b990bc986a
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 6 in width 49.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 6 at width 35.98828125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 7, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 7 to 11 in width 49.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 11 at width 23.326171875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element 058cfda6-1c3d-4240-8495-5bd0ed71c59f
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 5 in width 36.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 5 at width 32.6484375
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element be295e26-d3b8-4096-adcd-01048606a5c1
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 37.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 20.671875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 5, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 5 to 9 in width 37.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 23.326171875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 1} and element a1aefe82-da8a-4c77-b265-dd40252686cc
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 51.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 17.98828125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 4, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 4 to 17 in width 51.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 71.326171875
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 37.330078125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 11 to 17 in width 51.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 30.99609375
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@1b549ad1
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@3c3803ef
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@2981699b
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@528023ce
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@31e32974
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@64b8ec81
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@46578c3c
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@151a596b
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@3d9a7a35
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@1e6545e3
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@64291c7f
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@233fc090
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@4d9a4d10
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@79e4531d
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@550272ba
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@86403ca
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@17093d1b
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@4c2ee85c
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@affc4c1
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@affc4c1 for (null, null)
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@22adfc07
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@7c92ecac
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@5a5435d0 for object net.sf.jasperreports.engine.fill.JRTemplateLine@4745876a
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@306a4ee3 for object net.sf.jasperreports.engine.fill.JRTemplateText@33e88a8f
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@affc4c1 for object net.sf.jasperreports.engine.fill.JRTemplateText@7e681531
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@affc4c1 for (null, null)
+2017-10-05 12:30:38 DEBUG JRVerticalFiller:741 - Fill 1: detail at 114
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12] has complex layout false, leading 0.5097656
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element cae10bab-4c20-46a8-a23a-2df0d4746afa
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 37.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 1
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 6.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 1e7b435a-d954-43c5-9f32-f27a8d5bac7c
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 110.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 33.328125
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element b6466e10-2088-440b-842e-a663a1c2efd7
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 48.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 15.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 5ff16d96-3ee0-41b2-973c-ec9c8fffb246
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 73.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 6.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 51111a56-9e20-44f0-8aa0-7d160872301f
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 15.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 1a4fecb7-1949-430d-a139-c882098e7169
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 45.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 6.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 402391fc-b4ae-4b7e-a375-9309afa14eb1
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 48.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 6.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element 9c9a1096-0e90-4418-b398-41de50814a45
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 35.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 6.0
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 12.0, style: 0} and element f4ae2520-df64-4cb5-966f-2645776fca25
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 72.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=12]
+2017-10-05 12:30:38 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 54.66796875
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@1193b40
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@1193b40 for (null, null)
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@2cf23aa0
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@3509b3a7
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@7d824d7d
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@7928220d
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@44b230b2
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@3c5e3708
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@3c5e3708 for (null, null)
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@6bd80467
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@6bd80467 for (null, {java.lang.Double, null,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@731108a6
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@63bb182b
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@486bc307
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@22cbeefa
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d for (null, {java.lang.Integer, null,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@6bd80467 for object net.sf.jasperreports.engine.fill.JRTemplateText@62a5b76a
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@6bd80467 for (null, {java.lang.Double, null,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d for object net.sf.jasperreports.engine.fill.JRTemplateText@744023c2
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d for (null, {java.lang.Integer, null,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@1193b40 for object net.sf.jasperreports.engine.fill.JRTemplateText@901af8e
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@1193b40 for (null, null)
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d for object net.sf.jasperreports.engine.fill.JRTemplateText@74a995ed
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@59e4963d for (null, {java.lang.Integer, null,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@3b7862f5
+2017-10-05 12:30:38 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@3b7862f5 for (null, {java.sql.Date, yyyy/MM/dd,null,null,null})
+2017-10-05 12:30:38 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateLine@715ebe0e for object net.sf.jasperreports.engine.fill.JRTemplateLine@4e53186b
+2017-10-05 12:30:38 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 12:30:38 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 12:45:29 ERROR ScaleDAO:165 - Exception tag --> Invalid sql statement Incorrect integer value: 'No' for column 'water' at row 1
+2017-10-05 12:47:53 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:47:53 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1235857864/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1235857864/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 12:47:53 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 12:47:54 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 12:47:54 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 12:47:56 DEBUG JRBaseFiller:356 - Fill 1: created for WeightScale1
+2017-10-05 12:47:56 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 1070988938
+2017-10-05 12:47:56 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 2139138631
+2017-10-05 12:47:56 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 755384907
+2017-10-05 12:47:56 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 340, columnFooterOffsetY: 340, lastPageColumnFooterOffsetY: 340
+2017-10-05 12:47:56 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 12:47:56 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 2097152000, columnFooterOffsetY: 2097152000, lastPageColumnFooterOffsetY: 2097152000
+2017-10-05 12:47:56 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 12:47:56 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT
+	s.weight_scale_id,
+	s.customer_code,
+	c.customer_name,
+	s.net_weight,
+	s.date,
+	s.time_stamp
+
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code and s.weight_scale_id=?
+2017-10-05 12:47:56 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (weight_scale_id of type java.lang.String): WID0004
+2017-10-05 12:47:57 DEBUG JRBaseFiller:1857 - Fill 1: adding page 1
+2017-10-05 12:47:57 DEBUG JRVerticalFiller:340 - Fill 1: title at 0
+2017-10-05 12:47:57 DEBUG SimpleTextLineWrapper:303 - creating element font infos cache of size 2000
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14] has complex layout false, leading 0.59472656
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 14.0, style: 1} and element 925cca97-22d8-4926-ad03-828141b6b259
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 17 in width 189.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 154.013671875
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9] has complex layout false, leading 0.38232422
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element 079ff8eb-9f28-4eae-b7d8-01c446d5d162
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 9
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 50.0009765625
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9] has complex layout false, leading 0.38232422
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element cae10bab-4c20-46a8-a23a-2df0d4746afa
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 20 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 20
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 20 at width 102.2431640625
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10] has complex layout false, leading 0.4248047
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element 9b6039c3-0860-4eb5-87ef-217c7c95e4b0
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 1
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 1e7b435a-d954-43c5-9f32-f27a8d5bac7c
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 5 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 5 at width 32.501953125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element a44e0f91-87f2-4edc-b557-78b87d7e7972
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element e5cde872-3b9b-412f-8ba9-100958d58009
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 48.5068359375
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element a135b957-5e80-4693-a1b7-003f9ed7b572
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 41.0009765625
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element ea77c049-61ca-4573-a59e-7cad8527e643
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 25.0048828125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element c27e750b-3921-4177-b1bc-15c8be84bb05
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 6 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 6 at width 38.50927734375
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element b7b0995a-bb75-4262-8501-47905d7126e7
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 4436c9aa-5ca7-4bfe-a1f9-72ba970410f6
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 12:47:57 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 11.25
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@448bbe63
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@29aa1240
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@4150ba78
+2017-10-05 12:47:57 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@4150ba78 for (null, null)
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@7d8b246d
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@44a018e
+2017-10-05 12:47:57 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@44a018e for (null, {java.sql.Date, yyyy/MM/dd,null,null,null})
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@4150ba78 for object net.sf.jasperreports.engine.fill.JRTemplateText@408de805
+2017-10-05 12:47:57 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@4150ba78 for (null, null)
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@7d8b246d for object net.sf.jasperreports.engine.fill.JRTemplateText@89d7324
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@29aa1240 for object net.sf.jasperreports.engine.fill.JRTemplateText@2c118616
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@7d8b246d for object net.sf.jasperreports.engine.fill.JRTemplateText@7883a46b
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@29aa1240 for object net.sf.jasperreports.engine.fill.JRTemplateText@57e1a6be
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@29aa1240 for object net.sf.jasperreports.engine.fill.JRTemplateText@3486eb35
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@7d8b246d for object net.sf.jasperreports.engine.fill.JRTemplateText@1487ea85
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@7142a482
+2017-10-05 12:47:57 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@7142a482 for (null, {java.lang.Double, null,null,null,null})
+2017-10-05 12:47:57 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateLine@2960ba12
+2017-10-05 12:47:57 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 12:47:57 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 13:08:15 ERROR ScaleDAO:168 - Exception tag --> Invalid sql statement Incorrect integer value: '' for column 'tare' at row 1
+2017-10-05 13:18:47 ERROR ScaleDAO:168 - Exception tag --> Invalid sql statement Data truncated for column 'net_weight' at row 1
+2017-10-05 13:22:08 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 13:22:08 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run922782458/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run922782458/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 13:22:08 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 13:22:09 DEBUG JRBaseFiller:356 - Fill 1: created for WeightInfoA4
+2017-10-05 13:22:10 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 278367012
+2017-10-05 13:22:10 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 1551048261
+2017-10-05 13:22:10 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 347028971
+2017-10-05 13:22:10 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 842, columnFooterOffsetY: 822, lastPageColumnFooterOffsetY: 822
+2017-10-05 13:22:10 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 13:22:10 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 13:22:10 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT *
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code
+where (s.date between ? and ?) AND c.customer_code=?
+2017-10-05 13:22:10 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (from_date of type java.lang.String): 2017-10-05
+2017-10-05 13:22:10 DEBUG JRJdbcQueryExecuter:396 - Parameter #2 (to_date of type java.lang.String): 2017-10-05
+2017-10-05 13:22:10 DEBUG JRJdbcQueryExecuter:396 - Parameter #3 (cus_code of type java.lang.String): 
+2017-10-05 13:22:10 DEBUG JRVerticalFiller:165 - Fill 1: no data
+2017-10-05 13:22:10 DEBUG JRVerticalFiller:241 - Fill 1: no pages
+2017-10-05 13:22:10 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 13:22:10 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2017-10-05 13:24:22 DEBUG ExtensionsEnvironment:78 - Instantiating extensions registry class net.sf.jasperreports.extensions.DefaultExtensionsRegistry
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:130 - Loading registries for cache key sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 13:24:22 DEBUG JRLoader:723 - Found resource jasperreports_extension.properties at jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1300309879/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties in classloader sun.misc.Launcher$AppClassLoader@3d4eac69
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:158 - Loading JasperReports extension properties resource jar:file:/Users/lightway/Scale-Management/SM-FX/dist/run1300309879/lib/jasperreports-5.6.0.jar!/jasperreports_extension.properties
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.parameter.contributor
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.parameter.contributor using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarParameterContributorExtensionFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions for property net.sf.jasperreports.extension.registry.factory.date.range.clause.functions
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for date.range.clause.functions using factory class net.sf.jasperreports.types.date.DateRangeQueryClauseExtensions
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.repository
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for repository using factory class net.sf.jasperreports.repo.DefaultRepositoryExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.content.type.mapping
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for content.type.mapping using factory class net.sf.jasperreports.web.util.ContentTypeMappingExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.simple.font.families
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for simple.font.families using factory class net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.data.adapter.services
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for data.adapter.services using factory class net.sf.jasperreports.data.DefaultDataAdapterServiceExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jive.web.resource.handlers
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jive.web.resource.handlers using factory class net.sf.jasperreports.web.util.WebResourceHandlersExtensionRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.castor.mapping
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for castor.mapping using factory class net.sf.jasperreports.util.CastorMappingExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.matcher.exporter.filter.mapping
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for matcher.exporter.filter.mapping using factory class net.sf.jasperreports.engine.export.MatcherExportFilterMappingExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.governor
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for governor using factory class net.sf.jasperreports.governors.GovernorExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.requirejs.module.mapping
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for requirejs.module.mapping using factory class net.sf.jasperreports.web.util.RequirejsModuleMappingExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions for property net.sf.jasperreports.extension.registry.factory.sql.clause.functions
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for sql.clause.functions using factory class net.sf.jasperreports.engine.query.SQLQueryClauseFunctionsExtensions
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.property.style.provider
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for property.style.provider using factory class net.sf.jasperreports.engine.style.PropertyStyleProviderExtensionFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.jackson.mapping
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for jackson.mapping using factory class net.sf.jasperreports.web.util.JacksonMappingExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.default
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for default using factory class net.sf.jasperreports.extensions.DefaultExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory for property net.sf.jasperreports.extension.registry.factory.components
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for components using factory class net.sf.jasperreports.components.ComponentsExtensionsRegistryFactory
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:208 - Instantiating registry of type net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory for property net.sf.jasperreports.extension.registry.factory.header.toolbar.style.provider
+2017-10-05 13:24:22 DEBUG DefaultExtensionsRegistry:233 - Instantiating extensions registry for header.toolbar.style.provider using factory class net.sf.jasperreports.components.headertoolbar.HeaderToolbarConditionalStyleProviderExtensionFactory
+2017-10-05 13:24:24 DEBUG JRBaseFiller:356 - Fill 1: created for WeightScale1
+2017-10-05 13:24:24 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: BACKGROUND} for band 718862761
+2017-10-05 13:24:24 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: TITLE} for band 1493440178
+2017-10-05 13:24:24 DEBUG JRFillBand:154 - Origin {reportName: null, groupName: null,bandType: DETAIL} for band 1528513578
+2017-10-05 13:24:24 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 340, columnFooterOffsetY: 340, lastPageColumnFooterOffsetY: 340
+2017-10-05 13:24:24 DEBUG JRBaseFiller:911 - Fill 1: filling report
+2017-10-05 13:24:24 DEBUG JRVerticalFiller:136 - Filler 1 - pageHeight: 2097152000, columnFooterOffsetY: 2097152000, lastPageColumnFooterOffsetY: 2097152000
+2017-10-05 13:24:24 DEBUG JRFillDataset:1107 - Fill 1: Creating sql query executer
+2017-10-05 13:24:24 DEBUG JRJdbcQueryExecuter:254 - SQL query string: SELECT
+	s.weight_scale_id,
+	s.customer_code,
+	c.customer_name,
+	s.net_weight,
+	s.date,
+	s.time_stamp
+
+FROM scale s
+inner join customer c
+on c.customer_code=s.customer_code and s.weight_scale_id=?
+2017-10-05 13:24:24 DEBUG JRJdbcQueryExecuter:396 - Parameter #1 (weight_scale_id of type java.lang.String): WID0005
+2017-10-05 13:24:24 DEBUG JRBaseFiller:1857 - Fill 1: adding page 1
+2017-10-05 13:24:24 DEBUG JRVerticalFiller:340 - Fill 1: title at 0
+2017-10-05 13:24:24 DEBUG SimpleTextLineWrapper:303 - creating element font infos cache of size 2000
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14] has complex layout false, leading 0.59472656
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 14.0, style: 1} and element 925cca97-22d8-4926-ad03-828141b6b259
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 17 in width 189.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=14]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 17 at width 154.013671875
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9] has complex layout false, leading 0.38232422
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element 079ff8eb-9f28-4eae-b7d8-01c446d5d162
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 9
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 50.0009765625
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9] has complex layout false, leading 0.38232422
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element cae10bab-4c20-46a8-a23a-2df0d4746afa
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 29 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 17
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 16 at width 77.98974609375
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 17 to 29 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 29 at width 66.50244140625
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:346 - font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10] has complex layout false, leading 0.4248047
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element 9b6039c3-0860-4eb5-87ef-217c7c95e4b0
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:568 - exact line break index measured at 1
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 1e7b435a-d954-43c5-9f32-f27a8d5bac7c
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 24.99609375
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element a44e0f91-87f2-4edc-b557-78b87d7e7972
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element e5cde872-3b9b-412f-8ba9-100958d58009
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 9 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 9 at width 48.5068359375
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element a135b957-5e80-4693-a1b7-003f9ed7b572
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 10 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 10 at width 41.0009765625
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element ea77c049-61ca-4573-a59e-7cad8527e643
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element b05ce2e2-cd01-4fb8-96ae-53ab7ec7fc6c
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 4 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 4 at width 25.0048828125
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 1} and element c27e750b-3921-4177-b1bc-15c8be84bb05
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 6 in width 52.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 6 at width 38.50927734375
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 10.0, style: 1} and element b7b0995a-bb75-4262-8501-47905d7126e7
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 1 in width 8.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=bold,size=10]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 1 at width 3.330078125
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:283 - creating element font info for {family: Times New Roman, size: 9.0, style: 0} and element 4436c9aa-5ca7-4bfe-a1f9-72ba970410f6
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:421 - paragraph start at 0, truncate at char false, LTR true, exact measure false
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:510 - simple line measurement at 0 to 3 in width 130.0 with font java.awt.Font[family=Times New Roman,name=Times New Roman,style=plain,size=9]
+2017-10-05 13:24:24 TRACE SimpleTextLineWrapper:737 - measured to index 3 at width 11.25
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@7993fba7
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@297ee86a
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@57c19b23
+2017-10-05 13:24:24 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@57c19b23 for (null, null)
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@3c304fce
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@6253cd9a
+2017-10-05 13:24:24 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@6253cd9a for (null, {java.sql.Date, yyyy/MM/dd,null,null,null})
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@57c19b23 for object net.sf.jasperreports.engine.fill.JRTemplateText@39105a70
+2017-10-05 13:24:24 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@57c19b23 for (null, null)
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@3c304fce for object net.sf.jasperreports.engine.fill.JRTemplateText@337786d4
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@297ee86a for object net.sf.jasperreports.engine.fill.JRTemplateText@d87f14b
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@3c304fce for object net.sf.jasperreports.engine.fill.JRTemplateText@7144c27c
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@297ee86a for object net.sf.jasperreports.engine.fill.JRTemplateText@4a3cd5fe
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@297ee86a for object net.sf.jasperreports.engine.fill.JRTemplateText@45f2ab4b
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@3c304fce for object net.sf.jasperreports.engine.fill.JRTemplateText@774d0717
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateText@204d6ca0
+2017-10-05 13:24:24 DEBUG JRFillTextField:438 - created net.sf.jasperreports.engine.fill.JRTemplateText@204d6ca0 for (null, {java.lang.Double, null,null,null,null})
+2017-10-05 13:24:24 DEBUG DeduplicableRegistry:85 - Added object net.sf.jasperreports.engine.fill.JRTemplateLine@1f9c7adc
+2017-10-05 13:24:24 DEBUG JRBaseFiller:973 - Fill 1: ended
+2017-10-05 13:24:24 DEBUG JRFillDataset:1188 - Fill 1: closing query executer

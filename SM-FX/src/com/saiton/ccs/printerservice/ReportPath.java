@@ -11,7 +11,8 @@ public enum ReportPath {
 
     PATH_WEIGHT_ONE_REPORT(".//Reports//WeightScale1.jasper"),
     PATH_WEIGHT_TWO_REPORT(".//Reports//WeightScale2.jasper"),
-    PATH_WEIGHT_INFO(".//Reports//WeightInfo.jasper");
+    PATH_WEIGHT_INFO(".//Reports//WeightInfo.jasper"),
+    PATH_WEIGHT_INFO_A4(".//Reports//WeightInfoA4.jasper");
 
     private final String val;
 
