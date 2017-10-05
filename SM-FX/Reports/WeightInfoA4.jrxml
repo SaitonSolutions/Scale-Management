@@ -176,15 +176,15 @@ Weight (Kgs.)]]></text>
 			<line>
 				<reportElement x="186" y="92" width="1" height="35" uuid="ef871899-8f98-4d53-b791-2662d7fe88a3"/>
 			</line>
-			<textField pattern="yyyy/MM/dd">
-				<reportElement x="486" y="69" width="69" height="21" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
+				<reportElement x="467" y="69" width="88" height="21" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{to_date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="419" y="69" width="65" height="21" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
+				<reportElement x="408" y="69" width="65" height="21" uuid="f781b658-bebf-4382-a5ac-99e3312cea84"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12" isBold="true" isStrikeThrough="false"/>
 				</textElement>
@@ -200,7 +200,7 @@ Weight (Kgs.)]]></text>
 				</textElement>
 				<text><![CDATA[From Date :]]></text>
 			</staticText>
-			<textField pattern="yyyy/MM/dd">
+			<textField pattern="yyyy/MM/dd" isBlankWhenNull="true">
 				<reportElement x="68" y="69" width="124" height="21" uuid="3ee00384-cea1-477a-afe6-325d17c9a204"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12"/>
@@ -221,7 +221,7 @@ Weight (Kgs.)]]></text>
 				</textElement>
 				<text><![CDATA[Vehicle No:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="64" y="49" width="128" height="20" uuid="56d555c5-c3f2-4695-a1e1-9d2fdccf97dc"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
@@ -235,7 +235,7 @@ Weight (Kgs.)]]></text>
 				</textElement>
 				<text><![CDATA[Customer Name:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="296" y="48" width="128" height="20" uuid="c3b12e0c-6180-4219-a282-3005e2746e17"/>
 				<textElement verticalAlignment="Middle">
 					<font size="12" isBold="false"/>
