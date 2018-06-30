@@ -63,11 +63,13 @@ where s.date between $P{from_date} and $P{to_date}]]>
 	<title>
 		<band height="73" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="0" width="189" height="16" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
+				<reportElement x="1" y="0" width="189" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="false"/>
+					<font fontName="Times New Roman" size="16" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Subhagya Tea Factory]]></text>
+				<text><![CDATA[YALTA TEA FACTORY
+
+]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="33" y="37" width="19" height="36" uuid="e5cde872-3b9b-412f-8ba9-100958d58009"/>
@@ -165,7 +167,7 @@ Weight (Kgs.)]]></text>
 				<reportElement x="116" y="37" width="1" height="35" uuid="7ebb10ae-9618-46a0-9fc5-74c250eb9ffc"/>
 			</line>
 			<textField pattern="yyyy/MM/dd">
-				<reportElement x="140" y="26" width="45" height="9" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
+				<reportElement x="146" y="26" width="45" height="9" uuid="a4d9fcfe-e87e-4313-93a6-b57fb0cfa2ae"/>
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
@@ -192,20 +194,6 @@ Weight (Kgs.)]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="1" y="10" width="189" height="16" uuid="b067731a-6602-4a7a-98b4-0658f8de7fff"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="6" isBold="false" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Hakpitiya, Neluwa]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="1" y="16" width="189" height="16" uuid="144ca99d-24f2-4cf1-9e4f-76131e4bfe53"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="4" isBold="false" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Tel: 091 3080199]]></text>
-			</staticText>
 		</band>
 	</title>
 	<detail>

@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.log4j.Logger;
+import org.owasp.esapi.ESAPI;
+import org.owasp.esapi.codecs.Codec;
+import org.owasp.esapi.codecs.OracleCodec;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -20,6 +24,8 @@ public class UserDAO {
 
     private Starter star;
     private PasswordEncrypted passEncrypt = null;
+    Codec ORACLE_CODEC = new OracleCodec();
+    
 
     private Logger log = Logger.getLogger(this.getClass());
 
@@ -603,5 +609,98 @@ public class UserDAO {
         }
 
         return false;
+    }
+    
+    public Boolean insertWeight(
+            String weightScaleId,
+            String scaleId,
+            String customerCode,
+            String machine,
+            String netweight,
+            double grossweight,
+            String noOfBags,
+            String tare,
+            String coarseLeaf,
+            String water,
+            String boilLeaf,
+            String coreweight,
+            String name,
+            String vehicleNo,
+            String date
+    ) {
+        String encodedWeightScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                weightScaleId);
+        String encodedScaleId = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                scaleId);
+        String encodedCustomerCode = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                customerCode);
+
+        String encodedMachine = ESAPI.encoder().encodeForSQL(ORACLE_CODEC,
+                machine);
+
+        String encodedDate = ESAPI.encoder().encodeForSQL(ORACLE_CODEC, date);
+
+        if (star.con == null) {
+            log.error("Database connection failiure.");
+            return false;
+        } else {
+            try {
+
+                PreparedStatement ps = star.con.prepareStatement(
+                        "INSERT INTO scale("
+                        + " `weight_scale_id`,"
+                        + " `scale_id`,"
+                        + " `customer_code`,"
+                        + " `net_weight`,"
+                        + " `gross_weight`,"
+                        + " `no_of_bags`,"
+                        + " `tare`,"
+                        + " `corse_leaf`,"
+                        + " `water`,"
+                        + " `boil_leaf`,"
+                        + " `core_weight`,"
+                        + " `name`,"
+                                 + " `vehicle_no`,"
+                        + " `date`"
+                        + " ) "
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
+                ps.setString(1, encodedWeightScaleId);
+                ps.setString(2, encodedScaleId);
+                ps.setString(3, encodedCustomerCode);
+
+                ps.setString(4, netweight);
+                ps.setDouble(5, grossweight);
+                ps.setString(6, noOfBags);
+                ps.setString(7, tare);
+                ps.setString(8, coarseLeaf);
+                ps.setString(9, water);
+                ps.setString(10, boilLeaf);
+                ps.setString(11, coreweight);
+                ps.setString(12, name);
+                ps.setString(13, vehicleNo);
+                ps.setString(14, encodedDate);
+
+                int val = ps.executeUpdate();
+
+                if (val == 1) {
+                    return true;
+                } else {
+                    return false;
+                }
+
+            } catch (SQLException e) {
+
+                if (e instanceof SQLException) {
+                    log.error("Exception tag --> " + "Invalid sql statement "
+                            + e.getMessage());
+                }
+                return false;
+
+            } catch (Exception e) {
+                log.error("Exception tag --> " + "Error");
+                return false;
+            }
+        }
     }
 }

@@ -41,11 +41,11 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 	<title>
 		<band height="167" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="2" width="189" height="19" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
+				<reportElement x="1" y="2" width="189" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="14" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Subhagya Tea Factory]]></text>
+				<text><![CDATA[YALTA TEA FACTORY]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="39" width="52" height="19" uuid="079ff8eb-9f28-4eae-b7d8-01c446d5d162"/>
@@ -134,20 +134,6 @@ on c.customer_code=s.customer_code and s.weight_scale_id=$P{weight_scale_id}]]>
 			<line>
 				<reportElement x="0" y="140" width="190" height="1" uuid="a91338c6-a622-4a32-8c82-b51d3ee644b8"/>
 			</line>
-			<staticText>
-				<reportElement x="1" y="14" width="189" height="19" uuid="ff194b14-6bb4-40be-937d-e2069c5b6161"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="false" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Hakpitiya, Neluwa]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="1" y="24" width="189" height="19" uuid="c647f72e-93fe-41b8-a423-dfefa833ba1d"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="8" isBold="false" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Tel: 091 3080199]]></text>
-			</staticText>
 		</band>
 	</title>
 </jasperReport>

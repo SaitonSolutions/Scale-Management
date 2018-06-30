@@ -77,11 +77,13 @@ group by s.name]]>
 	<title>
 		<band height="128" splitType="Stretch">
 			<staticText>
-				<reportElement x="1" y="0" width="554" height="28" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
+				<reportElement x="1" y="1" width="554" height="35" uuid="925cca97-22d8-4926-ad03-828141b6b259"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="24" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Subhagya Tea Factory]]></text>
+				<text><![CDATA[YALTA TEA FACTORY
+
+]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="188" y="92" width="72" height="36" uuid="e5cde872-3b9b-412f-8ba9-100958d58009"/>
@@ -206,11 +208,11 @@ Weight (Kgs.)]]></text>
 				<textFieldExpression><![CDATA[$P{from_date}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="2" y="17" width="554" height="35" uuid="b678eaf9-922e-414c-884b-b6e4919cb996"/>
+				<reportElement x="2" y="19" width="554" height="35" uuid="b678eaf9-922e-414c-884b-b6e4919cb996"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="13" isBold="true" isUnderline="false"/>
+					<font fontName="Times New Roman" size="16" isBold="true" isUnderline="false"/>
 				</textElement>
-				<text><![CDATA[Hakpitiya, Neluwa]]></text>
+				<text><![CDATA[WEIGHING SHEET]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="1" y="48" width="92" height="21" uuid="44b8954e-42c4-4a4c-abb1-482b4430cf01"/>
@@ -240,13 +242,6 @@ Weight (Kgs.)]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="2" y="29" width="554" height="35" uuid="f0199f34-3c49-4e48-b875-503ed20112db"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[Tel: 091 3080199]]></text>
-			</staticText>
 		</band>
 	</title>
 	<detail>
