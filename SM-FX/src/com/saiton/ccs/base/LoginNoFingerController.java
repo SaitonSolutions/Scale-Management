@@ -54,6 +54,8 @@ public class LoginNoFingerController extends AnchorPane implements
         if (UserSession.getInstance().
                 login(txtUsername.getText(), passPassword.getText())) {
             clearAll();
+            
+            //TODO: 
             home.startHomeUi();
             home.onLoginSuccess();
         } else {

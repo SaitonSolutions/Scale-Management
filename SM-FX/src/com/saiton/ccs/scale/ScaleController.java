@@ -276,12 +276,12 @@ public class ScaleController implements Initializable, Validatable,
             try {
 //                int val = Integer.parseInt(txtReelNo.getText()) + 1;
 //                txtReelNo.setText(val + "");
-
+                clearInput();
                 txtWeightScaleId.setText(scaleDAO.generateID());
             } catch (Exception e) {
             }
 
-            //clearInput();
+           
         }
 
 //</editor-fold>
@@ -367,6 +367,10 @@ public class ScaleController implements Initializable, Validatable,
     @FXML
     private void btnRefreshCustomerOnAction(ActionEvent event) {
         txtCustomer.clear();
+ 
+        txtName.clear();
+        txtVehicleNo.clear();
+
         clearInput();
     }
 
@@ -502,19 +506,14 @@ public class ScaleController implements Initializable, Validatable,
     @Override
     public void clearInput() {
 
-        txtWeightScaleId.clear();
+        
 
-        txtCustomer.clear();
+        txtName.clear();
 
         txtMachine.clear();
 
         txtNetWeight.clear();
-        txtNetWeight1.clear();
-        customerCode = "";
-        txtWeightScaleId.setText(scaleDAO.generateID());
-        System.out.println("ID : " + scaleDAO.generateID());
-
-        txtNoOfBags.clear();
+       txtNoOfBags.clear();
 
         txtCoarseLeaf.clear();
         txtWater.clear();
@@ -524,6 +523,11 @@ public class ScaleController implements Initializable, Validatable,
         txtCoreWeight.clear();
         txtGrossWeight.setText("0.00");
         txtTare.clear();
+        customerCode = "";
+        txtWeightScaleId.setText(scaleDAO.generateID());
+        System.out.println("ID : " + scaleDAO.generateID());
+
+        
 
     }
 
