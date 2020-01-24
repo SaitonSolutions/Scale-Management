@@ -3906,3 +3906,4 @@ on c.customer_code=s.customer_code and s.weight_scale_id=?
 2017-03-16 10:22:09 DEBUG DeduplicableRegistry:92 - Found existing instance net.sf.jasperreports.engine.fill.JRTemplateText@47076a59 for object net.sf.jasperreports.engine.fill.JRTemplateText@48be1aac
 2017-03-16 10:22:09 DEBUG JRBaseFiller:973 - Fill 1: ended
 2017-03-16 10:22:09 DEBUG JRFillDataset:1188 - Fill 1: closing query executer
+2020-01-19 13:04:41 ERROR CustomerRegistrationDAO:84 - Exception tag --> Invalid sql statement
